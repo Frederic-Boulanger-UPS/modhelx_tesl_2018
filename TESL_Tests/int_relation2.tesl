@@ -1,0 +1,8 @@
+int-clock clock_a sporadic 2,  5
+int-clock clock_b sporadic 1, 2, 4
+tag relation clock_a = 2 * clock_b + 0
+ 
+@tagref clock_b
+@dumpres
+@output svg xscale 30 standalone overwrite
+//@trace info, fine

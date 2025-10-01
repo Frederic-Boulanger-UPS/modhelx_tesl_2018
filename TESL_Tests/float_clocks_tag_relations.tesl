@@ -1,0 +1,11 @@
+float-clock A periodic 3
+float-clock B
+
+tag relation A = 2 * B + 0
+A implies B
+
+//@tagref A
+@tagref B
+@maxstep 10
+@output svg standalone
+@trace info

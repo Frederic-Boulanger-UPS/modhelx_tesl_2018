@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Automatic-Module-Name: fr.supelec.modhelx.core
+Bundle-Name: ModHelX Core
+Bundle-SymbolicName: fr.supelec.modhelx.core
+Bundle-Version: 1.1.0.qualifier
+Bundle-Activator: fr.supelec.modhelx.core.Activator
+Bundle-Vendor: CentraleSupélec/LRI
+Require-Bundle: org.eclipse.core.runtime,
+ fr.supelec.tesl.core;bundle-version="1.0.10"
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-ActivationPolicy: lazy
+Export-Package: fr.supelec.modhelx.core,
+ fr.supelec.modhelx.core.abstractsemantics;
+  uses:="fr.supelec.modhelx.core.ecore,
+   fr.supelec.modhelx.core.state_management,
+   fr.supelec.tesl.core,
+   fr.supelec.tesl.logging",
+ fr.supelec.modhelx.core.ecore,
+ fr.supelec.modhelx.core.mocs.de;uses:="fr.supelec.modhelx.core.abstractsemantics,fr.supelec.modhelx.core.util,fr.supelec.tesl.core",
+ fr.supelec.modhelx.core.mocs.sdf;uses:="fr.supelec.modhelx.core.abstractsemantics,fr.supelec.tesl.core",
+ fr.supelec.modhelx.core.mocs.tfsm;uses:="fr.supelec.modhelx.core.abstractsemantics,fr.supelec.tesl.core",
+ fr.supelec.modhelx.core.mocs.tfsm.parser,
+ fr.supelec.modhelx.core.simulation;uses:="javax.swing,fr.supelec.modhelx.core.abstractsemantics,fr.supelec.tesl.core",
+ fr.supelec.modhelx.core.state_management;uses:="fr.supelec.modhelx.core.abstractsemantics,fr.supelec.tesl.core",
+ fr.supelec.modhelx.core.util;uses:="fr.supelec.modhelx.core.ecore,fr.supelec.modhelx.core.abstractsemantics"

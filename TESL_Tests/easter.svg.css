@@ -1,0 +1,46 @@
+/* Make things display in red for Easter on April 20 2014 */
+#d_110 {  /* d_110 = date label 110 */
+  fill: red;
+}
+#m_110 {  /* m_110 = marker on time line at 110 */
+  stroke: red;
+}
+#cm_1_110 {  /* cm_1_110 = marker on clock 1 line at 110 */
+  stroke: red;
+}
+#cm_2_110 {
+  stroke: red;
+}
+#cm_8_110 {
+  stroke: red;
+}
+#cm_9_110 {
+  stroke: red;
+}
+#h_110 {   /* h_110 = helper line at date 110 */
+  stroke: red;
+}
+
+/* Make things display in red for Easter on April 5 2015 */
+#d_460 {
+  fill: red;
+}
+#m_460 {
+  stroke: red;
+}
+#cm_1_460 {
+  stroke: red;
+}
+#cm_2_460 {
+  stroke: red;
+}
+#cm_8_460 {
+  stroke: red;
+}
+#cm_9_460 {
+  stroke: red;
+}
+#h_460 {
+  stroke: red;
+}
+

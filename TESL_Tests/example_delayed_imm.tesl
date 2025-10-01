@@ -1,0 +1,13 @@
+int-clock master periodic 2 offset 1
+int-clock counting periodic 1 offset 1
+tag relation master = counting
+ 
+unit-clock slave1
+unit-clock slave2
+ 
+master delayed by 3 on counting implies slave1
+master immediately delayed by 3 on counting implies slave2
+ 
+@maxstep 10
+@tagref counting
+@output svg select counting, master, slave1, slave2 xscale 50 standalone overwrite

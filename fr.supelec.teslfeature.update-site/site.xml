@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="TESL update site" url="http://wwwdi.supelec.fr/tesl-update-site">
+      The Tagged Event Specification Language allows the specification
+of timed systems by modeling events as clocks and occurrences
+of an event as ticks on its clock.
+Both event-triggered and time-triggered models are supported
+through the use of implication relations between clocks and of
+relations between the time scale of the clocks.
+   </description>
+   <feature url="features/fr.supelec.tesl.feature_1.2.1.201804201559.jar" id="fr.supelec.tesl.feature" version="1.2.1.201804201559">
+      <category name="TESL"/>
+   </feature>
+   <category-def name="TESL" label="TESL">
+      <description>
+         Tagged Events Specification Language
+      </description>
+   </category-def>
+</site>

@@ -1,0 +1,43 @@
+Manifest-Version: 1.0
+Export-Package: fr.supelec.tesl.lang; uses:="com.google.inject,  org.e
+ clipse.xtext.common.types,  org.eclipse.xtext,  org.eclipse.xtext.ser
+ vice",fr.supelec.tesl.lang.formatting;uses:="org.eclipse.xtext.format
+ ting.impl",fr.supelec.tesl.lang.generator;uses:="org.eclipse.xtext.ge
+ nerator,org.eclipse.emf.ecore.resource",fr.supelec.tesl.lang.parser.a
+ ntlr;uses:="fr.supelec.tesl.lang.parser.antlr.internal,org.eclipse.xt
+ ext.parser.antlr,fr.supelec.tesl.lang.services",fr.supelec.tesl.lang.
+ parser.antlr.internal; uses:="org.eclipse.emf.ecore,  org.eclipse.emf
+ .common.util,  org.eclipse.xtext.parser.antlr,  fr.supelec.tesl.lang.
+ services,  org.antlr.runtime",fr.supelec.tesl.lang.scoping;uses:="org
+ .eclipse.xtext.scoping.impl",fr.supelec.tesl.lang.serializer; uses:="
+ org.eclipse.emf.ecore,  org.eclipse.xtext.nodemodel,  org.eclipse.xte
+ xt.serializer.analysis,  fr.supelec.tesl.lang.services,  org.eclipse.
+ xtext.serializer.sequencer,  fr.supelec.tesl.lang.tesl,  org.eclipse.
+ xtext",fr.supelec.tesl.lang.services;uses:="org.eclipse.xtext.service
+ ,org.eclipse.xtext",fr.supelec.tesl.lang.tesl;uses:="org.eclipse.emf.
+ ecore,org.eclipse.emf.common.util",fr.supelec.tesl.lang.tesl.impl; us
+ es:="org.eclipse.emf.ecore,  org.eclipse.emf.ecore.impl,  org.eclipse
+ .emf.common.util,  org.eclipse.emf.common.notify,  fr.supelec.tesl.la
+ ng.tesl",fr.supelec.tesl.lang.tesl.util; uses:="org.eclipse.emf.ecore
+ ,  org.eclipse.emf.common.notify,  org.eclipse.emf.common.notify.impl
+ ,  org.eclipse.emf.ecore.util,  fr.supelec.tesl.lang.tesl",fr.supelec
+ .tesl.lang.validation;uses:="fr.supelec.tesl.lang.tesl"
+Require-Bundle: org.eclipse.xtext;visibility:=reexport,org.eclipse.xte
+ xt.xbase;resolution:=optional;visibility:=reexport,org.eclipse.xtext.
+ generator;resolution:=optional,org.apache.commons.logging;bundle-vers
+ ion="1.0.4";resolution:=optional,org.eclipse.emf.codegen.ecore;resolu
+ tion:=optional,org.eclipse.emf.mwe.utils;resolution:=optional,org.ecl
+ ipse.emf.mwe2.launch;resolution:=optional,org.eclipse.xtext.util,org.
+ eclipse.emf.ecore,org.eclipse.emf.common,org.antlr.runtime,org.eclips
+ e.xtext.common.types,org.objectweb.asm;bundle-version="[5.0.1,6.0.0)"
+ ;resolution:=optional
+Bundle-Vendor: Supélec
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 1.1.6.201407171718
+Bundle-Name: fr.supelec.tesl.lang
+Bundle-ManifestVersion: 2
+Import-Package: fr.supelec.tesl.core,org.apache.log4j,org.eclipse.xtex
+ t.xbase.lib
+Bundle-SymbolicName: fr.supelec.tesl.lang; singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+

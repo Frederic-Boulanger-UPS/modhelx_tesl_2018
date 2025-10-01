@@ -1,0 +1,13 @@
+int-clock master periodic 1 offset 1
+int-clock begin periodic 3 offset 2
+int-clock end periodic 5 offset 3
+tag relation master = begin
+tag relation master = end
+ 
+unit-clock slave
+ 
+master sustained from begin to end implies slave
+ 
+@maxstep 10
+@tagref master
+@output svg xscale 30 standalone overwrite

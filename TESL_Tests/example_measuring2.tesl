@@ -1,0 +1,9 @@
+U-clock master
+U-clock slave
+D-clock measuring periodic 2 offset 1
+measuring every 2 implies master
+master time delayed by 1.5 on measuring implies slave
+
+@tagref measuring
+@maxstep 6
+@output svg select measuring, master, slave xscale 50 standalone overwrite

@@ -1,0 +1,13 @@
+Z-clock t  sporadic 0, 1, 2, 3, 4, 5, 6, 7
+Z-clock m1 sporadic    1,    3,       6
+Z-clock m2 sporadic       2, 3, 4,       7
+
+U-clock s
+
+tag relation m1 = t
+tag relation m2 = t
+
+await m1 m2 implies s
+
+@tagref t
+@output svg standalone select m1, m2, s border="{10 0 0 0}"

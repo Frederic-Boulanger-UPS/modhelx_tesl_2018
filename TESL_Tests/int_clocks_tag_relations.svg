@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns='http://www.w3.org/2000/svg'
+     viewBox='0 0 427 80'>
+  <defs>
+    <marker id='arrow-head' orient='auto' markerWidth='6' markerHeight='6' refX='0' refY='3'>
+      <path d='M0,0 V6 L6,3 Z' fill='black'/>
+    </marker>
+  </defs>
+  <style type='text/css'>
+  <![CDATA[
+    .clockline {
+      stroke-width: 1px;
+      stroke: black;
+    }
+    .timeline {
+      stroke-width: 1px;
+      stroke: black;
+      marker-end: url(#arrow-head);
+    }
+    .clockname {
+      font-family: sans-serif;
+      font-size:80%;
+      text-anchor: end;
+    }
+    .ticklabel {
+      font-family: sans-serif;
+      font-size:60%;
+      text-anchor: middle;
+      /* 2014-05: baseline-shift does not work in Firefox (OK in Chrome and Safari) */
+      /* baseline-shift: -1em; */
+      transform: translate(0px, 1em);  /* For Firefox */
+      -webkit-transform: translate(0px, 1em); /* For Chrome, Safari */
+    }
+    .tickmark {
+      stroke: black;
+      stroke-width: 2px;
+    }
+    .clktickmark {
+      stroke: black;
+      stroke-width: 2px;
+    }
+    .tickhelper {
+      stroke: black;
+      stroke-width: 1px;
+      stroke-dasharray: 2 5;
+    }
+  ]]>
+  </style>
+
+  <svg id='clocknames' x='0' y='0'>
+    <text class='clockname' id='c_1' x='12.5' y='20'>A</text>
+    <text class='clockname' id='c_2' x='12.5' y='40'>B</text>
+  </svg>
+  <svg id='chrono' x='22.5' y='0'>
+    <line class='clockline' id='l_1' x1='0' y1='20' x2='399' y2='20'/>
+    <line class='clockline' id='l_2' x1='0' y1='40' x2='399' y2='40'/>
+    <line class='timeline' id='timeline' x1='0' y1='60' x2='399' y2='60'/>
+    <line class='tickhelper' id='h_12' x1='50' y1='0.0' x2='50' y2='60'/>
+    <line class='tickmark' id='m_12' x1='50' y1='60' x2='50' y2='54'/>
+    <text class='ticklabel' id='d_12' x='50' y='64'>12</text>
+    <line class='clktickmark' id='cm_1_12' x1='50' y1='20' x2='50' y2='10'/>
+    <line class='clktickmark' id='cm_2_12' x1='50' y1='40' x2='50' y2='30'/>
+    <line class='tickhelper' id='h_48' x1='86' y1='0.0' x2='86' y2='60'/>
+    <line class='tickmark' id='m_48' x1='86' y1='60' x2='86' y2='54'/>
+    <text class='ticklabel' id='d_48' x='86' y='64'>48</text>
+    <line class='clktickmark' id='cm_1_48' x1='86' y1='20' x2='86' y2='10'/>
+    <line class='clktickmark' id='cm_2_48' x1='86' y1='40' x2='86' y2='30'/>
+    <line class='tickhelper' id='h_84' x1='122' y1='0.0' x2='122' y2='60'/>
+    <line class='tickmark' id='m_84' x1='122' y1='60' x2='122' y2='54'/>
+    <text class='ticklabel' id='d_84' x='122' y='64'>84</text>
+    <line class='clktickmark' id='cm_1_84' x1='122' y1='20' x2='122' y2='10'/>
+    <line class='clktickmark' id='cm_2_84' x1='122' y1='40' x2='122' y2='30'/>
+    <line class='tickhelper' id='h_120' x1='158' y1='0.0' x2='158' y2='60'/>
+    <line class='tickmark' id='m_120' x1='158' y1='60' x2='158' y2='54'/>
+    <text class='ticklabel' id='d_120' x='158' y='64'>120</text>
+    <line class='clktickmark' id='cm_1_120' x1='158' y1='20' x2='158' y2='10'/>
+    <line class='clktickmark' id='cm_2_120' x1='158' y1='40' x2='158' y2='30'/>
+    <line class='tickhelper' id='h_156' x1='194' y1='0.0' x2='194' y2='60'/>
+    <line class='tickmark' id='m_156' x1='194' y1='60' x2='194' y2='54'/>
+    <text class='ticklabel' id='d_156' x='194' y='64'>156</text>
+    <line class='clktickmark' id='cm_1_156' x1='194' y1='20' x2='194' y2='10'/>
+    <line class='clktickmark' id='cm_2_156' x1='194' y1='40' x2='194' y2='30'/>
+    <line class='tickhelper' id='h_192' x1='230' y1='0.0' x2='230' y2='60'/>
+    <line class='tickmark' id='m_192' x1='230' y1='60' x2='230' y2='54'/>
+    <text class='ticklabel' id='d_192' x='230' y='64'>192</text>
+    <line class='clktickmark' id='cm_1_192' x1='230' y1='20' x2='230' y2='10'/>
+    <line class='clktickmark' id='cm_2_192' x1='230' y1='40' x2='230' y2='30'/>
+    <line class='tickhelper' id='h_228' x1='266' y1='0.0' x2='266' y2='60'/>
+    <line class='tickmark' id='m_228' x1='266' y1='60' x2='266' y2='54'/>
+    <text class='ticklabel' id='d_228' x='266' y='64'>228</text>
+    <line class='clktickmark' id='cm_1_228' x1='266' y1='20' x2='266' y2='10'/>
+    <line class='clktickmark' id='cm_2_228' x1='266' y1='40' x2='266' y2='30'/>
+    <line class='tickhelper' id='h_264' x1='302' y1='0.0' x2='302' y2='60'/>
+    <line class='tickmark' id='m_264' x1='302' y1='60' x2='302' y2='54'/>
+    <text class='ticklabel' id='d_264' x='302' y='64'>264</text>
+    <line class='clktickmark' id='cm_1_264' x1='302' y1='20' x2='302' y2='10'/>
+    <line class='clktickmark' id='cm_2_264' x1='302' y1='40' x2='302' y2='30'/>
+    <line class='tickhelper' id='h_300' x1='338' y1='0.0' x2='338' y2='60'/>
+    <line class='tickmark' id='m_300' x1='338' y1='60' x2='338' y2='54'/>
+    <text class='ticklabel' id='d_300' x='338' y='64'>300</text>
+    <line class='clktickmark' id='cm_1_300' x1='338' y1='20' x2='338' y2='10'/>
+    <line class='clktickmark' id='cm_2_300' x1='338' y1='40' x2='338' y2='30'/>
+    <line class='tickhelper' id='h_336' x1='374' y1='0.0' x2='374' y2='60'/>
+    <line class='tickmark' id='m_336' x1='374' y1='60' x2='374' y2='54'/>
+    <text class='ticklabel' id='d_336' x='374' y='64'>336</text>
+    <line class='clktickmark' id='cm_1_336' x1='374' y1='20' x2='374' y2='10'/>
+    <line class='clktickmark' id='cm_2_336' x1='374' y1='40' x2='374' y2='30'/>
+  </svg>
+</svg>

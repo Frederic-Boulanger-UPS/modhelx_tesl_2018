@@ -1,0 +1,43 @@
+Q-clock realtime    // in seconds
+Q-clock crankshaft  // in degrees
+Q-clock camshaft    // in degrees
+tag relation crankshaft = 2 * camshaft + 0 // crankshaft turns twice faster than camshaft
+
+let int rpm = 2000  // engine rotation speed in rotations/minute
+let rational degrees_per_sec = [rational $rpm]*360/60
+tag relation crankshaft = $degrees_per_sec * realtime + 0
+
+// Make the engine run by generating periodic TDC events
+Q-clock top_dead_center periodic 1 offset 0
+// crankshaft angle advances by 360 degrees each top dead center
+tag relation crankshaft = 360 * top_dead_center + 0
+
+// Clocks of exhaust and compression top dead centers
+U-clock exhaust_tdc
+top_dead_center every 2 implies exhaust_tdc
+U-clock compress_tdc
+top_dead_center every 2 starting at 1 implies compress_tdc
+
+U-clock ignition
+let decimal ignition_advance = 8E-3 // spark triggered 8ms before TDC
+// Get ignition delay after compression TDC from ignition advance and RPMs
+let rational period = [rational 60] / $rpm
+let rational ignition_delay = $period - $ignition_advance
+// Ignition 8ms before comp. TDC = 30ms - 8ms = 22ms after exhaust TDC at 2000rpm
+
+// Trigger ignition
+exhaust_tdc time delayed by $ignition_delay on realtime implies ignition
+
+@trace _lets_
+@tagref camshaft
+@maxstep 8
+@output vcd select crankshaft, top_dead_center, camshaft, exhaust_tdc, compress_tdc, ignition
+@output tikz select crankshaft, top_dead_center, camshaft, exhaust_tdc, compress_tdc, ignition
+             xscale 0.01    // for camshaft time scale
+             from 0 to 550
+             border="{1mm 1mm 1mm 2mm}" standalone overwrite
+@output svg  select realtime, crankshaft, top_dead_center, camshaft, exhaust_tdc, compress_tdc, ignition
+             from 0 to 550
+             xscale 0.5    // for camshaft time scale
+             border="-10 0 0 5" standalone
+             

@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Wed May 28 10:53:29 CEST 2014
+markTmpDer=true
+builderNum=2
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=
+mainTexFile=easter_with_next.tex
+outputFile=easter_with_next.pdf
+langSpell=
+markDer=true
+srcDir=

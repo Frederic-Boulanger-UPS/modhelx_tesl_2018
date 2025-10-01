@@ -1,0 +1,20 @@
+int-clock master1 sporadic 1, 2, 4, 7
+int-clock master2 sporadic 2,   5
+tag relation master2 = 2 * master1 + 0
+
+unit-clock slave
+ 
+master1 implies slave
+master2 implies slave
+
+// the tick at 2 on master1 occurs at date 4 on master2
+// the tick at 5 on master2 occurs at date 2 on master1
+// If the tag reference is master1, we cannot distinguish dates 4 and 5 of master2
+// because they both correspond to date 2 on master1
+// If the tag reference is master2, we have a finer time scale which allows us to 
+// distinguish dates 4 and 5 of master2, although they still correspond to the same 
+// date 2 on master1. The VCDs are not the same when we change the reference time scale.
+//@tagref master1
+@tagref master2
+@output svg xscale 20 standalone
+@trace error

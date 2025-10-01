@@ -1,0 +1,123 @@
+\pgfkeysifdefined{/tikz/tesl clock name/.@cmd}{}{%
+  \tikzstyle{tesl clock name}=[node font=\sffamily, above left, inner ysep=0pt]
+}
+\pgfkeysifdefined{/tikz/tesl time line/.@cmd}{}{%
+  \tikzstyle{tesl time line}=[->,shorten >=1pt,auto,semithick]
+}
+\pgfkeysifdefined{/tikz/tesl tick helper/.@cmd}{}{%
+  \tikzstyle{tesl tick helper}=[loosely dotted]
+}
+\pgfkeysifdefined{/tikz/tesl clock tick mark/.@cmd}{}{%
+  \tikzstyle{tesl clock tick mark}=[thick]
+}
+\pgfkeysifdefined{/tikz/tesl tick mark/.@cmd}{}{%
+  \tikzstyle{tesl tick mark}=[]
+}
+\pgfkeysifdefined{/tikz/tesl tick label/.@cmd}{}{%
+  \tikzstyle{tesl tick label}=[below, node font={\sffamily\scriptsize}]
+}
+\pgfkeysifdefined{/tikz/tesl clock line/.@cmd}{}{%
+  \tikzstyle{tesl clock line}=[]
+}
+\expandafter\ifx\csname teslclocktickheight\endcsname\relax
+  \def\teslclocktickheight{0.6}%
+\fi
+\expandafter\ifx\csname tesltimetickheight\endcsname\relax
+  \def\tesltimetickheight{0.2}%
+\fi
+\expandafter\ifx\csname teslxoffsetfromtimeorigin\endcsname\relax
+  \def\teslxoffsetfromtimeorigin{-1}%
+\fi
+\expandafter\ifx\csname teslextraclocklength\endcsname\relax
+  \def\teslextraclocklength{1}%
+\fi
+\expandafter\ifx\csname teslextratimelinelength\endcsname\relax
+  \def\teslextratimelinelength{0.3}%
+\fi
+\expandafter\ifx\csname teslpicid\endcsname\relax
+  \def\teslpicid{}%
+\fi
+
+\path (0, -0) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_0) ;
+\path (0, -0) ++(14.5, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_0_end) ;
+\draw[tesl clock line] (\teslpicid c_0) node[tesl clock name] {in\_Ready} -- (\teslpicid c_0_end) ;
+\path (0, -1) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_1) ;
+\path (0, -1) ++(14.5, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_1_end) ;
+\draw[tesl clock line] (\teslpicid c_1) node[tesl clock name] {enter\_Ready} -- (\teslpicid c_1_end) ;
+\path (0, -2) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_2) ;
+\path (0, -2) ++(14.5, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_2_end) ;
+\draw[tesl clock line] (\teslpicid c_2) node[tesl clock name] {leave\_Ready} -- (\teslpicid c_2_end) ;
+\path (0, -3) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_3) ;
+\path (0, -3) ++(14.5, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_3_end) ;
+\draw[tesl clock line] (\teslpicid c_3) node[tesl clock name] {in\_Waiting} -- (\teslpicid c_3_end) ;
+\path (0, -4) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_4) ;
+\path (0, -4) ++(14.5, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_4_end) ;
+\draw[tesl clock line] (\teslpicid c_4) node[tesl clock name] {enter\_Waiting} -- (\teslpicid c_4_end) ;
+\path (0, -5) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_5) ;
+\path (0, -5) ++(14.5, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_5_end) ;
+\draw[tesl clock line] (\teslpicid c_5) node[tesl clock name] {leave\_Waiting} -- (\teslpicid c_5_end) ;
+\path (0, -6) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_6) ;
+\path (0, -6) ++(14.5, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_6_end) ;
+\draw[tesl clock line] (\teslpicid c_6) node[tesl clock name] {action\_reset} -- (\teslpicid c_6_end) ;
+\path (0, -7) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_7) ;
+\path (0, -7) ++(14.5, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_7_end) ;
+\draw[tesl clock line] (\teslpicid c_7) node[tesl clock name] {action\_reply} -- (\teslpicid c_7_end) ;
+\path (0, -8) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_8) ;
+\path (0, -8) ++(14.5, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_8_end) ;
+\draw[tesl clock line] (\teslpicid c_8) node[tesl clock name] {event\_request} -- (\teslpicid c_8_end) ;
+\path (0, -9) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_9) ;
+\path (0, -9) ++(14.5, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_9_end) ;
+\draw[tesl clock line] (\teslpicid c_9) node[tesl clock name] {event\_ack} -- (\teslpicid c_9_end) ;
+\path (0, -10) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_10) ;
+\path (0, -10) ++(14.5, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_10_end) ;
+\draw[tesl clock line] (\teslpicid c_10) node[tesl clock name] {timeout\_W\_to\_R} -- (\teslpicid c_10_end) ;
+\path (0, -11) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_11) ;
+\path (0, -11) ++(14.5, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_11_end) ;
+\draw[tesl clock line] (\teslpicid c_11) node[tesl clock name] {start} -- (\teslpicid c_11_end) ;
+\path (0, -12) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_12) ;
+\path (0, -12) ++(14.5, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_12_end) ;
+\draw[tesl clock line] (\teslpicid c_12) node[tesl clock name] {allEvents} -- (\teslpicid c_12_end) ;
+\path (0, -13) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid timeline) ;
+\path (0, -13) ++(14.5, 0) ++(\teslextraclocklength, 0) ++(\teslextratimelinelength, 0) coordinate (\teslpicid timeline_end) ;
+\draw[tesl time line] (\teslpicid timeline) -- (\teslpicid timeline_end) ;
+\draw[tesl tick helper] (0, 0) -- +(0, -13) ;
+\draw[tesl tick mark] (0, -13) -- +(0, \tesltimetickheight) ;
+\node[tesl tick label] (\teslpicid d_0) at (0, -13) {0} ;
+\draw[tesl clock tick mark] (0, -12) -- +(0, \teslclocktickheight) ; % allEvents_0
+\draw[tesl clock tick mark] (0, -11) -- +(0, \teslclocktickheight) ; % start_0
+\draw[tesl clock tick mark] (0, -1) -- +(0, \teslclocktickheight) ; % enter_Ready_0
+\draw[tesl tick helper] (2.5, 0) -- +(0, -13) ;
+\draw[tesl tick mark] (2.5, -13) -- +(0, \tesltimetickheight) ;
+\node[tesl tick label] (\teslpicid d_5) at (2.5, -13) {5} ;
+\draw[tesl clock tick mark] (2.5, -12) -- +(0, \teslclocktickheight) ; % allEvents_1
+\draw[tesl clock tick mark] (2.5, -0) -- +(0, \teslclocktickheight) ; % in_Ready_1
+\draw[tesl clock tick mark] (2.5, -8) -- +(0, \teslclocktickheight) ; % event_request_1
+\draw[tesl clock tick mark] (2.5, -2) -- +(0, \teslclocktickheight) ; % leave_Ready_1
+\draw[tesl clock tick mark] (2.5, -7) -- +(0, \teslclocktickheight) ; % action_reply_1
+\draw[tesl clock tick mark] (2.5, -4) -- +(0, \teslclocktickheight) ; % enter_Waiting_1
+\draw[tesl tick helper] (6.5, 0) -- +(0, -13) ;
+\draw[tesl tick mark] (6.5, -13) -- +(0, \tesltimetickheight) ;
+\node[tesl tick label] (\teslpicid d_13) at (6.5, -13) {13} ;
+\draw[tesl clock tick mark] (6.5, -9) -- +(0, \teslclocktickheight) ; % event_ack_2
+\draw[tesl clock tick mark] (6.5, -12) -- +(0, \teslclocktickheight) ; % allEvents_2
+\draw[tesl clock tick mark] (6.5, -5) -- +(0, \teslclocktickheight) ; % leave_Waiting_2
+\draw[tesl clock tick mark] (6.5, -3) -- +(0, \teslclocktickheight) ; % in_Waiting_2
+\draw[tesl clock tick mark] (6.5, -1) -- +(0, \teslclocktickheight) ; % enter_Ready_2
+\draw[tesl tick helper] (9.5, 0) -- +(0, -13) ;
+\draw[tesl tick mark] (9.5, -13) -- +(0, \tesltimetickheight) ;
+\node[tesl tick label] (\teslpicid d_19) at (9.5, -13) {19} ;
+\draw[tesl clock tick mark] (9.5, -12) -- +(0, \teslclocktickheight) ; % allEvents_3
+\draw[tesl clock tick mark] (9.5, -0) -- +(0, \teslclocktickheight) ; % in_Ready_3
+\draw[tesl clock tick mark] (9.5, -8) -- +(0, \teslclocktickheight) ; % event_request_3
+\draw[tesl clock tick mark] (9.5, -2) -- +(0, \teslclocktickheight) ; % leave_Ready_3
+\draw[tesl clock tick mark] (9.5, -7) -- +(0, \teslclocktickheight) ; % action_reply_3
+\draw[tesl clock tick mark] (9.5, -4) -- +(0, \teslclocktickheight) ; % enter_Waiting_3
+\draw[tesl tick helper] (14.5, 0) -- +(0, -13) ;
+\draw[tesl tick mark] (14.5, -13) -- +(0, \tesltimetickheight) ;
+\node[tesl tick label] (\teslpicid d_29) at (14.5, -13) {29} ;
+\draw[tesl clock tick mark] (14.5, -12) -- +(0, \teslclocktickheight) ; % allEvents_4
+\draw[tesl clock tick mark] (14.5, -10) -- +(0, \teslclocktickheight) ; % timeout_W_to_R_4
+\draw[tesl clock tick mark] (14.5, -5) -- +(0, \teslclocktickheight) ; % leave_Waiting_4
+\draw[tesl clock tick mark] (14.5, -3) -- +(0, \teslclocktickheight) ; % in_Waiting_4
+\draw[tesl clock tick mark] (14.5, -1) -- +(0, \teslclocktickheight) ; % enter_Ready_4
+\draw[tesl clock tick mark] (14.5, -6) -- +(0, \teslclocktickheight) ; % action_reset_4

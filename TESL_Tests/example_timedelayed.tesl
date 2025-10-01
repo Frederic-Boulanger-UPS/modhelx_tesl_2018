@@ -1,0 +1,23 @@
+D-clock gen periodic 1 offset 1
+D-clock measuring
+tag relation gen = measuring
+
+unit-clock master
+//gen filtered by 0,1 (1,1)* implies master
+gen every 2 implies master
+
+unit-clock slave
+
+master time delayed by 1.5 on measuring implies slave
+
+@maxstep 10
+@tagref gen
+
+//@output vcd  select master, slave
+//@output tikz select measuring->m, master->a, slave->b
+//                    xscale 1.5
+@output vcd  select master, slave from 2 to 10
+@output tikz select measuring->m, master->a, slave->b
+                    from 4 to 8 label if master, slave
+                    xscale 1.5
+@output svg select measuring, gen, master, slave xscale 50 standalone overwrite

@@ -1,0 +1,12 @@
+float-clock m
+float-clock scenario sporadic 1, 1.5
+tag relation scenario = m
+scenario implies a
+
+unit-clock a
+unit-clock b
+
+a time delayed by 1.5 on m implies b
+
+@tagref m
+@dumpres

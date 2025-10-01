@@ -1,0 +1,26 @@
+Q-clock ms           // a clock to measure milliseconds
+Q-clock s            // a clock to measure seconds
+tag relation ms = 1000 * s + 0
+Q-clock min          // a clock to measure minutes
+tag relation s = 60 * min + 0
+
+Q-clock button sporadic 500   // button is pushed at time 500
+tag relation button = ms        // measured on the ms scale
+
+unit-clock switch_on   // switch the light on
+unit-clock switch_off  // switch the light off
+unit-clock light_on    // the light becomes on
+unit-clock light_off   // the light becomes off
+
+button implies switch_on // pushing the button switches the light on
+// The light is switched off 1 minute later
+switch_on time delayed by 1.0 on min implies switch_off
+
+// The light is on 1s after being switched on
+switch_on time delayed by 1.0 on s implies light_on
+// The light is off 5ms after being switched off
+switch_off time delayed by 50.0 on ms implies light_off
+
+@tagref ms  // use the ms clock as time base in the output
+@trace info, tags
+@dumpres

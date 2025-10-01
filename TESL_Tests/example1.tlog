@@ -1,0 +1,19 @@
+## File: /Users/boulange/Documents/Recherche/ModHelX_Gemoc/TESL_Tests/example1.tesl
+## TESL version: 1.0.11
+## TESL lang version: 1.1.8
+##-----------------------------------------
+Stop clock: null
+Tagref clock: Clock "master": (2) (5) (10) 
+Max. steps: 1000
+##### Solve [1] #####
+##### Solve [2] #####
+##### Solve [3] #####
+### End of simulation ###
+## Simulation result:
+# Tag = 2.0
+  master
+# Tag = 5.0
+  master
+# Tag = 10.0
+  master
+## End

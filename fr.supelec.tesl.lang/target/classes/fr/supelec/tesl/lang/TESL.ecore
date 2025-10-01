@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="tesl" nsURI="http://www.supelec.fr/tesl/lang/TESL" nsPrefix="tesl">
+  <eClassifiers xsi:type="ecore:EClass" name="Specification">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="decl" upperBound="-1" eType="#//Clock"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rel" upperBound="-1" eType="#//Relation"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="let" upperBound="-1" eType="#//Let"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pragmas" upperBound="-1"
+        eType="#//Pragma" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Clock">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nongreedy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Type"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="qual" eType="#//ClockQualifier"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClockQualifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PeriodicQualifier" eSuperTypes="#//ClockQualifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="period" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="offset" eType="#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SporadicQualifier" eSuperTypes="#//ClockQualifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instants" upperBound="-1"
+        eType="#//Expression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Type">
+    <eLiterals name="TUNIT" literal="U-clock"/>
+    <eLiterals name="TINT" value="1" literal="Z-clock"/>
+    <eLiterals name="TDEC" value="2" literal="D-clock"/>
+    <eLiterals name="TRAT" value="3" literal="Q-clock"/>
+    <eLiterals name="TFLOAT" value="4" literal="F-clock"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ValueType">
+    <eLiterals name="TINT" literal="int"/>
+    <eLiterals name="TDEC" value="1" literal="decimal"/>
+    <eLiterals name="TRAT" value="2" literal="rational"/>
+    <eLiterals name="TFLOAT" value="3" literal="double"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ImplicationRelation" eSuperTypes="#//Relation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Clock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="qual" eType="#//ImplicationQualifier"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Clock"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AwaitImplication" eSuperTypes="#//Relation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="masters" unique="false"
+        upperBound="-1" eType="#//Clock"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="weak" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="strong" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reset" eType="#//Clock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Clock"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImplicationQualifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FilteredQualifier" eSuperTypes="#//ImplicationQualifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//Pattern"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EveryQualifier" eSuperTypes="#//ImplicationQualifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="period" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="off" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="offset" eType="#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DelayedQualifier" eSuperTypes="#//ImplicationQualifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="immediately" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="count" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clock" eType="#//Clock"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SustainedQualifier" eSuperTypes="#//ImplicationQualifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="immediately" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="startClock" eType="#//Clock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="endClock" eType="#//Clock"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="weakly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeDelayedQualifier" eSuperTypes="#//ImplicationQualifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="delay" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clock" eType="#//Clock"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="immReset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="strongReset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resetClock" eType="#//Clock"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Let">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ValueType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Value" eSuperTypes="#//Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IntegerValue" eSuperTypes="#//Value">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sign" eType="#//Op"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigInteger"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DecimalValue" eSuperTypes="#//Value">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sign" eType="#//Op"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FloatValue" eSuperTypes="#//Value">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sign" eType="#//Op"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RationalValue" eSuperTypes="#//Value">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sign" eType="#//Op"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LetValue" eSuperTypes="#//Value">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//Let"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Op">
+    <eLiterals name="PLUS" literal="+"/>
+    <eLiterals name="MINUS" value="1" literal="-"/>
+    <eLiterals name="TIMES" value="2" literal="*"/>
+    <eLiterals name="DIV" value="3" literal="/"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Cast" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntCast" eSuperTypes="#//Cast"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FloatCast" eSuperTypes="#//Cast"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DecimalCast" eSuperTypes="#//Cast"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RationalCast" eSuperTypes="#//Cast"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WhenQualifier" eSuperTypes="#//ImplicationQualifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="not" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clock" eType="#//Clock"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NextQualifier" eSuperTypes="#//ImplicationQualifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="strict" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clock" eType="#//Clock"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Pattern">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="skip" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keep" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rep" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="repskip" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="repkeep" eType="#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TagRelation" eSuperTypes="#//Relation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="#//TagExpr"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TagExpr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clockY" eType="#//Clock"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="eq" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clockX" eType="#//Clock"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SameTagsExpr" eSuperTypes="#//TagExpr"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AffineTagsExpr" eSuperTypes="#//TagExpr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="valueA" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="valueB" eType="#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Pragma"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StopPragma" eSuperTypes="#//Pragma">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clock" eType="#//Clock"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TagrefPragma" eSuperTypes="#//Pragma">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clock" eType="#//Clock"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TracePragma" eSuperTypes="#//Pragma">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kinds" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MaxstepPragma" eSuperTypes="#//Pragma">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OutputPragma" eSuperTypes="#//Pragma">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="selection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="selectedClocks" upperBound="-1"
+        eType="#//ClockItem" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="window" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="labelif" unique="false"
+        upperBound="-1" eType="#//Clock"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="xscaled" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="xscale" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="border" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="css" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nodefcss" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="jvs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="standalone" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="overwrite" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClockItem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clock" eType="#//Clock"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DoubleCalcPragma" eSuperTypes="#//Pragma">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="num_digits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigInteger"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="round" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rounding_mode" eType="#//ROUNDING_MODE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DumpResultPragma" eSuperTypes="#//Pragma"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="ROUNDING_MODE">
+    <eLiterals name="ROUND_UP" literal="round_up"/>
+    <eLiterals name="ROUND_DOWN" value="1" literal="round_down"/>
+    <eLiterals name="ROUND_CEILING" value="2" literal="round_ceil"/>
+    <eLiterals name="ROUND_FLOOR" value="3" literal="round_floor"/>
+    <eLiterals name="ROUND_HALF_UP" value="4" literal="round_half_up"/>
+    <eLiterals name="ROUND_HALF_DOWN" value="5" literal="round_half_down"/>
+    <eLiterals name="ROUND_HALF_EVEN" value="6" literal="round_half_even"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BinOp" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="#//Op"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expression"
+        containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

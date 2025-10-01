@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.supelec.tesl.lang/src-gen" editDirectory="/fr.supelec.tesl.lang.edit/src"
+    editorDirectory="/fr.supelec.tesl.lang.editor/src" modelPluginID="fr.supelec.tesl.lang"
+    forceOverwrite="true" modelName="TESL" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="8.0" copyrightFields="false" editPluginID="fr.supelec.tesl.lang.edit"
+    editorPluginID="fr.supelec.tesl.lang.editor" runtimeVersion="2.20">
+  <genPackages prefix="Tesl" basePackage="fr.supelec.tesl.lang" disposableProviderFactory="true"
+      fileExtensions="tesl" ecorePackage="TESL.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TESL.ecore#//Type">
+      <genEnumLiterals ecoreEnumLiteral="TESL.ecore#//Type/TUNIT"/>
+      <genEnumLiterals ecoreEnumLiteral="TESL.ecore#//Type/TINT"/>
+      <genEnumLiterals ecoreEnumLiteral="TESL.ecore#//Type/TDEC"/>
+      <genEnumLiterals ecoreEnumLiteral="TESL.ecore#//Type/TRAT"/>
+      <genEnumLiterals ecoreEnumLiteral="TESL.ecore#//Type/TFLOAT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TESL.ecore#//ValueType">
+      <genEnumLiterals ecoreEnumLiteral="TESL.ecore#//ValueType/TINT"/>
+      <genEnumLiterals ecoreEnumLiteral="TESL.ecore#//ValueType/TDEC"/>
+      <genEnumLiterals ecoreEnumLiteral="TESL.ecore#//ValueType/TRAT"/>
+      <genEnumLiterals ecoreEnumLiteral="TESL.ecore#//ValueType/TFLOAT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TESL.ecore#//Op">
+      <genEnumLiterals ecoreEnumLiteral="TESL.ecore#//Op/PLUS"/>
+      <genEnumLiterals ecoreEnumLiteral="TESL.ecore#//Op/MINUS"/>
+      <genEnumLiterals ecoreEnumLiteral="TESL.ecore#//Op/TIMES"/>
+      <genEnumLiterals ecoreEnumLiteral="TESL.ecore#//Op/DIV"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TESL.ecore#//ROUNDING_MODE">
+      <genEnumLiterals ecoreEnumLiteral="TESL.ecore#//ROUNDING_MODE/ROUND_UP"/>
+      <genEnumLiterals ecoreEnumLiteral="TESL.ecore#//ROUNDING_MODE/ROUND_DOWN"/>
+      <genEnumLiterals ecoreEnumLiteral="TESL.ecore#//ROUNDING_MODE/ROUND_CEILING"/>
+      <genEnumLiterals ecoreEnumLiteral="TESL.ecore#//ROUNDING_MODE/ROUND_FLOOR"/>
+      <genEnumLiterals ecoreEnumLiteral="TESL.ecore#//ROUNDING_MODE/ROUND_HALF_UP"/>
+      <genEnumLiterals ecoreEnumLiteral="TESL.ecore#//ROUNDING_MODE/ROUND_HALF_DOWN"/>
+      <genEnumLiterals ecoreEnumLiteral="TESL.ecore#//ROUNDING_MODE/ROUND_HALF_EVEN"/>
+    </genEnums>
+    <genClasses ecoreClass="TESL.ecore#//Specification">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//Specification/decl"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//Specification/rel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//Specification/let"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//Specification/pragmas"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//Clock">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//Clock/nongreedy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//Clock/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//Clock/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//Clock/qual"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//ClockQualifier"/>
+    <genClasses ecoreClass="TESL.ecore#//PeriodicQualifier">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//PeriodicQualifier/period"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//PeriodicQualifier/offset"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//SporadicQualifier">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//SporadicQualifier/instants"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//Relation"/>
+    <genClasses ecoreClass="TESL.ecore#//ImplicationRelation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TESL.ecore#//ImplicationRelation/source"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//ImplicationRelation/qual"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TESL.ecore#//ImplicationRelation/target"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//AwaitImplication">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TESL.ecore#//AwaitImplication/masters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//AwaitImplication/weak"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//AwaitImplication/strong"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TESL.ecore#//AwaitImplication/reset"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TESL.ecore#//AwaitImplication/target"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//ImplicationQualifier"/>
+    <genClasses ecoreClass="TESL.ecore#//FilteredQualifier">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//FilteredQualifier/pattern"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//EveryQualifier">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//EveryQualifier/period"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//EveryQualifier/off"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//EveryQualifier/offset"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//DelayedQualifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//DelayedQualifier/immediately"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//DelayedQualifier/count"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//DelayedQualifier/reset"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TESL.ecore#//DelayedQualifier/clock"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//SustainedQualifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//SustainedQualifier/immediately"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TESL.ecore#//SustainedQualifier/startClock"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TESL.ecore#//SustainedQualifier/endClock"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//SustainedQualifier/weakly"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//TimeDelayedQualifier">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//TimeDelayedQualifier/delay"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TESL.ecore#//TimeDelayedQualifier/clock"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//TimeDelayedQualifier/reset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//TimeDelayedQualifier/immReset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//TimeDelayedQualifier/strongReset"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TESL.ecore#//TimeDelayedQualifier/resetClock"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//Let">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//Let/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//Let/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//Let/value"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//Value"/>
+    <genClasses ecoreClass="TESL.ecore#//IntegerValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//IntegerValue/sign"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//IntegerValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//DecimalValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//DecimalValue/sign"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//DecimalValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//FloatValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//FloatValue/sign"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//FloatValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//RationalValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//RationalValue/sign"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//RationalValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//LetValue">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TESL.ecore#//LetValue/ref"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//Expression"/>
+    <genClasses ecoreClass="TESL.ecore#//Cast">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//Cast/expr"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//IntCast"/>
+    <genClasses ecoreClass="TESL.ecore#//FloatCast"/>
+    <genClasses ecoreClass="TESL.ecore#//DecimalCast"/>
+    <genClasses ecoreClass="TESL.ecore#//RationalCast"/>
+    <genClasses ecoreClass="TESL.ecore#//WhenQualifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//WhenQualifier/not"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TESL.ecore#//WhenQualifier/clock"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//NextQualifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//NextQualifier/strict"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TESL.ecore#//NextQualifier/clock"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//Pattern">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//Pattern/skip"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//Pattern/keep"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//Pattern/rep"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//Pattern/repskip"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//Pattern/repkeep"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//TagRelation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//TagRelation/expr"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//TagExpr">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TESL.ecore#//TagExpr/clockY"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//TagExpr/valueA"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TESL.ecore#//TagExpr/clockX"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//TagExpr/valueN"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//TagExpr/valueB"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//Pragma"/>
+    <genClasses ecoreClass="TESL.ecore#//StopPragma">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TESL.ecore#//StopPragma/clock"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//TagrefPragma">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TESL.ecore#//TagrefPragma/clock"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//TracePragma">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//TracePragma/kinds"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//MaxstepPragma">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//MaxstepPragma/value"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//OutputPragma">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//OutputPragma/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//OutputPragma/selection"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//OutputPragma/selectedClocks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//OutputPragma/window"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//OutputPragma/from"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//OutputPragma/to"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TESL.ecore#//OutputPragma/labelif"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//OutputPragma/xscaled"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//OutputPragma/xscale"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//OutputPragma/border"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//OutputPragma/css"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//OutputPragma/nodefcss"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//OutputPragma/jvs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//OutputPragma/standalone"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//OutputPragma/overwrite"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//ClockItem">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TESL.ecore#//ClockItem/clock"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//ClockItem/newName"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//DoubleCalcPragma">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//DoubleCalcPragma/num_digits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//DoubleCalcPragma/round"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//DoubleCalcPragma/rounding_mode"/>
+    </genClasses>
+    <genClasses ecoreClass="TESL.ecore#//DumpResultPragma"/>
+    <genClasses ecoreClass="TESL.ecore#//BinOp">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//BinOp/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TESL.ecore#//BinOp/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TESL.ecore#//BinOp/right"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

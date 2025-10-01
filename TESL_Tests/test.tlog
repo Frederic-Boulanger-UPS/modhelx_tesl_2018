@@ -1,0 +1,47 @@
+## File: /Users/boulange/Documents/Recherche/ModHelX_Gemoc/TESL_Tests/test.tesl
+## TESL version: 1.0.11
+## TESL lang version: 1.1.8
+##-----------------------------------------
+Stop clock: null
+Tagref clock: Clock "base": (0) 
+Max. steps: 10
+##### Solve [1] #####
+##### Solve [2] #####
+##### Solve [3] #####
+##### Solve [4] #####
+##### Solve [5] #####
+##### Solve [6] #####
+##### Solve [7] #####
+##### Solve [8] #####
+##### Solve [9] #####
+##### Solve [10] #####
+
+Stopping simulation at step 10 as requested.
+### End of simulation ###
+## Simulation result:
+# Tag = 0.0
+  even
+  base
+# Tag = 1.0
+  base
+# Tag = 2.0
+  even
+  base
+# Tag = 3.0
+  base
+# Tag = 4.0
+  even
+  base
+# Tag = 5.0
+  base
+# Tag = 6.0
+  even
+  base
+# Tag = 7.0
+  base
+# Tag = 8.0
+  even
+  base
+# Tag = 9.0
+  base
+## End

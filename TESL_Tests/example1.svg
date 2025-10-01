@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns='http://www.w3.org/2000/svg'
+     viewBox='0 0 536 80'>
+  <defs>
+    <marker id='arrow-head' orient='auto' markerWidth='6' markerHeight='6' refX='0' refY='3'>
+      <path d='M0,0 V6 L6,3 Z' fill='black'/>
+    </marker>
+  </defs>
+  <style type='text/css'>
+  <![CDATA[
+    .clockline {
+      stroke-width: 1px;
+      stroke: black;
+    }
+    .timeline {
+      stroke-width: 1px;
+      stroke: black;
+      marker-end: url(#arrow-head);
+    }
+    .clockname {
+      font-family: sans-serif;
+      font-size:80%;
+      text-anchor: end;
+    }
+    .ticklabel {
+      font-family: sans-serif;
+      font-size:60%;
+      text-anchor: middle;
+      /* 2014-05: baseline-shift does not work in Firefox (OK in Chrome and Safari) */
+      /* baseline-shift: -1em; */
+      transform: translate(0px, 1em);  /* For Firefox */
+      -webkit-transform: translate(0px, 1em); /* For Chrome, Safari */
+    }
+    .tickmark {
+      stroke: black;
+      stroke-width: 2px;
+    }
+    .clktickmark {
+      stroke: black;
+      stroke-width: 2px;
+    }
+    .tickhelper {
+      stroke: black;
+      stroke-width: 1px;
+      stroke-dasharray: 2 5;
+    }
+  ]]>
+  </style>
+
+  <svg id='clocknames' x='0' y='0'>
+    <text class='clockname' id='c_1' x='45' y='20'>master</text>
+    <text class='clockname' id='c_2' x='45' y='40'>slave</text>
+  </svg>
+  <svg id='chrono' x='55' y='0'>
+    <line class='clockline' id='l_1' x1='0' y1='20' x2='475' y2='20'/>
+    <line class='clockline' id='l_2' x1='0' y1='40' x2='475' y2='40'/>
+    <line class='timeline' id='timeline' x1='0' y1='60' x2='475' y2='60'/>
+    <line class='tickhelper' id='h_2' x1='50' y1='0.0' x2='50' y2='60'/>
+    <line class='tickmark' id='m_2' x1='50' y1='60' x2='50' y2='54'/>
+    <text class='ticklabel' id='d_2' x='50' y='64'>2</text>
+    <line class='clktickmark' id='cm_1_2' x1='50' y1='20' x2='50' y2='10'/>
+    <line class='tickhelper' id='h_5' x1='200' y1='0.0' x2='200' y2='60'/>
+    <line class='tickmark' id='m_5' x1='200' y1='60' x2='200' y2='54'/>
+    <text class='ticklabel' id='d_5' x='200' y='64'>5</text>
+    <line class='clktickmark' id='cm_1_5' x1='200' y1='20' x2='200' y2='10'/>
+    <line class='tickhelper' id='h_10' x1='450' y1='0.0' x2='450' y2='60'/>
+    <line class='tickmark' id='m_10' x1='450' y1='60' x2='450' y2='54'/>
+    <text class='ticklabel' id='d_10' x='450' y='64'>10</text>
+    <line class='clktickmark' id='cm_1_10' x1='450' y1='20' x2='450' y2='10'/>
+  </svg>
+</svg>

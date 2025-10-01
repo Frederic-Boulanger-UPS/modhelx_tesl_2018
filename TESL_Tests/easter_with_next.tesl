@@ -1,0 +1,93 @@
+// Okay for non-leap years only
+
+// There is a new day after each day ;-)
+Q-clock Day periodic 1 offset 1
+
+// Sundays happen every 7 days starting from 5 (January 5 2014 is Sunday)
+Q-clock Sunday periodic 7 offset 5
+
+// Tag Sundays with the day number
+tag relation Sunday = Day
+
+// The day before an exact new moon is every 29.53059 day starting at 0.42
+// because the first new moon of 2014 is on 1 Jan 2014 10:15 UTC => day date 1.42
+Q-clock ExactNewMoonMinus1Day periodic 29.53059 offset .42
+
+// A new moon day is the next day after ExactNewMoonMinus1Day (the exact new moon may be at midnight)
+U-clock NewMoonDay
+
+U-clock MonthJan // ticks every day in January
+U-clock MonthFeb // ticks every day in February
+U-clock MonthMar // ticks every day in March
+U-clock MonthApr // ticks every day in April
+U-clock MonthMay // ticks every day in May
+
+// Ecclesiastic equinox is on March 21, the 81st day of the year
+Q-clock Equinox periodic 365 offset 81
+tag relation Equinox = Day
+
+U-clock FullMoonDay // Tick every full moon day
+
+U-clock Easter  // Ticks each Easter
+
+U-clock EasterMoonDay // Ticks each full moon day at or after the ecclesiastic equinox
+
+U-clock Stop // The simulation stops when this clock ticks
+
+// Compute months
+// Jan 1 -> 1
+// Feb 1 -> 32
+// Mar 1 -> 60
+// Apr 1 -> 91
+// May 1 -> 121
+Day filtered by 0, 31 (334, 31)* implies MonthJan
+Day filtered by 31, 28 (337, 28)* implies MonthFeb
+Day filtered by 59, 31 (334, 31)* implies MonthMar
+Day filtered by 90, 30 (335, 30)* implies MonthApr
+Day filtered by 120, 31 (334, 31)* implies MonthMay
+
+
+// Introduce synodic moon period
+// ** PERIOD **
+// 235 synodic months (= lunar phases) in 19 years (= 6939.688 days)
+// hence a period of 29.53059 days
+// cf. http://en.wikipedia.org/wiki/Metonic_cycle
+// cf. http://en.wikipedia.org/wiki/Synodic_month#Synodic_month
+// ** PHASE **
+// 1st new moon: 1 Jan 2014 10:15 UTC => day date 1.42
+//tag relation Day = 29.53059 * ExactNewMoonMinus1Day + .42
+tag relation Day = ExactNewMoonMinus1Day
+// Day sustained from ExactNewMoonMinus1Day to Day implies NewMoonDay
+Day next to ExactNewMoonMinus1Day implies NewMoonDay
+
+NewMoonDay delayed by 14 on Day implies FullMoonDay 
+ 
+// FullMoonDay sustained immediately from Equinox to FullMoonDay implies EasterMoonDay
+FullMoonDay next to Equinox implies EasterMoonDay
+
+// Sunday sustained immediately from EasterMoonDay to Sunday implies Easter
+Sunday next to EasterMoonDay implies Easter
+
+Day filtered by 500,1 implies Stop
+
+@stop when Stop
+@tagref Day
+//@maxstep 50
+//@trace info
+@output vcd
+	select Day, Sunday, ExactNewMoonMinus1Day, NewMoonDay, FullMoonDay, Equinox, EasterMoonDay, Easter, MonthApr
+	from 100 to 465
+	
+@output tikz 
+	select Day, Sunday, ExactNewMoonMinus1Day, NewMoonDay, FullMoonDay, Equinox, EasterMoonDay, Easter 
+	from 440 to 465
+	label if ExactNewMoonMinus1Day, FullMoonDay, Equinox, EasterMoonDay, Easter
+	xscale 0.5 standalone overwrite
+
+@output svg 
+	select Day, Sunday, ExactNewMoonMinus1Day, NewMoonDay, FullMoonDay, Equinox, EasterMoonDay, Easter, MonthApr, MonthMay 
+//	from 440 to 465
+	label if ExactNewMoonMinus1Day, FullMoonDay, Equinox, EasterMoonDay, Easter
+	xscale 25 standalone
+	css="easter.svg.css"
+	javascript="easter.svg.js"

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>fr.supelec.gemoc.contrib</groupId>
+	<artifactId>fr.supelec.gemoc.contrib.root</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<modules>
+		<!-- plugins -->
+		<module>../fr.supelec.tesl.core</module>
+		<module>../fr.supelec.tesl.lang</module>
+		<module>../fr.supelec.tesl.lang.ui</module>
+		<module>../fr.supelec.modhelx.core</module>
+
+		<!-- features and update site -->
+		<module>../fr.supelec.gemoc.contrib.feature_modhelx</module>
+		<module>../fr.supelec.gemoc.contrib.feature_tesl</module>
+		<module>../fr.supelec.gemoc.contrib.feature_tesllang</module>
+		<module>../fr.supelec.gemoc.contrib.updatesite</module>
+		
+	</modules>
+
+	<properties>
+		<tycho-version>0.15.0</tycho-version>
+		<project.build.sourceEncoding>UTF8</project.build.sourceEncoding>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>juno-with-no-platform4</id>
+			<layout>p2</layout>
+			<url>http://www.obeo.fr/download/eclipse/juno-3.8</url>
+		</repository>
+        <repository>
+            <id>emf2.9.x</id>
+            <layout>p2</layout>
+            <url>http://download.eclipse.org/modeling/emf/emf/updates/2.9.x/</url>
+        </repository>
+        <repository>
+        	<id>gemoc_language_workbench-latest-snapshot</id>
+            <layout>p2</layout>
+            <url>https://ci.inria.fr/gemoc/job/org.gemoc.gemoc_language_workbench.root/lastSuccessfulBuild/artifact/org/gemoc/gemoc_language_workbench/org.gemoc.gemoc_language_workbench.p2updatesite/target/repository/</url>
+        </repository>
+	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-p2-director-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<executions>
+					<execution>
+						<id>materialize-products</id>
+						<goals>
+							<goal>materialize-products</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>archive-products</id>
+						<goals>
+							<goal>archive-products</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<!-- environments that will be built -->
+					<environments>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>macosx</os>
+							<ws>cocoa</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

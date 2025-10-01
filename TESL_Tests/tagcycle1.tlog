@@ -1,0 +1,10 @@
+## File: /Users/boulange/Documents/Recherche/ModHelX_Gemoc/TESL_Tests/tagcycle1.tesl
+## TESL version: 1.1.0
+## TESL lang version: 1.2.0
+##-----------------------------------------
+21:57:48: (TESL solver/error) Adding tag relation TagRelation from a to b x1+2 would close a cycle in the tag relation graph.
+# Error at line 4: #ERROR: Adding tag relation TagRelation from a to b x1+2 would close a cycle in the tag relation graph.
+Stop clock: null
+Tagref clock: null
+Max. steps: 1000
+## Execution aborted because of errors in the specification.

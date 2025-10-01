@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="fr.supelec.gemoc.contrib.feature_tesllang"
+      label="The TESL tagged event language and editor as a contribution from Supélec"
+      version="1.1.7.qualifier"
+      provider-name="Supélec">
+
+   <description url="http://wwwdi.supelec.fr/software/ModHelX/">
+      The TESL tagged event language and editor
+   </description>
+
+   <copyright url="http://wwwdi.supelec.fr/software/">
+      Copyright Supélec 2014
+   </copyright>
+
+   <license url="http://www.eclipse.org/org/documents/epl-v10.php">
+      Eclipse Public License - v 1.0
+THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE PUBLIC LICENSE (&quot;AGREEMENT&quot;).
+ANY USE, REPRODUCTION OR DISTRIBUTION OF THE PROGRAM CONSTITUTES RECIPIENT’S ACCEPTANCE OF THIS AGREEMENT.
+   </license>
+
+   <url>
+      <update label="TESL update site" url="http://wwwdi.supelec.fr/tesl-update-site"/>
+      <discovery label="TESL web site at Supélec" url="http://wwwdi.supelec.fr/software/TESL/"/>
+   </url>
+
+   <requires>
+      <import plugin="org.eclipse.xtext"/>
+      <import plugin="org.eclipse.xtext.util"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.eclipse.emf.common"/>
+      <import plugin="org.antlr.runtime"/>
+      <import plugin="org.eclipse.xtext.common.types"/>
+      <import plugin="fr.supelec.tesl.core"/>
+      <import plugin="org.apache.log4j"/>
+      <import plugin="org.eclipse.xtext.xbase.lib"/>
+      <import plugin="org.eclipse.xtext.ui"/>
+      <import plugin="org.eclipse.ui.editors" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.ide" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtext.ui.shared"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.xtext.builder"/>
+      <import plugin="org.eclipse.xtext.common.types.ui"/>
+      <import plugin="org.eclipse.xtext.ui.codetemplates.ui"/>
+      <import plugin="org.eclipse.compare"/>
+      <import plugin="org.eclipse.ui.console"/>
+      <import feature="fr.supelec.gemoc.contrib.feature_tesl" version="1.0.7.qualifier"/>
+      <import plugin="fr.supelec.tesl.core" version="1.0.10" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="fr.supelec.tesl.lang"
+         download-size="0"
+         install-size="0"
+         version="1.1.6.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="fr.supelec.tesl.lang.ui"
+         download-size="0"
+         install-size="0"
+         version="1.1.7.qualifier"
+         unpack="false"/>
+
+</feature>

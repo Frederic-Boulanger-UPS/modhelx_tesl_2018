@@ -1,0 +1,19 @@
+int-clock master sporadic 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31
+int-clock begin sporadic   2,         9,             17,             25,     29
+int-clock end sporadic           6,          13,     17,     21,             29
+tag relation master = begin
+tag relation master = end
+ 
+unit-clock slave
+unit-clock slave_imm
+unit-clock slave_weak
+unit-clock slave_imm_weak
+ 
+master sustained from begin to end implies slave
+master sustained immediately from begin to end implies slave_imm
+master sustained from begin to end weakly implies slave_weak
+master sustained immediately from begin to end weakly implies slave_imm_weak
+ 
+@tagref master
+@dumpres
+@output svg xscale 30 standalone overwrite

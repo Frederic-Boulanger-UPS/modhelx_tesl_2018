@@ -1,0 +1,21 @@
+int-clock event sporadic 7
+
+unit-clock enter1
+unit-clock enter2
+
+int-clock start sporadic 0
+tag relation start = event
+start implies enter1
+
+int-clock eventPrime
+tag relation eventPrime = event
+event implies eventPrime
+enter1 time delayed by 2 on eventPrime implies enter2
+
+enter2 when event implies enter1   // generates a stack overflow
+// The stack overflow does not occur if the clock "eventPrime" does not exist
+// and "event" is used instead.
+// *** FIXED ***
+
+@maxstep 100
+@tagref event

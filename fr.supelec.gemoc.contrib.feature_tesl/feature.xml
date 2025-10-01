@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="fr.supelec.gemoc.contrib.feature_tesl"
+      label="The TESL tagged event engine as a contribution from Supélec to Gemoc"
+      version="1.0.10.qualifier"
+      provider-name="Supélec">
+
+   <description url="http://wwwdi.supelec.fr/software/ModHelX/">
+      The TESL tagged event engine from Supélec
+   </description>
+
+   <copyright url="http://wwwdi.supelec.fr/software/">
+      Copyright Supélec 2014
+   </copyright>
+
+   <license url="http://www.eclipse.org/org/documents/epl-v10.php">
+      Eclipse Public License - v 1.0
+THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE PUBLIC LICENSE (&quot;AGREEMENT&quot;).
+ANY USE, REPRODUCTION OR DISTRIBUTION OF THE PROGRAM CONSTITUTES RECIPIENT’S ACCEPTANCE OF THIS AGREEMENT.
+   </license>
+
+   <url>
+      <update label="TESL update site" url="http://wwwdi.supelec.fr/tesl-update-site"/>
+      <discovery label="TESL web site at Supélec" url="http://wwwdi.supelec.fr/software/TESL/"/>
+   </url>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import feature="fr.supelec.gemoc.contrib.feature_tesl" version="1.0.0.qualifier"/>
+   </requires>
+
+   <plugin
+         id="fr.supelec.tesl.core"
+         download-size="0"
+         install-size="0"
+         version="1.0.10.qualifier"
+         unpack="false"/>
+
+</feature>

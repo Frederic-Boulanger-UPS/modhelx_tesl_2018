@@ -1,0 +1,11 @@
+decimal-clock master periodic 2 offset 0.5
+decimal-clock counting periodic 1 offset 1
+tag relation master = counting
+ 
+unit-clock slave
+ 
+master delayed by 3 on counting implies slave
+ 
+@maxstep 10
+@tagref counting
+@output svg xscale 50 standalone overwrite

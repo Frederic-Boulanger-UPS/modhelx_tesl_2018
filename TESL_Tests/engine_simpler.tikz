@@ -1,0 +1,89 @@
+\pgfkeysifdefined{/tikz/tesl clock name/.@cmd}{}{%
+  \tikzstyle{tesl clock name}=[node font=\sffamily, above left, inner ysep=0pt]
+}
+\pgfkeysifdefined{/tikz/tesl time line/.@cmd}{}{%
+  \tikzstyle{tesl time line}=[->,shorten >=1pt,auto,semithick]
+}
+\pgfkeysifdefined{/tikz/tesl tick helper/.@cmd}{}{%
+  \tikzstyle{tesl tick helper}=[loosely dotted]
+}
+\pgfkeysifdefined{/tikz/tesl clock tick mark/.@cmd}{}{%
+  \tikzstyle{tesl clock tick mark}=[thick]
+}
+\pgfkeysifdefined{/tikz/tesl tick mark/.@cmd}{}{%
+  \tikzstyle{tesl tick mark}=[]
+}
+\pgfkeysifdefined{/tikz/tesl tick label/.@cmd}{}{%
+  \tikzstyle{tesl tick label}=[below, node font={\sffamily\scriptsize}]
+}
+\pgfkeysifdefined{/tikz/tesl clock line/.@cmd}{}{%
+  \tikzstyle{tesl clock line}=[]
+}
+\expandafter\ifx\csname teslclocktickheight\endcsname\relax
+  \def\teslclocktickheight{0.6}%
+\fi
+\expandafter\ifx\csname tesltimetickheight\endcsname\relax
+  \def\tesltimetickheight{0.2}%
+\fi
+\expandafter\ifx\csname teslxoffsetfromtimeorigin\endcsname\relax
+  \def\teslxoffsetfromtimeorigin{-1}%
+\fi
+\expandafter\ifx\csname teslextraclocklength\endcsname\relax
+  \def\teslextraclocklength{1}%
+\fi
+\expandafter\ifx\csname teslextratimelinelength\endcsname\relax
+  \def\teslextratimelinelength{0.3}%
+\fi
+\expandafter\ifx\csname teslpicid\endcsname\relax
+  \def\teslpicid{}%
+\fi
+
+\path (0, -0) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_0) ;
+\path (0, -0) ++(5.4, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_0_end) ;
+\draw[tesl clock line] (\teslpicid c_0) node[tesl clock name] {crankshaft} -- (\teslpicid c_0_end) ;
+\path (0, -1) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_1) ;
+\path (0, -1) ++(5.4, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_1_end) ;
+\draw[tesl clock line] (\teslpicid c_1) node[tesl clock name] {top\_dead\_center} -- (\teslpicid c_1_end) ;
+\path (0, -2) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_2) ;
+\path (0, -2) ++(5.4, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_2_end) ;
+\draw[tesl clock line] (\teslpicid c_2) node[tesl clock name] {camshaft} -- (\teslpicid c_2_end) ;
+\path (0, -3) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_3) ;
+\path (0, -3) ++(5.4, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_3_end) ;
+\draw[tesl clock line] (\teslpicid c_3) node[tesl clock name] {exhaust\_tdc} -- (\teslpicid c_3_end) ;
+\path (0, -4) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_4) ;
+\path (0, -4) ++(5.4, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_4_end) ;
+\draw[tesl clock line] (\teslpicid c_4) node[tesl clock name] {compress\_tdc} -- (\teslpicid c_4_end) ;
+\path (0, -5) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_5) ;
+\path (0, -5) ++(5.4, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_5_end) ;
+\draw[tesl clock line] (\teslpicid c_5) node[tesl clock name] {ignition} -- (\teslpicid c_5_end) ;
+\path (0, -6) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid timeline) ;
+\path (0, -6) ++(5.4, 0) ++(\teslextraclocklength, 0) ++(\teslextratimelinelength, 0) coordinate (\teslpicid timeline_end) ;
+\draw[tesl time line] (\teslpicid timeline) -- (\teslpicid timeline_end) ;
+\draw[tesl tick helper] (0, 0) -- +(0, -6) ;
+\draw[tesl tick mark] (0, -6) -- +(0, \tesltimetickheight) ;
+\node[tesl tick label] (\teslpicid d_0) at (0, -6) {0} ;
+\draw[tesl clock tick mark] (0, -3) -- +(0, \teslclocktickheight) ; % exhaust_tdc_0
+\draw[tesl clock tick mark] (0, -1) -- +(0, \teslclocktickheight) ; % top_dead_center_0
+\draw[tesl tick helper] (1.32, 0) -- +(0, -6) ;
+\draw[tesl tick mark] (1.32, -6) -- +(0, \tesltimetickheight) ;
+\node[tesl tick label] (\teslpicid d_132) at (1.32, -6) {132} ;
+\draw[tesl clock tick mark] (1.32, -5) -- +(0, \teslclocktickheight) ; % ignition_1
+\draw[tesl tick helper] (1.8, 0) -- +(0, -6) ;
+\draw[tesl tick mark] (1.8, -6) -- +(0, \tesltimetickheight) ;
+\node[tesl tick label] (\teslpicid d_180) at (1.8, -6) {180} ;
+\draw[tesl clock tick mark] (1.8, -4) -- +(0, \teslclocktickheight) ; % compress_tdc_2
+\draw[tesl clock tick mark] (1.8, -1) -- +(0, \teslclocktickheight) ; % top_dead_center_2
+\draw[tesl tick helper] (3.6, 0) -- +(0, -6) ;
+\draw[tesl tick mark] (3.6, -6) -- +(0, \tesltimetickheight) ;
+\node[tesl tick label] (\teslpicid d_360) at (3.6, -6) {360} ;
+\draw[tesl clock tick mark] (3.6, -3) -- +(0, \teslclocktickheight) ; % exhaust_tdc_3
+\draw[tesl clock tick mark] (3.6, -1) -- +(0, \teslclocktickheight) ; % top_dead_center_3
+\draw[tesl tick helper] (4.92, 0) -- +(0, -6) ;
+\draw[tesl tick mark] (4.92, -6) -- +(0, \tesltimetickheight) ;
+\node[tesl tick label] (\teslpicid d_492) at (4.92, -6) {492} ;
+\draw[tesl clock tick mark] (4.92, -5) -- +(0, \teslclocktickheight) ; % ignition_4
+\draw[tesl tick helper] (5.4, 0) -- +(0, -6) ;
+\draw[tesl tick mark] (5.4, -6) -- +(0, \tesltimetickheight) ;
+\node[tesl tick label] (\teslpicid d_540) at (5.4, -6) {540} ;
+\draw[tesl clock tick mark] (5.4, -4) -- +(0, \teslclocktickheight) ; % compress_tdc_5
+\draw[tesl clock tick mark] (5.4, -1) -- +(0, \teslclocktickheight) ; % top_dead_center_5

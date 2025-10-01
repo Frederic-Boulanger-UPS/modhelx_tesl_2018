@@ -1,0 +1,303 @@
+## File: /Users/boulange/Documents/Recherche/ModHelX_Gemoc/TESL_Tests/time_delayed.tesl
+## TESL version: 1.0.11
+## TESL lang version: 1.1.8
+##-----------------------------------------
+Stop clock: null
+Tagref clock: Clock "source": (0) (2) (4) (8) (10) (13) (16) (17) 
+Max. steps: 1000
+##### Solve [1] #####
+14:42:34: (TESL solver/info) START
+	TimeDelayedImplication: 15.2, Clock "slave":  <= Clock "source": (0) (2) (4) (8) (10) (13) (16) (17)  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": 
+	Clock "source": (0) (2) (4) (8) (10) (13) (16) (17) 
+	Clock "measure": 
+
+14:42:34: (TESL solver/info) Merging on Clock "source": {, now} (0) (2) (4) (8) (10) (13) (16) (17)  tag = 0
+14:42:34: (TESL solver/info) *** Result
+	TimeDelayedImplication: 15.2, Clock "slave":  <= Clock "source": (0, now) (2) (4) (8) (10) (13) (16) (17)  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": 
+	Clock "source": (0, now) (2) (4) (8) (10) (13) (16) (17) 
+	Clock "measure": 
+
+##### Solve [2] #####
+14:42:34: (TESL solver/info) START
+	TimeDelayedImplication: 15.2, Clock "slave":  <= Clock "source": (2) (4) (8) (10) (13) (16) (17)  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": 
+	Clock "source": (2) (4) (8) (10) (13) (16) (17) 
+	Clock "measure": 
+
+14:42:34: (TESL solver/info) Merging on Clock "__measure_ruler__": {, now} (15.2)  tag = 15.2
+14:42:34: (TESL solver/info) Merging on Clock "source": {, now} (2) (4) (8) (10) (13) (16) (17)  tag = 1.52
+14:42:34: (TESL solver/info) *** Result
+	TimeDelayedImplication: 15.2, Clock "slave": (Unit, now)  <= Clock "source": (2) (4) (8) (10) (13) (16) (17)  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": (Unit, now) 
+	Clock "source": (2) (4) (8) (10) (13) (16) (17) 
+	Clock "measure": 
+
+##### Solve [3] #####
+14:42:34: (TESL solver/info) START
+	TimeDelayedImplication: 15.2, Clock "slave":  <= Clock "source": (2) (4) (8) (10) (13) (16) (17)  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": 
+	Clock "source": (2) (4) (8) (10) (13) (16) (17) 
+	Clock "measure": 
+
+14:42:34: (TESL solver/info) Merging on Clock "source": {, now} (2) (4) (8) (10) (13) (16) (17)  tag = 2
+14:42:34: (TESL solver/info) *** Result
+	TimeDelayedImplication: 15.2, Clock "slave":  <= Clock "source": (2, now) (4) (8) (10) (13) (16) (17)  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": 
+	Clock "source": (2, now) (4) (8) (10) (13) (16) (17) 
+	Clock "measure": 
+
+##### Solve [4] #####
+14:42:34: (TESL solver/info) START
+	TimeDelayedImplication: 15.2, Clock "slave":  <= Clock "source": (4) (8) (10) (13) (16) (17)  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": 
+	Clock "source": (4) (8) (10) (13) (16) (17) 
+	Clock "measure": 
+
+14:42:34: (TESL solver/info) Merging on Clock "__measure_ruler__": {, now} (35.2)  tag = 35.2
+14:42:34: (TESL solver/info) Merging on Clock "source": {, now} (4) (8) (10) (13) (16) (17)  tag = 3.52
+14:42:34: (TESL solver/info) *** Result
+	TimeDelayedImplication: 15.2, Clock "slave": (Unit, now)  <= Clock "source": (4) (8) (10) (13) (16) (17)  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": (Unit, now) 
+	Clock "source": (4) (8) (10) (13) (16) (17) 
+	Clock "measure": 
+
+##### Solve [5] #####
+14:42:34: (TESL solver/info) START
+	TimeDelayedImplication: 15.2, Clock "slave":  <= Clock "source": (4) (8) (10) (13) (16) (17)  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": 
+	Clock "source": (4) (8) (10) (13) (16) (17) 
+	Clock "measure": 
+
+14:42:34: (TESL solver/info) Merging on Clock "source": {, now} (4) (8) (10) (13) (16) (17)  tag = 4
+14:42:34: (TESL solver/info) *** Result
+	TimeDelayedImplication: 15.2, Clock "slave":  <= Clock "source": (4, now) (8) (10) (13) (16) (17)  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": 
+	Clock "source": (4, now) (8) (10) (13) (16) (17) 
+	Clock "measure": 
+
+##### Solve [6] #####
+14:42:34: (TESL solver/info) START
+	TimeDelayedImplication: 15.2, Clock "slave":  <= Clock "source": (8) (10) (13) (16) (17)  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": 
+	Clock "source": (8) (10) (13) (16) (17) 
+	Clock "measure": 
+
+14:42:34: (TESL solver/info) Merging on Clock "__measure_ruler__": {, now} (55.2)  tag = 55.2
+14:42:34: (TESL solver/info) Merging on Clock "source": {, now} (8) (10) (13) (16) (17)  tag = 5.52
+14:42:34: (TESL solver/info) *** Result
+	TimeDelayedImplication: 15.2, Clock "slave": (Unit, now)  <= Clock "source": (8) (10) (13) (16) (17)  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": (Unit, now) 
+	Clock "source": (8) (10) (13) (16) (17) 
+	Clock "measure": 
+
+##### Solve [7] #####
+14:42:34: (TESL solver/info) START
+	TimeDelayedImplication: 15.2, Clock "slave":  <= Clock "source": (8) (10) (13) (16) (17)  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": 
+	Clock "source": (8) (10) (13) (16) (17) 
+	Clock "measure": 
+
+14:42:34: (TESL solver/info) Merging on Clock "source": {, now} (8) (10) (13) (16) (17)  tag = 8
+14:42:34: (TESL solver/info) *** Result
+	TimeDelayedImplication: 15.2, Clock "slave":  <= Clock "source": (8, now) (10) (13) (16) (17)  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": 
+	Clock "source": (8, now) (10) (13) (16) (17) 
+	Clock "measure": 
+
+##### Solve [8] #####
+14:42:34: (TESL solver/info) START
+	TimeDelayedImplication: 15.2, Clock "slave":  <= Clock "source": (10) (13) (16) (17)  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": 
+	Clock "source": (10) (13) (16) (17) 
+	Clock "measure": 
+
+14:42:34: (TESL solver/info) Merging on Clock "__measure_ruler__": {, now} (95.2)  tag = 95.2
+14:42:34: (TESL solver/info) Merging on Clock "source": {, now} (10) (13) (16) (17)  tag = 9.52
+14:42:34: (TESL solver/info) *** Result
+	TimeDelayedImplication: 15.2, Clock "slave": (Unit, now)  <= Clock "source": (10) (13) (16) (17)  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": (Unit, now) 
+	Clock "source": (10) (13) (16) (17) 
+	Clock "measure": 
+
+##### Solve [9] #####
+14:42:34: (TESL solver/info) START
+	TimeDelayedImplication: 15.2, Clock "slave":  <= Clock "source": (10) (13) (16) (17)  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": 
+	Clock "source": (10) (13) (16) (17) 
+	Clock "measure": 
+
+14:42:34: (TESL solver/info) Merging on Clock "source": {, now} (10) (13) (16) (17)  tag = 10
+14:42:34: (TESL solver/info) *** Result
+	TimeDelayedImplication: 15.2, Clock "slave":  <= Clock "source": (10, now) (13) (16) (17)  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": 
+	Clock "source": (10, now) (13) (16) (17) 
+	Clock "measure": 
+
+##### Solve [10] #####
+14:42:34: (TESL solver/info) START
+	TimeDelayedImplication: 15.2, Clock "slave":  <= Clock "source": (13) (16) (17)  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": 
+	Clock "source": (13) (16) (17) 
+	Clock "measure": 
+
+14:42:34: (TESL solver/info) Merging on Clock "__measure_ruler__": {, now} (115.2)  tag = 115.2
+14:42:34: (TESL solver/info) Merging on Clock "source": {, now} (13) (16) (17)  tag = 11.52
+14:42:34: (TESL solver/info) *** Result
+	TimeDelayedImplication: 15.2, Clock "slave": (Unit, now)  <= Clock "source": (13) (16) (17)  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": (Unit, now) 
+	Clock "source": (13) (16) (17) 
+	Clock "measure": 
+
+##### Solve [11] #####
+14:42:34: (TESL solver/info) START
+	TimeDelayedImplication: 15.2, Clock "slave":  <= Clock "source": (13) (16) (17)  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": 
+	Clock "source": (13) (16) (17) 
+	Clock "measure": 
+
+14:42:34: (TESL solver/info) Merging on Clock "source": {, now} (13) (16) (17)  tag = 13
+14:42:34: (TESL solver/info) *** Result
+	TimeDelayedImplication: 15.2, Clock "slave":  <= Clock "source": (13, now) (16) (17)  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": 
+	Clock "source": (13, now) (16) (17) 
+	Clock "measure": 
+
+##### Solve [12] #####
+14:42:34: (TESL solver/info) START
+	TimeDelayedImplication: 15.2, Clock "slave":  <= Clock "source": (16) (17)  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": 
+	Clock "source": (16) (17) 
+	Clock "measure": 
+
+14:42:34: (TESL solver/info) Merging on Clock "__measure_ruler__": {, now} (145.2)  tag = 145.2
+14:42:34: (TESL solver/info) Merging on Clock "source": {, now} (16) (17)  tag = 14.52
+14:42:34: (TESL solver/info) *** Result
+	TimeDelayedImplication: 15.2, Clock "slave": (Unit, now)  <= Clock "source": (16) (17)  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": (Unit, now) 
+	Clock "source": (16) (17) 
+	Clock "measure": 
+
+##### Solve [13] #####
+14:42:34: (TESL solver/info) START
+	TimeDelayedImplication: 15.2, Clock "slave":  <= Clock "source": (16) (17)  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": 
+	Clock "source": (16) (17) 
+	Clock "measure": 
+
+14:42:34: (TESL solver/info) Merging on Clock "source": {, now} (16) (17)  tag = 16
+14:42:34: (TESL solver/info) *** Result
+	TimeDelayedImplication: 15.2, Clock "slave":  <= Clock "source": (16, now) (17)  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": 
+	Clock "source": (16, now) (17) 
+	Clock "measure": 
+
+##### Solve [14] #####
+14:42:34: (TESL solver/info) START
+	TimeDelayedImplication: 15.2, Clock "slave":  <= Clock "source": (17)  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": 
+	Clock "source": (17) 
+	Clock "measure": 
+
+14:42:34: (TESL solver/info) Merging on Clock "__measure_ruler__": {, now} (175.2)  tag = 170
+14:42:34: (TESL solver/info) Merging on Clock "source": {, now} (17)  tag = 17
+14:42:34: (TESL solver/info) *** Result
+	TimeDelayedImplication: 15.2, Clock "slave":  <= Clock "source": (17, now)  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": 
+	Clock "source": (17, now) 
+	Clock "measure": 
+
+##### Solve [15] #####
+14:42:34: (TESL solver/info) START
+	TimeDelayedImplication: 15.2, Clock "slave":  <= Clock "source":  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": 
+	Clock "source": 
+	Clock "measure": 
+
+14:42:34: (TESL solver/info) Merging on Clock "__measure_ruler__": {, now} (175.2) (185.2)  tag = 175.2
+14:42:34: (TESL solver/info) *** Result
+	TimeDelayedImplication: 15.2, Clock "slave": (Unit, now)  <= Clock "source":  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": (Unit, now) 
+	Clock "source": 
+	Clock "measure": 
+
+##### Solve [16] #####
+14:42:34: (TESL solver/info) START
+	TimeDelayedImplication: 15.2, Clock "slave":  <= Clock "source":  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": 
+	Clock "source": 
+	Clock "measure": 
+
+14:42:34: (TESL solver/info) Merging on Clock "__measure_ruler__": {, now} (185.2)  tag = 185.2
+14:42:34: (TESL solver/info) *** Result
+	TimeDelayedImplication: 15.2, Clock "slave": (Unit, now)  <= Clock "source":  Clock "measure":  
+	TagRelation from source to measure x10+0
+	TagRelation from __measure_ruler__ to measure
+	Clock "slave": (Unit, now) 
+	Clock "source": 
+	Clock "measure": 
+
+### End of simulation ###

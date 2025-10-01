@@ -1,0 +1,15 @@
+int-clock a sporadic 1, 3
+int-clock b sporadic 5
+tag relation b = 2 * a + 1
+a implies b
+
+int-clock c sporadic 7
+int-clock d sporadic 5
+tag relation c = 3 * d + -2
+c implies d
+
+b implies c
+
+// Error at 3rd instant because no tag can be computed for the ticks on c and d
+@tagref c
+@trace info

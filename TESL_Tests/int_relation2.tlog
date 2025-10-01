@@ -1,0 +1,23 @@
+## File: /Users/boulange/Documents/Recherche/ModHelX_Gemoc/TESL_Tests/int_relation2.tesl
+## TESL version: 1.0.11
+## TESL lang version: 1.1.8
+##-----------------------------------------
+Stop clock: null
+Tagref clock: Clock "clock_b": (1) (2) (4) 
+Max. steps: 1000
+##### Solve [1] #####
+##### Solve [2] #####
+##### Solve [3] #####
+##### Solve [4] #####
+### End of simulation ###
+## Simulation result:
+# Tag = 1.0
+  clock_b
+  clock_a
+# Tag = 2.0
+  clock_b
+# Tag = 2.0
+  clock_a
+# Tag = 4.0
+  clock_b
+## End

@@ -1,0 +1,7 @@
+int-clock a sporadic 0, 1, 2
+int-clock b
+tag relation a = 2 * b + 0
+a implies b
+
+@tagref b
+@dumpres

@@ -1,0 +1,137 @@
+\pgfkeysifdefined{/tikz/tesl clock name/.@cmd}{}{%
+  \tikzstyle{tesl clock name}=[node font=\sffamily, above left, inner ysep=0pt]
+}
+\pgfkeysifdefined{/tikz/tesl time line/.@cmd}{}{%
+  \tikzstyle{tesl time line}=[->,shorten >=1pt,auto,semithick]
+}
+\pgfkeysifdefined{/tikz/tesl tick helper/.@cmd}{}{%
+  \tikzstyle{tesl tick helper}=[loosely dotted]
+}
+\pgfkeysifdefined{/tikz/tesl clock tick mark/.@cmd}{}{%
+  \tikzstyle{tesl clock tick mark}=[thick]
+}
+\pgfkeysifdefined{/tikz/tesl tick mark/.@cmd}{}{%
+  \tikzstyle{tesl tick mark}=[]
+}
+\pgfkeysifdefined{/tikz/tesl tick label/.@cmd}{}{%
+  \tikzstyle{tesl tick label}=[below, node font={\sffamily\scriptsize}]
+}
+\pgfkeysifdefined{/tikz/tesl clock line/.@cmd}{}{%
+  \tikzstyle{tesl clock line}=[]
+}
+\expandafter\ifx\csname teslclocktickheight\endcsname\relax
+  \def\teslclocktickheight{0.6}%
+\fi
+\expandafter\ifx\csname tesltimetickheight\endcsname\relax
+  \def\tesltimetickheight{0.2}%
+\fi
+\expandafter\ifx\csname teslxoffsetfromtimeorigin\endcsname\relax
+  \def\teslxoffsetfromtimeorigin{-1}%
+\fi
+\expandafter\ifx\csname teslextraclocklength\endcsname\relax
+  \def\teslextraclocklength{1}%
+\fi
+\expandafter\ifx\csname teslextratimelinelength\endcsname\relax
+  \def\teslextratimelinelength{0.3}%
+\fi
+\expandafter\ifx\csname teslpicid\endcsname\relax
+  \def\teslpicid{}%
+\fi
+
+\path (220, -0) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_0) ;
+\path (220, -0) ++(12.5, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_0_end) ;
+\draw[tesl clock line] (\teslpicid c_0) node[tesl clock name] {Day} -- (\teslpicid c_0_end) ;
+\path (220, -1) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_1) ;
+\path (220, -1) ++(12.5, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_1_end) ;
+\draw[tesl clock line] (\teslpicid c_1) node[tesl clock name] {Sunday} -- (\teslpicid c_1_end) ;
+\path (220, -2) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_2) ;
+\path (220, -2) ++(12.5, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_2_end) ;
+\draw[tesl clock line] (\teslpicid c_2) node[tesl clock name] {ExactNewMoonMinus1Day} -- (\teslpicid c_2_end) ;
+\path (220, -3) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_3) ;
+\path (220, -3) ++(12.5, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_3_end) ;
+\draw[tesl clock line] (\teslpicid c_3) node[tesl clock name] {NewMoonDay} -- (\teslpicid c_3_end) ;
+\path (220, -4) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_4) ;
+\path (220, -4) ++(12.5, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_4_end) ;
+\draw[tesl clock line] (\teslpicid c_4) node[tesl clock name] {FullMoonDay} -- (\teslpicid c_4_end) ;
+\path (220, -5) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_5) ;
+\path (220, -5) ++(12.5, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_5_end) ;
+\draw[tesl clock line] (\teslpicid c_5) node[tesl clock name] {Equinox} -- (\teslpicid c_5_end) ;
+\path (220, -6) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_6) ;
+\path (220, -6) ++(12.5, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_6_end) ;
+\draw[tesl clock line] (\teslpicid c_6) node[tesl clock name] {EasterMoonDay} -- (\teslpicid c_6_end) ;
+\path (220, -7) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_7) ;
+\path (220, -7) ++(12.5, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_7_end) ;
+\draw[tesl clock line] (\teslpicid c_7) node[tesl clock name] {Easter} -- (\teslpicid c_7_end) ;
+\path (220, -8) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid timeline) ;
+\path (220, -8) ++(12.5, 0) ++(\teslextraclocklength, 0) ++(\teslextratimelinelength, 0) coordinate (\teslpicid timeline_end) ;
+\draw[tesl time line] (\teslpicid timeline) -- (\teslpicid timeline_end) ;
+\draw[tesl tick helper] (220, 0) -- +(0, -8) ;
+\draw[tesl clock tick mark] (220, -0) -- +(0, \teslclocktickheight) ; % Day_0
+\draw[tesl tick helper] (220.5, 0) -- +(0, -8) ;
+\draw[tesl clock tick mark] (220.5, -0) -- +(0, \teslclocktickheight) ; % Day_1
+\draw[tesl tick helper] (221, 0) -- +(0, -8) ;
+\draw[tesl clock tick mark] (221, -0) -- +(0, \teslclocktickheight) ; % Day_2
+\draw[tesl tick helper] (221.5, 0) -- +(0, -8) ;
+\draw[tesl clock tick mark] (221.5, -0) -- +(0, \teslclocktickheight) ; % Day_3
+\draw[tesl tick helper] (221.69, 0) -- +(0, -8) ;
+\draw[tesl tick mark] (221.69, -8) -- +(0, \tesltimetickheight) ;
+\node[tesl tick label] (\teslpicid d_443_38) at (221.69, -8) {443.38} ;
+\draw[tesl clock tick mark] (221.69, -2) -- +(0, \teslclocktickheight) ; % ExactNewMoonMinus1Day_4
+\draw[tesl tick helper] (222, 0) -- +(0, -8) ;
+\draw[tesl clock tick mark] (222, -0) -- +(0, \teslclocktickheight) ; % Day_5
+\draw[tesl clock tick mark] (222, -3) -- +(0, \teslclocktickheight) ; % NewMoonDay_5
+\draw[tesl tick helper] (222.5, 0) -- +(0, -8) ;
+\draw[tesl clock tick mark] (222.5, -0) -- +(0, \teslclocktickheight) ; % Day_6
+\draw[tesl tick helper] (223, 0) -- +(0, -8) ;
+\draw[tesl tick mark] (223, -8) -- +(0, \tesltimetickheight) ;
+\node[tesl tick label] (\teslpicid d_446) at (223, -8) {446} ;
+\draw[tesl clock tick mark] (223, -5) -- +(0, \teslclocktickheight) ; % Equinox_7
+\draw[tesl clock tick mark] (223, -1) -- +(0, \teslclocktickheight) ; % Sunday_7
+\draw[tesl clock tick mark] (223, -0) -- +(0, \teslclocktickheight) ; % Day_7
+\draw[tesl tick helper] (223.5, 0) -- +(0, -8) ;
+\draw[tesl clock tick mark] (223.5, -0) -- +(0, \teslclocktickheight) ; % Day_8
+\draw[tesl tick helper] (224, 0) -- +(0, -8) ;
+\draw[tesl clock tick mark] (224, -0) -- +(0, \teslclocktickheight) ; % Day_9
+\draw[tesl tick helper] (224.5, 0) -- +(0, -8) ;
+\draw[tesl clock tick mark] (224.5, -0) -- +(0, \teslclocktickheight) ; % Day_10
+\draw[tesl tick helper] (225, 0) -- +(0, -8) ;
+\draw[tesl clock tick mark] (225, -0) -- +(0, \teslclocktickheight) ; % Day_11
+\draw[tesl tick helper] (225.5, 0) -- +(0, -8) ;
+\draw[tesl clock tick mark] (225.5, -0) -- +(0, \teslclocktickheight) ; % Day_12
+\draw[tesl tick helper] (226, 0) -- +(0, -8) ;
+\draw[tesl clock tick mark] (226, -0) -- +(0, \teslclocktickheight) ; % Day_13
+\draw[tesl tick helper] (226.5, 0) -- +(0, -8) ;
+\draw[tesl clock tick mark] (226.5, -1) -- +(0, \teslclocktickheight) ; % Sunday_14
+\draw[tesl clock tick mark] (226.5, -0) -- +(0, \teslclocktickheight) ; % Day_14
+\draw[tesl tick helper] (227, 0) -- +(0, -8) ;
+\draw[tesl clock tick mark] (227, -0) -- +(0, \teslclocktickheight) ; % Day_15
+\draw[tesl tick helper] (227.5, 0) -- +(0, -8) ;
+\draw[tesl clock tick mark] (227.5, -0) -- +(0, \teslclocktickheight) ; % Day_16
+\draw[tesl tick helper] (228, 0) -- +(0, -8) ;
+\draw[tesl clock tick mark] (228, -0) -- +(0, \teslclocktickheight) ; % Day_17
+\draw[tesl tick helper] (228.5, 0) -- +(0, -8) ;
+\draw[tesl clock tick mark] (228.5, -0) -- +(0, \teslclocktickheight) ; % Day_18
+\draw[tesl tick helper] (229, 0) -- +(0, -8) ;
+\draw[tesl tick mark] (229, -8) -- +(0, \tesltimetickheight) ;
+\node[tesl tick label] (\teslpicid d_458) at (229, -8) {458} ;
+\draw[tesl clock tick mark] (229, -6) -- +(0, \teslclocktickheight) ; % EasterMoonDay_19
+\draw[tesl clock tick mark] (229, -4) -- +(0, \teslclocktickheight) ; % FullMoonDay_19
+\draw[tesl clock tick mark] (229, -0) -- +(0, \teslclocktickheight) ; % Day_19
+\draw[tesl tick helper] (229.5, 0) -- +(0, -8) ;
+\draw[tesl clock tick mark] (229.5, -0) -- +(0, \teslclocktickheight) ; % Day_20
+\draw[tesl tick helper] (230, 0) -- +(0, -8) ;
+\draw[tesl tick mark] (230, -8) -- +(0, \tesltimetickheight) ;
+\node[tesl tick label] (\teslpicid d_460) at (230, -8) {460} ;
+\draw[tesl clock tick mark] (230, -7) -- +(0, \teslclocktickheight) ; % Easter_21
+\draw[tesl clock tick mark] (230, -1) -- +(0, \teslclocktickheight) ; % Sunday_21
+\draw[tesl clock tick mark] (230, -0) -- +(0, \teslclocktickheight) ; % Day_21
+\draw[tesl tick helper] (230.5, 0) -- +(0, -8) ;
+\draw[tesl clock tick mark] (230.5, -0) -- +(0, \teslclocktickheight) ; % Day_22
+\draw[tesl tick helper] (231, 0) -- +(0, -8) ;
+\draw[tesl clock tick mark] (231, -0) -- +(0, \teslclocktickheight) ; % Day_23
+\draw[tesl tick helper] (231.5, 0) -- +(0, -8) ;
+\draw[tesl clock tick mark] (231.5, -0) -- +(0, \teslclocktickheight) ; % Day_24
+\draw[tesl tick helper] (232, 0) -- +(0, -8) ;
+\draw[tesl clock tick mark] (232, -0) -- +(0, \teslclocktickheight) ; % Day_25
+\draw[tesl tick helper] (232.5, 0) -- +(0, -8) ;
+\draw[tesl clock tick mark] (232.5, -0) -- +(0, \teslclocktickheight) ; % Day_26

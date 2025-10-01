@@ -1,0 +1,14 @@
+float-clock measuring
+
+float-clock master sporadic 2, 4, 8, 9
+
+tag relation measuring = master
+
+unit-clock slave
+
+master time delayed by 1.5 on measuring implies slave
+
+@maxstep 10
+@tagref master
+
+@output tikz select measuring->m, master->a, slave->b standalone

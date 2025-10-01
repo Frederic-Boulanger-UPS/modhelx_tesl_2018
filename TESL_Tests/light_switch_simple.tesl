@@ -1,0 +1,31 @@
+unit-clock button
+unit-clock switchOn
+unit-clock switchOff
+unit-clock lightOn
+unit-clock lightOff
+int-clock minutes
+int-clock seconds
+int-clock milliseconds
+
+int-clock scenario_in_milliseconds sporadic 500
+scenario_in_milliseconds implies button
+
+button implies switchOn
+button time delayed by 5 on minutes implies switchOff
+switchOn time delayed by 1 on seconds implies lightOn
+switchOff time delayed by 1 on milliseconds implies lightOff
+
+
+// The above is not sufficient: the solver greedily places almost all ticks
+// at 0. We need to define tag relations
+
+tag relation milliseconds = 1000 * seconds + 0
+tag relation seconds = 60 * minutes + 0
+
+tag relation milliseconds = scenario_in_milliseconds
+
+@tagref milliseconds
+@maxstep 20
+@output svg xscale 10 standalone
+@dumpres
+//@trace info

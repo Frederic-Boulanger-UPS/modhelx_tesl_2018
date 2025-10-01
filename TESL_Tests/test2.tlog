@@ -1,0 +1,27 @@
+## File: /Users/boulange/Documents/Recherche/ModHelX_Gemoc/TESL_Tests/test2.tesl
+## TESL version: 1.1.0
+## TESL lang version: 1.2.0
+##-----------------------------------------
+Stop clock: null
+Tagref clock: Clock "Day": (0.0) (1.0) (2.0) (3.0) (4.0) (5.0) (6.0) (7.0) (8.0) (9.0) (10.0) (11.0) (12.0) (13.0) (14.0) 
+Max. steps: 1000
+Number of digits for double calculus: 6
+Rounding mode for double calculus: 5
+##### Solve [1] #####
+##### Solve [2] #####
+##### Solve [3] #####
+##### Solve [4] #####
+##### Solve [5] #####
+##### Solve [6] #####
+##### Solve [7] #####
+##### Solve [8] #####
+##### Solve [9] #####
+##### Solve [10] #####
+##### Solve [11] #####
+##### Solve [12] #####
+##### Solve [13] #####
+##### Solve [14] #####
+##### Solve [15] #####
+##### Solve [16] #####
+##### Solve [17] #####
+### End of simulation ###

@@ -1,0 +1,13 @@
+int-clock P periodic 2 offset 1
+int-clock Q periodic 3 offset 2
+tag relation P = Q
+
+unit-clock Stop
+
+P filtered by 10, 1 implies Stop
+
+// try to uncomment this to demonstrate the "max steps" parameter
+//@maxstep 10
+@stop when Stop
+@tagref P
+@output svg standalone

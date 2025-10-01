@@ -1,0 +1,21 @@
+Z-clock t  sporadic 0, 1, 2, 3, 4, 5, 6, 7
+Z-clock m1 sporadic    1, 2, 3,       6
+Z-clock m2 sporadic       2, 3, 4,       7
+Z-clock r  sporadic       2,    4
+
+U-clock s
+U-clock sr
+U-clock srw
+
+tag relation m1 = t
+tag relation m2 = t
+tag relation r = t
+
+await m1 m2 implies s                          // await with no reset
+await m1 m2 with weak reset on r implies sr    // (strong) await with weak reset
+await m1 m2 with strong reset on r implies srw // (weak) await with strong reset
+
+@tagref t
+@dumpres
+@output svg standalone select m1, m2, r, s, sr, srw
+//@trace info

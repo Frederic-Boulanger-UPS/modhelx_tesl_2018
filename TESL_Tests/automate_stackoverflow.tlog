@@ -1,0 +1,12 @@
+## File: /Users/boulange/Documents/Recherche/ModHelX_Gemoc/TESL_Tests/automate_stackoverflow.tesl
+## TESL version: 1.1.0
+## TESL lang version: 1.2.1
+##-----------------------------------------
+Stop clock: Clock "end": (30) 
+Tagref clock: null
+Max. steps: 100
+##### Solve [1] #####
+
+### Simulation aborted:
+###   Check for errors in TESL source file or use "@trace info" to debug your specification
+# Unsupported dependency of start clock on slave clock in immediate sustain. SustainedImplication immediate and strong (off): Clock "in1":  <= Clock "allEvents":  Clock "enter1":  Clock "leave1":  

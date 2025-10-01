@@ -1,0 +1,8 @@
+Z-clock base periodic 1 offset 0
+unit-clock even
+base every 2 implies even
+
+@dumpres
+@tagref base
+@maxstep 10
+@output svg standalone

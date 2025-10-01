@@ -1,0 +1,12 @@
+int-clock A periodic 4 offset 2
+int-clock B
+
+// test signed numbers
+tag relation B = 9*A+(+1+-7)
+A implies B
+
+
+@maxstep 10
+@tagref B
+@output svg xscale 1 border="5 0 0 0" standalone
+@trace info

@@ -1,0 +1,72 @@
+// events
+Z-clock eventA sporadic 4, 20
+Z-clock eventB sporadic 5, 11, 23
+Z-clock eventC sporadic 25
+
+// clock of all events
+Z-clock allEvents
+eventA implies allEvents
+eventB implies allEvents
+eventC implies allEvents
+
+tag relation eventA = allEvents
+tag relation eventB = allEvents
+tag relation eventC = allEvents
+
+// start signal (used to switch to the initial state)
+Z-clock start sporadic 0
+tag relation start = allEvents
+start implies allEvents
+
+// states: generic enter/in/leave events
+U-clock enter1
+U-clock enter2
+U-clock enter3
+
+U-clock in1
+U-clock in2
+U-clock in3
+
+U-clock leave1
+U-clock leave2
+U-clock leave3
+
+
+// Not "sustained immediately" here:
+// We consider that at the time of the event, we are still in the previous
+// state. Therefore, we cannot be in the new state at the same time.
+allEvents sustained from enter1 to leave1 implies in1
+allEvents sustained from enter2 to leave2 implies in2
+allEvents sustained from enter3 to leave3 implies in3
+
+// timed events (for timed transitions)
+U-clock eventTimeout2to3
+enter2 time delayed by 2 on allEvents with reset on leave2 implies eventTimeout2to3
+eventTimeout2to3 implies allEvents
+
+// transition table
+start implies enter1
+
+in1 when eventA implies enter2
+in2 when eventB implies enter1
+in2 when eventTimeout2to3 implies enter3
+in3 when eventC implies enter1
+
+
+// "leave" events
+enter2 when in1 implies leave1
+enter1 when in2 implies leave2
+enter3 when in2 implies leave2
+enter1 when in3 implies leave3
+
+
+//// stop
+//Z-clock end sporadic 30
+//tag relation end = allEvents
+//
+//@stop when end
+//@maxstep 100
+@tagref allEvents
+@output svg xscale 20 border="-10 0 0 0" standalone //no-default-css css = "default.svg.css"
+@output tikz standalone
+@trace info

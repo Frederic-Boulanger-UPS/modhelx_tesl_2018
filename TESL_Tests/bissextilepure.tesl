@@ -1,0 +1,22 @@
+// Computing leap years with "pure" clocks and filtering
+
+int-clock year periodic 1
+
+unit-clock year4
+year filtered by 0,1 (3,1)* implies year4
+
+unit-clock year100
+year filtered by 0,1 (99,1)* implies year100
+
+unit-clock year400
+year filtered by 0,1 (399,1)* implies year400
+
+unit-clock leap
+// A year is leap if it is divisible by 4 but not by 100
+year4 sustained immediately from year4 to year100 weakly implies leap
+// However, a year divisible by 400 is leap
+year400 implies leap
+
+@maxstep 2200
+@output svg xscale 30 standalone
+//@trace info

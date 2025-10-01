@@ -1,0 +1,16 @@
+## File: /Users/boulange/Documents/Recherche/ModHelX_Gemoc/TESL_Tests/await_simple.tesl
+## TESL version: 1.1.0
+## TESL lang version: 1.2.0
+##-----------------------------------------
+Stop clock: null
+Tagref clock: Clock "t": (0) (1) (2) (3) (4) (5) (6) (7) 
+Max. steps: 1000
+##### Solve [1] #####
+##### Solve [2] #####
+##### Solve [3] #####
+##### Solve [4] #####
+##### Solve [5] #####
+##### Solve [6] #####
+##### Solve [7] #####
+##### Solve [8] #####
+### End of simulation ###

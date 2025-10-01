@@ -1,0 +1,19 @@
+## File: /Users/boulange/Documents/Recherche/ModHelX_Gemoc/TESL_Tests/test1.tesl
+## TESL version: 1.1.0
+## TESL lang version: 1.2.0
+##-----------------------------------------
+# Error at line 5: A sporadic unit-clock qualifier may not specify tags
+# Error at line 14: Unsupported value as integer for measuring a delay on an int clock: fr.supelec.tesl.lang.tesl.impl.DecimalValueImpl@77c8c772 (sign: +, value: 1.5)
+# Error at line 15: Cannot measure a delay on a unit clock
+21:56:32: (TESL solver/error) Adding tag relation TagRelation from B to A x3.0+4.0 would close a cycle in the tag relation graph.
+# Error at line 28: #ERROR: Adding tag relation TagRelation from B to A x3.0+4.0 would close a cycle in the tag relation graph.
+21:56:32: (TESL solver/error) Adding tag relation TagRelation from B to A would close a cycle in the tag relation graph.
+# Error at line 29: #ERROR: Adding tag relation TagRelation from B to A would close a cycle in the tag relation graph.
+21:56:32: (TESL solver/error) Adding tag relation TagRelation from B to A x1.0+2.0 would close a cycle in the tag relation graph.
+# Error at line 30: #ERROR: Adding tag relation TagRelation from B to A x1.0+2.0 would close a cycle in the tag relation graph.
+Stop clock: Clock "D": (0) 
+Tagref clock: null
+Max. steps: 1000
+Number of digits for double calculus: 6
+Rounding mode for double calculus: 5
+## Execution aborted because of errors in the specification.

@@ -1,0 +1,58 @@
+// This model is valid for 2014 and 2015 only
+ 
+D-clock Day periodic 1 offset 1  // There is a day every day starting at day 1
+ 
+// Sundays happen every 7 days starting from 5 (January 5 2014 is Sunday)
+D-clock Sunday periodic 7 offset 5
+tag relation Sunday = Day
+ 
+// The day before an exact new moon is every 29.53059 day starting at 0.42
+// because the first new moon of 2014 is on 1 Jan 2014 10:15 UTC => day date 1.42
+D-clock ExactNewMoonMinus1Day periodic 29.53059 offset .42
+tag relation Day = ExactNewMoonMinus1Day
+ 
+// A new moon day is the next day after ExactNewMoonMinus1Day (the exact new moon may be at midnight)
+U-clock NewMoonDay
+Day next to ExactNewMoonMinus1Day implies NewMoonDay
+ 
+U-clock FullMoonDay // Tick every full moon day
+NewMoonDay delayed by 14 on Day implies FullMoonDay 
+ 
+// Ecclesiastic equinox is on March 21, the 81st day of the year
+D-clock Equinox periodic 365 offset 81
+tag relation Equinox = Day
+ 
+U-clock Easter  // Ticks each Easter
+U-clock EasterMoonDay // Ticks each full moon day at or after the ecclesiastic equinox
+FullMoonDay next to Equinox implies EasterMoonDay
+Sunday next to EasterMoonDay implies Easter
+ 
+U-clock Stop                               // The simulation stops when this clock ticks
+Day filtered by 500,1 implies Stop // Stop after 500 days
+ 
+// Compute months to help read the date of Easter on the resulting vcd
+U-clock MonthJan // ticks every day in January
+U-clock MonthFeb // ticks every day in February
+U-clock MonthMar // ticks every day in March
+U-clock MonthApr // ticks every day in April
+U-clock MonthMay // ticks every day in May
+
+// Compute months up to April or May (where Easter can be)
+Day filtered by 0, 31 (334, 31)* implies MonthJan       // January starts on day 1 and has 31 days
+Day filtered by 31, 28 (337, 28)* implies MonthFeb    // February starts on day 32 and has 28 days
+Day filtered by 59, 31 (334, 31)* implies MonthMar    // March starts on day 59 and has 31 days
+Day filtered by 90, 30 (335, 30)* implies MonthApr     // April starts on day 90 and has 30 days
+Day filtered by 120, 31 (334, 31)* implies MonthMay  // April starts on day 120 and has 31 days
+
+//@doublecalc digits=0 (round_ceil)
+@stop when Stop
+@tagref Day
+//@output vcd
+@output svg
+        select Day, Sunday, ExactNewMoonMinus1Day, NewMoonDay, FullMoonDay, Equinox, EasterMoonDay, Easter, MonthApr, MonthMay
+        xscale 50 standalone
+        css="easter.svg.css"
+        javascript="easter.svg.js"
+
+//@trace info
+//@output tikz select Day, Sunday, ExactNewMoonMinus1Day, NewMoonDay, FullMoonDay, Equinox, EasterMoonDay, Easter from 75. to 115.

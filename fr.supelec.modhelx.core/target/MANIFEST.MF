@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Export-Package: fr.supelec.modhelx.core,fr.supelec.modhelx.core.abstra
+ ctsemantics; uses:="fr.supelec.modhelx.core.ecore,  fr.supelec.modhel
+ x.core.state_management,  fr.supelec.tesl.core,  fr.supelec.tesl.logg
+ ing",fr.supelec.modhelx.core.ecore,fr.supelec.modhelx.core.mocs.de;us
+ es:="fr.supelec.modhelx.core.abstractsemantics,fr.supelec.modhelx.cor
+ e.util,fr.supelec.tesl.core",fr.supelec.modhelx.core.mocs.sdf;uses:="
+ fr.supelec.modhelx.core.abstractsemantics,fr.supelec.tesl.core",fr.su
+ pelec.modhelx.core.mocs.tfsm;uses:="fr.supelec.modhelx.core.abstracts
+ emantics,fr.supelec.tesl.core",fr.supelec.modhelx.core.mocs.tfsm.pars
+ er,fr.supelec.modhelx.core.simulation;uses:="javax.swing,fr.supelec.m
+ odhelx.core.abstractsemantics,fr.supelec.tesl.core",fr.supelec.modhel
+ x.core.state_management;uses:="fr.supelec.modhelx.core.abstractsemant
+ ics,fr.supelec.tesl.core",fr.supelec.modhelx.core.util;uses:="fr.supe
+ lec.modhelx.core.ecore,fr.supelec.modhelx.core.abstractsemantics"
+Require-Bundle: org.eclipse.core.runtime,fr.supelec.tesl.core;bundle-v
+ ersion="1.0.10"
+Bundle-Vendor: Supélec
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 1.1.0.201407171718
+Bundle-Name: ModHelX Core
+Bundle-Activator: fr.supelec.modhelx.core.Activator
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: fr.supelec.modhelx.core
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+

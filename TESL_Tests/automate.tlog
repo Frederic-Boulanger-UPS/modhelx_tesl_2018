@@ -1,0 +1,679 @@
+## File: /Users/boulange/Documents/Recherche/ModHelX_Gemoc/TESL_Tests/automate.tesl
+## TESL version: 1.1.0
+## TESL lang version: 1.2.1
+##-----------------------------------------
+Stop clock: null
+Tagref clock: Clock "allEvents": 
+Max. steps: 1000
+##### Solve [1] #####
+15:50:39: (TESL solver/info) START
+	Implication: Clock "allEvents":  <= Clock "eventA": (4) (20)  
+	Implication: Clock "allEvents":  <= Clock "eventB": (5) (11) (23)  
+	Implication: Clock "allEvents":  <= Clock "eventC": (25)  
+	Implication: Clock "allEvents":  <= Clock "start": (0)  
+	SustainedImplication delayed and strong (off): Clock "in1":  <= Clock "allEvents":  Clock "enter1":  Clock "leave1":  
+	SustainedImplication delayed and strong (off): Clock "in2":  <= Clock "allEvents":  Clock "enter2":  Clock "leave2":  
+	SustainedImplication delayed and strong (off): Clock "in3":  <= Clock "allEvents":  Clock "enter3":  Clock "leave3":  
+	TimeDelayedImplication: 2, Clock "eventTimeout2to3":  <= Clock "enter2":  Clock "allEvents":  Clock "leave2":  
+	Implication: Clock "allEvents":  <= Clock "eventTimeout2to3":  
+	Implication: Clock "enter1":  <= Clock "start": (0)  
+	WhenImplication: Clock "enter2":  <= Clock "in1":  Clock "eventA": (4) (20)  
+	WhenImplication: Clock "enter1":  <= Clock "in2":  Clock "eventB": (5) (11) (23)  
+	WhenImplication: Clock "enter3":  <= Clock "in2":  Clock "eventTimeout2to3":  
+	WhenImplication: Clock "enter1":  <= Clock "in3":  Clock "eventC": (25)  
+	WhenImplication: Clock "leave1":  <= Clock "enter2":  Clock "in1":  
+	WhenImplication: Clock "leave2":  <= Clock "enter1":  Clock "in2":  
+	WhenImplication: Clock "leave2":  <= Clock "enter3":  Clock "in2":  
+	WhenImplication: Clock "leave3":  <= Clock "enter1":  Clock "in3":  
+	TagRelation from allEvents to eventA
+	TagRelation from allEvents to eventB
+	TagRelation from allEvents to eventC
+	TagRelation from allEvents to start
+	TagRelation from __allEvents_ruler__ to allEvents
+	Clock "eventB": (5) (11) (23) 
+	Clock "leave2": 
+	Clock "enter2": 
+	Clock "enter3": 
+	Clock "eventTimeout2to3": 
+	Clock "eventC": (25) 
+	Clock "in3": 
+	Clock "leave3": 
+	Clock "start": (0) 
+	Clock "enter1": 
+	Clock "leave1": 
+	Clock "in2": 
+	Clock "in1": 
+	Clock "eventA": (4) (20) 
+	Clock "allEvents": 
+
+15:50:39: (TESL solver/info) Merging on Clock "eventB": {, now} (5) (11) (23)  tag = 0
+15:50:39: (TESL solver/info) Merging on Clock "start": {, now} (0)  tag = 0
+15:50:39: (TESL solver/info) Merging on Clock "eventC": {, now} (25)  tag = 0
+15:50:39: (TESL solver/info) Merging on Clock "eventA": {, now} (4) (20)  tag = 0
+15:50:39: (TESL solver/info) *** Result
+	Implication: Clock "allEvents": (0, now)  <= Clock "eventA": (4) (20)  
+	Implication: Clock "allEvents": (0, now)  <= Clock "eventB": (5) (11) (23)  
+	Implication: Clock "allEvents": (0, now)  <= Clock "eventC": (25)  
+	Implication: Clock "allEvents": (0, now)  <= Clock "start": (0, now)  
+	Implication: Clock "enter1": (Unit, now)  <= Clock "start": (0, now)  
+	SustainedImplication delayed and strong (on): Clock "in1":  <= Clock "allEvents": (0, now)  Clock "enter1": (Unit, now)  Clock "leave1":  
+	SustainedImplication delayed and strong (off): Clock "in2":  <= Clock "allEvents": (0, now)  Clock "enter2":  Clock "leave2":  
+	SustainedImplication delayed and strong (off): Clock "in3":  <= Clock "allEvents": (0, now)  Clock "enter3":  Clock "leave3":  
+	TimeDelayedImplication: 2, Clock "eventTimeout2to3":  <= Clock "enter2":  Clock "allEvents": (0, now)  Clock "leave2":  
+	Implication: Clock "allEvents": (0, now)  <= Clock "eventTimeout2to3":  
+	WhenImplication: Clock "enter2":  <= Clock "in1":  Clock "eventA": (4) (20)  
+	WhenImplication: Clock "enter1": (Unit, now)  <= Clock "in2":  Clock "eventB": (5) (11) (23)  
+	WhenImplication: Clock "enter3":  <= Clock "in2":  Clock "eventTimeout2to3":  
+	WhenImplication: Clock "enter1": (Unit, now)  <= Clock "in3":  Clock "eventC": (25)  
+	WhenImplication: Clock "leave1":  <= Clock "enter2":  Clock "in1":  
+	WhenImplication: Clock "leave2":  <= Clock "enter1": (Unit, now)  Clock "in2":  
+	WhenImplication: Clock "leave2":  <= Clock "enter3":  Clock "in2":  
+	WhenImplication: Clock "leave3":  <= Clock "enter1": (Unit, now)  Clock "in3":  
+	TagRelation from allEvents to eventA
+	TagRelation from allEvents to eventB
+	TagRelation from allEvents to eventC
+	TagRelation from allEvents to start
+	TagRelation from __allEvents_ruler__ to allEvents
+	Clock "eventB": (5) (11) (23) 
+	Clock "leave2": 
+	Clock "enter2": 
+	Clock "enter3": 
+	Clock "eventTimeout2to3": 
+	Clock "eventC": (25) 
+	Clock "in3": 
+	Clock "leave3": 
+	Clock "start": (0, now) 
+	Clock "enter1": (Unit, now) 
+	Clock "leave1": 
+	Clock "in2": 
+	Clock "in1": 
+	Clock "eventA": (4) (20) 
+	Clock "allEvents": (0, now) 
+
+##### Solve [2] #####
+15:50:39: (TESL solver/info) START
+	Implication: Clock "allEvents":  <= Clock "eventA": (4) (20)  
+	Implication: Clock "allEvents":  <= Clock "eventB": (5) (11) (23)  
+	Implication: Clock "allEvents":  <= Clock "eventC": (25)  
+	Implication: Clock "allEvents":  <= Clock "start":  
+	Implication: Clock "enter1":  <= Clock "start":  
+	SustainedImplication delayed and strong (on): Clock "in1":  <= Clock "allEvents":  Clock "enter1":  Clock "leave1":  
+	SustainedImplication delayed and strong (off): Clock "in2":  <= Clock "allEvents":  Clock "enter2":  Clock "leave2":  
+	SustainedImplication delayed and strong (off): Clock "in3":  <= Clock "allEvents":  Clock "enter3":  Clock "leave3":  
+	TimeDelayedImplication: 2, Clock "eventTimeout2to3":  <= Clock "enter2":  Clock "allEvents":  Clock "leave2":  
+	Implication: Clock "allEvents":  <= Clock "eventTimeout2to3":  
+	WhenImplication: Clock "enter2":  <= Clock "in1":  Clock "eventA": (4) (20)  
+	WhenImplication: Clock "enter1":  <= Clock "in2":  Clock "eventB": (5) (11) (23)  
+	WhenImplication: Clock "enter3":  <= Clock "in2":  Clock "eventTimeout2to3":  
+	WhenImplication: Clock "enter1":  <= Clock "in3":  Clock "eventC": (25)  
+	WhenImplication: Clock "leave1":  <= Clock "enter2":  Clock "in1":  
+	WhenImplication: Clock "leave2":  <= Clock "enter1":  Clock "in2":  
+	WhenImplication: Clock "leave2":  <= Clock "enter3":  Clock "in2":  
+	WhenImplication: Clock "leave3":  <= Clock "enter1":  Clock "in3":  
+	TagRelation from allEvents to eventA
+	TagRelation from allEvents to eventB
+	TagRelation from allEvents to eventC
+	TagRelation from allEvents to start
+	TagRelation from __allEvents_ruler__ to allEvents
+	Clock "eventB": (5) (11) (23) 
+	Clock "leave2": 
+	Clock "enter2": 
+	Clock "enter3": 
+	Clock "eventTimeout2to3": 
+	Clock "eventC": (25) 
+	Clock "in3": 
+	Clock "leave3": 
+	Clock "start": 
+	Clock "enter1": 
+	Clock "leave1": 
+	Clock "in2": 
+	Clock "in1": 
+	Clock "eventA": (4) (20) 
+	Clock "allEvents": 
+
+15:50:39: (TESL solver/info) Merging on Clock "eventB": {, now} (5) (11) (23)  tag = 4
+15:50:39: (TESL solver/info) Merging on Clock "eventC": {, now} (25)  tag = 4
+15:50:39: (TESL solver/info) Merging on Clock "eventA": {, now} (4) (20)  tag = 4
+15:50:39: (TESL solver/info) *** Result
+	Implication: Clock "allEvents": (4, now)  <= Clock "eventA": (4, now) (20)  
+	Implication: Clock "allEvents": (4, now)  <= Clock "eventB": (5) (11) (23)  
+	Implication: Clock "allEvents": (4, now)  <= Clock "eventC": (25)  
+	Implication: Clock "allEvents": (4, now)  <= Clock "start":  
+	Implication: Clock "enter1":  <= Clock "start":  
+	SustainedImplication delayed and strong (off): Clock "in1": (Unit, now)  <= Clock "allEvents": (4, now)  Clock "enter1":  Clock "leave1": (Unit, now)  
+	SustainedImplication delayed and strong (on): Clock "in2":  <= Clock "allEvents": (4, now)  Clock "enter2": (Unit, now)  Clock "leave2":  
+	SustainedImplication delayed and strong (off): Clock "in3":  <= Clock "allEvents": (4, now)  Clock "enter3":  Clock "leave3":  
+	TimeDelayedImplication: 2, Clock "eventTimeout2to3":  <= Clock "enter2": (Unit, now)  Clock "allEvents": (4, now)  Clock "leave2":  
+	Implication: Clock "allEvents": (4, now)  <= Clock "eventTimeout2to3":  
+	WhenImplication: Clock "enter2": (Unit, now)  <= Clock "in1": (Unit, now)  Clock "eventA": (4, now) (20)  
+	WhenImplication: Clock "enter1":  <= Clock "in2":  Clock "eventB": (5) (11) (23)  
+	WhenImplication: Clock "enter3":  <= Clock "in2":  Clock "eventTimeout2to3":  
+	WhenImplication: Clock "enter1":  <= Clock "in3":  Clock "eventC": (25)  
+	WhenImplication: Clock "leave1": (Unit, now)  <= Clock "enter2": (Unit, now)  Clock "in1": (Unit, now)  
+	WhenImplication: Clock "leave2":  <= Clock "enter1":  Clock "in2":  
+	WhenImplication: Clock "leave2":  <= Clock "enter3":  Clock "in2":  
+	WhenImplication: Clock "leave3":  <= Clock "enter1":  Clock "in3":  
+	TagRelation from allEvents to eventA
+	TagRelation from allEvents to eventB
+	TagRelation from allEvents to eventC
+	TagRelation from allEvents to start
+	TagRelation from __allEvents_ruler__ to allEvents
+	Clock "eventB": (5) (11) (23) 
+	Clock "leave2": 
+	Clock "enter2": (Unit, now) 
+	Clock "enter3": 
+	Clock "eventTimeout2to3": 
+	Clock "eventC": (25) 
+	Clock "in3": 
+	Clock "leave3": 
+	Clock "start": 
+	Clock "enter1": 
+	Clock "leave1": (Unit, now) 
+	Clock "in2": 
+	Clock "in1": (Unit, now) 
+	Clock "eventA": (4, now) (20) 
+	Clock "allEvents": (4, now) 
+
+##### Solve [3] #####
+15:50:39: (TESL solver/info) START
+	Implication: Clock "allEvents":  <= Clock "eventA": (20)  
+	Implication: Clock "allEvents":  <= Clock "eventB": (5) (11) (23)  
+	Implication: Clock "allEvents":  <= Clock "eventC": (25)  
+	Implication: Clock "allEvents":  <= Clock "start":  
+	Implication: Clock "enter1":  <= Clock "start":  
+	SustainedImplication delayed and strong (off): Clock "in1":  <= Clock "allEvents":  Clock "enter1":  Clock "leave1":  
+	SustainedImplication delayed and strong (on): Clock "in2":  <= Clock "allEvents":  Clock "enter2":  Clock "leave2":  
+	SustainedImplication delayed and strong (off): Clock "in3":  <= Clock "allEvents":  Clock "enter3":  Clock "leave3":  
+	TimeDelayedImplication: 2, Clock "eventTimeout2to3":  <= Clock "enter2":  Clock "allEvents":  Clock "leave2":  
+	Implication: Clock "allEvents":  <= Clock "eventTimeout2to3":  
+	WhenImplication: Clock "enter2":  <= Clock "in1":  Clock "eventA": (20)  
+	WhenImplication: Clock "enter1":  <= Clock "in2":  Clock "eventB": (5) (11) (23)  
+	WhenImplication: Clock "enter3":  <= Clock "in2":  Clock "eventTimeout2to3":  
+	WhenImplication: Clock "enter1":  <= Clock "in3":  Clock "eventC": (25)  
+	WhenImplication: Clock "leave1":  <= Clock "enter2":  Clock "in1":  
+	WhenImplication: Clock "leave2":  <= Clock "enter1":  Clock "in2":  
+	WhenImplication: Clock "leave2":  <= Clock "enter3":  Clock "in2":  
+	WhenImplication: Clock "leave3":  <= Clock "enter1":  Clock "in3":  
+	TagRelation from allEvents to eventA
+	TagRelation from allEvents to eventB
+	TagRelation from allEvents to eventC
+	TagRelation from allEvents to start
+	TagRelation from __allEvents_ruler__ to allEvents
+	Clock "eventB": (5) (11) (23) 
+	Clock "leave2": 
+	Clock "enter2": 
+	Clock "enter3": 
+	Clock "eventTimeout2to3": 
+	Clock "eventC": (25) 
+	Clock "in3": 
+	Clock "leave3": 
+	Clock "start": 
+	Clock "enter1": 
+	Clock "leave1": 
+	Clock "in2": 
+	Clock "in1": 
+	Clock "eventA": (20) 
+	Clock "allEvents": 
+
+15:50:39: (TESL solver/info) Merging on Clock "eventB": {, now} (5) (11) (23)  tag = 5
+15:50:39: (TESL solver/info) Merging on Clock "__allEvents_ruler__": {, now} (6)  tag = 5
+15:50:39: (TESL solver/info) Merging on Clock "eventC": {, now} (25)  tag = 5
+15:50:39: (TESL solver/info) Merging on Clock "eventA": {, now} (20)  tag = 5
+15:50:39: (TESL solver/info) *** Result
+	Implication: Clock "allEvents": (5, now)  <= Clock "eventA": (20)  
+	Implication: Clock "allEvents": (5, now)  <= Clock "eventB": (5, now) (11) (23)  
+	Implication: Clock "allEvents": (5, now)  <= Clock "eventC": (25)  
+	Implication: Clock "allEvents": (5, now)  <= Clock "start":  
+	Implication: Clock "enter1": (Unit, now)  <= Clock "start":  
+	SustainedImplication delayed and strong (on): Clock "in1":  <= Clock "allEvents": (5, now)  Clock "enter1": (Unit, now)  Clock "leave1":  
+	SustainedImplication delayed and strong (off): Clock "in2": (Unit, now)  <= Clock "allEvents": (5, now)  Clock "enter2":  Clock "leave2": (Unit, now)  
+	SustainedImplication delayed and strong (off): Clock "in3":  <= Clock "allEvents": (5, now)  Clock "enter3":  Clock "leave3":  
+	TimeDelayedImplication: 2, Clock "eventTimeout2to3":  <= Clock "enter2":  Clock "allEvents": (5, now)  Clock "leave2": (Unit, now)  
+	Implication: Clock "allEvents": (5, now)  <= Clock "eventTimeout2to3":  
+	WhenImplication: Clock "enter2":  <= Clock "in1":  Clock "eventA": (20)  
+	WhenImplication: Clock "enter1": (Unit, now)  <= Clock "in2": (Unit, now)  Clock "eventB": (5, now) (11) (23)  
+	WhenImplication: Clock "enter3":  <= Clock "in2": (Unit, now)  Clock "eventTimeout2to3":  
+	WhenImplication: Clock "enter1": (Unit, now)  <= Clock "in3":  Clock "eventC": (25)  
+	WhenImplication: Clock "leave1":  <= Clock "enter2":  Clock "in1":  
+	WhenImplication: Clock "leave2": (Unit, now)  <= Clock "enter1": (Unit, now)  Clock "in2": (Unit, now)  
+	WhenImplication: Clock "leave2": (Unit, now)  <= Clock "enter3":  Clock "in2": (Unit, now)  
+	WhenImplication: Clock "leave3":  <= Clock "enter1": (Unit, now)  Clock "in3":  
+	TagRelation from allEvents to eventA
+	TagRelation from allEvents to eventB
+	TagRelation from allEvents to eventC
+	TagRelation from allEvents to start
+	TagRelation from __allEvents_ruler__ to allEvents
+	Clock "eventB": (5, now) (11) (23) 
+	Clock "leave2": (Unit, now) 
+	Clock "enter2": 
+	Clock "enter3": 
+	Clock "eventTimeout2to3": 
+	Clock "eventC": (25) 
+	Clock "in3": 
+	Clock "leave3": 
+	Clock "start": 
+	Clock "enter1": (Unit, now) 
+	Clock "leave1": 
+	Clock "in2": (Unit, now) 
+	Clock "in1": 
+	Clock "eventA": (20) 
+	Clock "allEvents": (5, now) 
+
+##### Solve [4] #####
+15:50:39: (TESL solver/info) START
+	Implication: Clock "allEvents":  <= Clock "eventA": (20)  
+	Implication: Clock "allEvents":  <= Clock "eventB": (11) (23)  
+	Implication: Clock "allEvents":  <= Clock "eventC": (25)  
+	Implication: Clock "allEvents":  <= Clock "start":  
+	Implication: Clock "enter1":  <= Clock "start":  
+	SustainedImplication delayed and strong (on): Clock "in1":  <= Clock "allEvents":  Clock "enter1":  Clock "leave1":  
+	SustainedImplication delayed and strong (off): Clock "in2":  <= Clock "allEvents":  Clock "enter2":  Clock "leave2":  
+	SustainedImplication delayed and strong (off): Clock "in3":  <= Clock "allEvents":  Clock "enter3":  Clock "leave3":  
+	TimeDelayedImplication: 2, Clock "eventTimeout2to3":  <= Clock "enter2":  Clock "allEvents":  Clock "leave2":  
+	Implication: Clock "allEvents":  <= Clock "eventTimeout2to3":  
+	WhenImplication: Clock "enter2":  <= Clock "in1":  Clock "eventA": (20)  
+	WhenImplication: Clock "enter1":  <= Clock "in2":  Clock "eventB": (11) (23)  
+	WhenImplication: Clock "enter3":  <= Clock "in2":  Clock "eventTimeout2to3":  
+	WhenImplication: Clock "enter1":  <= Clock "in3":  Clock "eventC": (25)  
+	WhenImplication: Clock "leave1":  <= Clock "enter2":  Clock "in1":  
+	WhenImplication: Clock "leave2":  <= Clock "enter1":  Clock "in2":  
+	WhenImplication: Clock "leave2":  <= Clock "enter3":  Clock "in2":  
+	WhenImplication: Clock "leave3":  <= Clock "enter1":  Clock "in3":  
+	TagRelation from allEvents to eventA
+	TagRelation from allEvents to eventB
+	TagRelation from allEvents to eventC
+	TagRelation from allEvents to start
+	TagRelation from __allEvents_ruler__ to allEvents
+	Clock "eventB": (11) (23) 
+	Clock "leave2": 
+	Clock "enter2": 
+	Clock "enter3": 
+	Clock "eventTimeout2to3": 
+	Clock "eventC": (25) 
+	Clock "in3": 
+	Clock "leave3": 
+	Clock "start": 
+	Clock "enter1": 
+	Clock "leave1": 
+	Clock "in2": 
+	Clock "in1": 
+	Clock "eventA": (20) 
+	Clock "allEvents": 
+
+15:50:39: (TESL solver/info) Merging on Clock "eventB": {, now} (11) (23)  tag = 11
+15:50:39: (TESL solver/info) Merging on Clock "eventC": {, now} (25)  tag = 11
+15:50:39: (TESL solver/info) Merging on Clock "eventA": {, now} (20)  tag = 11
+15:50:39: (TESL solver/info) *** Result
+	Implication: Clock "allEvents": (11, now)  <= Clock "eventA": (20)  
+	Implication: Clock "allEvents": (11, now)  <= Clock "eventB": (11, now) (23)  
+	Implication: Clock "allEvents": (11, now)  <= Clock "eventC": (25)  
+	Implication: Clock "allEvents": (11, now)  <= Clock "start":  
+	Implication: Clock "enter1":  <= Clock "start":  
+	SustainedImplication delayed and strong (on): Clock "in1": (Unit, now)  <= Clock "allEvents": (11, now)  Clock "enter1":  Clock "leave1":  
+	SustainedImplication delayed and strong (off): Clock "in2":  <= Clock "allEvents": (11, now)  Clock "enter2":  Clock "leave2":  
+	SustainedImplication delayed and strong (off): Clock "in3":  <= Clock "allEvents": (11, now)  Clock "enter3":  Clock "leave3":  
+	TimeDelayedImplication: 2, Clock "eventTimeout2to3":  <= Clock "enter2":  Clock "allEvents": (11, now)  Clock "leave2":  
+	Implication: Clock "allEvents": (11, now)  <= Clock "eventTimeout2to3":  
+	WhenImplication: Clock "enter2":  <= Clock "in1": (Unit, now)  Clock "eventA": (20)  
+	WhenImplication: Clock "enter1":  <= Clock "in2":  Clock "eventB": (11, now) (23)  
+	WhenImplication: Clock "enter3":  <= Clock "in2":  Clock "eventTimeout2to3":  
+	WhenImplication: Clock "enter1":  <= Clock "in3":  Clock "eventC": (25)  
+	WhenImplication: Clock "leave1":  <= Clock "enter2":  Clock "in1": (Unit, now)  
+	WhenImplication: Clock "leave2":  <= Clock "enter1":  Clock "in2":  
+	WhenImplication: Clock "leave2":  <= Clock "enter3":  Clock "in2":  
+	WhenImplication: Clock "leave3":  <= Clock "enter1":  Clock "in3":  
+	TagRelation from allEvents to eventA
+	TagRelation from allEvents to eventB
+	TagRelation from allEvents to eventC
+	TagRelation from allEvents to start
+	TagRelation from __allEvents_ruler__ to allEvents
+	Clock "eventB": (11, now) (23) 
+	Clock "leave2": 
+	Clock "enter2": 
+	Clock "enter3": 
+	Clock "eventTimeout2to3": 
+	Clock "eventC": (25) 
+	Clock "in3": 
+	Clock "leave3": 
+	Clock "start": 
+	Clock "enter1": 
+	Clock "leave1": 
+	Clock "in2": 
+	Clock "in1": (Unit, now) 
+	Clock "eventA": (20) 
+	Clock "allEvents": (11, now) 
+
+##### Solve [5] #####
+15:50:39: (TESL solver/info) START
+	Implication: Clock "allEvents":  <= Clock "eventA": (20)  
+	Implication: Clock "allEvents":  <= Clock "eventB": (23)  
+	Implication: Clock "allEvents":  <= Clock "eventC": (25)  
+	Implication: Clock "allEvents":  <= Clock "start":  
+	Implication: Clock "enter1":  <= Clock "start":  
+	SustainedImplication delayed and strong (on): Clock "in1":  <= Clock "allEvents":  Clock "enter1":  Clock "leave1":  
+	SustainedImplication delayed and strong (off): Clock "in2":  <= Clock "allEvents":  Clock "enter2":  Clock "leave2":  
+	SustainedImplication delayed and strong (off): Clock "in3":  <= Clock "allEvents":  Clock "enter3":  Clock "leave3":  
+	TimeDelayedImplication: 2, Clock "eventTimeout2to3":  <= Clock "enter2":  Clock "allEvents":  Clock "leave2":  
+	Implication: Clock "allEvents":  <= Clock "eventTimeout2to3":  
+	WhenImplication: Clock "enter2":  <= Clock "in1":  Clock "eventA": (20)  
+	WhenImplication: Clock "enter1":  <= Clock "in2":  Clock "eventB": (23)  
+	WhenImplication: Clock "enter3":  <= Clock "in2":  Clock "eventTimeout2to3":  
+	WhenImplication: Clock "enter1":  <= Clock "in3":  Clock "eventC": (25)  
+	WhenImplication: Clock "leave1":  <= Clock "enter2":  Clock "in1":  
+	WhenImplication: Clock "leave2":  <= Clock "enter1":  Clock "in2":  
+	WhenImplication: Clock "leave2":  <= Clock "enter3":  Clock "in2":  
+	WhenImplication: Clock "leave3":  <= Clock "enter1":  Clock "in3":  
+	TagRelation from allEvents to eventA
+	TagRelation from allEvents to eventB
+	TagRelation from allEvents to eventC
+	TagRelation from allEvents to start
+	TagRelation from __allEvents_ruler__ to allEvents
+	Clock "eventB": (23) 
+	Clock "leave2": 
+	Clock "enter2": 
+	Clock "enter3": 
+	Clock "eventTimeout2to3": 
+	Clock "eventC": (25) 
+	Clock "in3": 
+	Clock "leave3": 
+	Clock "start": 
+	Clock "enter1": 
+	Clock "leave1": 
+	Clock "in2": 
+	Clock "in1": 
+	Clock "eventA": (20) 
+	Clock "allEvents": 
+
+15:50:39: (TESL solver/info) Merging on Clock "eventB": {, now} (23)  tag = 20
+15:50:39: (TESL solver/info) Merging on Clock "eventC": {, now} (25)  tag = 20
+15:50:39: (TESL solver/info) Merging on Clock "eventA": {, now} (20)  tag = 20
+15:50:39: (TESL solver/info) *** Result
+	Implication: Clock "allEvents": (20, now)  <= Clock "eventA": (20, now)  
+	Implication: Clock "allEvents": (20, now)  <= Clock "eventB": (23)  
+	Implication: Clock "allEvents": (20, now)  <= Clock "eventC": (25)  
+	Implication: Clock "allEvents": (20, now)  <= Clock "start":  
+	Implication: Clock "enter1":  <= Clock "start":  
+	SustainedImplication delayed and strong (off): Clock "in1": (Unit, now)  <= Clock "allEvents": (20, now)  Clock "enter1":  Clock "leave1": (Unit, now)  
+	SustainedImplication delayed and strong (on): Clock "in2":  <= Clock "allEvents": (20, now)  Clock "enter2": (Unit, now)  Clock "leave2":  
+	SustainedImplication delayed and strong (off): Clock "in3":  <= Clock "allEvents": (20, now)  Clock "enter3":  Clock "leave3":  
+	TimeDelayedImplication: 2, Clock "eventTimeout2to3":  <= Clock "enter2": (Unit, now)  Clock "allEvents": (20, now)  Clock "leave2":  
+	Implication: Clock "allEvents": (20, now)  <= Clock "eventTimeout2to3":  
+	WhenImplication: Clock "enter2": (Unit, now)  <= Clock "in1": (Unit, now)  Clock "eventA": (20, now)  
+	WhenImplication: Clock "enter1":  <= Clock "in2":  Clock "eventB": (23)  
+	WhenImplication: Clock "enter3":  <= Clock "in2":  Clock "eventTimeout2to3":  
+	WhenImplication: Clock "enter1":  <= Clock "in3":  Clock "eventC": (25)  
+	WhenImplication: Clock "leave1": (Unit, now)  <= Clock "enter2": (Unit, now)  Clock "in1": (Unit, now)  
+	WhenImplication: Clock "leave2":  <= Clock "enter1":  Clock "in2":  
+	WhenImplication: Clock "leave2":  <= Clock "enter3":  Clock "in2":  
+	WhenImplication: Clock "leave3":  <= Clock "enter1":  Clock "in3":  
+	TagRelation from allEvents to eventA
+	TagRelation from allEvents to eventB
+	TagRelation from allEvents to eventC
+	TagRelation from allEvents to start
+	TagRelation from __allEvents_ruler__ to allEvents
+	Clock "eventB": (23) 
+	Clock "leave2": 
+	Clock "enter2": (Unit, now) 
+	Clock "enter3": 
+	Clock "eventTimeout2to3": 
+	Clock "eventC": (25) 
+	Clock "in3": 
+	Clock "leave3": 
+	Clock "start": 
+	Clock "enter1": 
+	Clock "leave1": (Unit, now) 
+	Clock "in2": 
+	Clock "in1": (Unit, now) 
+	Clock "eventA": (20, now) 
+	Clock "allEvents": (20, now) 
+
+##### Solve [6] #####
+15:50:39: (TESL solver/info) START
+	Implication: Clock "allEvents":  <= Clock "eventA":  
+	Implication: Clock "allEvents":  <= Clock "eventB": (23)  
+	Implication: Clock "allEvents":  <= Clock "eventC": (25)  
+	Implication: Clock "allEvents":  <= Clock "start":  
+	Implication: Clock "enter1":  <= Clock "start":  
+	SustainedImplication delayed and strong (off): Clock "in1":  <= Clock "allEvents":  Clock "enter1":  Clock "leave1":  
+	SustainedImplication delayed and strong (on): Clock "in2":  <= Clock "allEvents":  Clock "enter2":  Clock "leave2":  
+	SustainedImplication delayed and strong (off): Clock "in3":  <= Clock "allEvents":  Clock "enter3":  Clock "leave3":  
+	TimeDelayedImplication: 2, Clock "eventTimeout2to3":  <= Clock "enter2":  Clock "allEvents":  Clock "leave2":  
+	Implication: Clock "allEvents":  <= Clock "eventTimeout2to3":  
+	WhenImplication: Clock "enter2":  <= Clock "in1":  Clock "eventA":  
+	WhenImplication: Clock "enter1":  <= Clock "in2":  Clock "eventB": (23)  
+	WhenImplication: Clock "enter3":  <= Clock "in2":  Clock "eventTimeout2to3":  
+	WhenImplication: Clock "enter1":  <= Clock "in3":  Clock "eventC": (25)  
+	WhenImplication: Clock "leave1":  <= Clock "enter2":  Clock "in1":  
+	WhenImplication: Clock "leave2":  <= Clock "enter1":  Clock "in2":  
+	WhenImplication: Clock "leave2":  <= Clock "enter3":  Clock "in2":  
+	WhenImplication: Clock "leave3":  <= Clock "enter1":  Clock "in3":  
+	TagRelation from allEvents to eventA
+	TagRelation from allEvents to eventB
+	TagRelation from allEvents to eventC
+	TagRelation from allEvents to start
+	TagRelation from __allEvents_ruler__ to allEvents
+	Clock "eventB": (23) 
+	Clock "leave2": 
+	Clock "enter2": 
+	Clock "enter3": 
+	Clock "eventTimeout2to3": 
+	Clock "eventC": (25) 
+	Clock "in3": 
+	Clock "leave3": 
+	Clock "start": 
+	Clock "enter1": 
+	Clock "leave1": 
+	Clock "in2": 
+	Clock "in1": 
+	Clock "eventA": 
+	Clock "allEvents": 
+
+15:50:39: (TESL solver/info) Merging on Clock "eventB": {, now} (23)  tag = 22
+15:50:39: (TESL solver/info) Merging on Clock "__allEvents_ruler__": {, now} (22)  tag = 22
+15:50:39: (TESL solver/info) Merging on Clock "eventC": {, now} (25)  tag = 22
+15:50:39: (TESL solver/info) *** Result
+	Implication: Clock "allEvents": (22, now)  <= Clock "eventA":  
+	Implication: Clock "allEvents": (22, now)  <= Clock "eventB": (23)  
+	Implication: Clock "allEvents": (22, now)  <= Clock "eventC": (25)  
+	Implication: Clock "allEvents": (22, now)  <= Clock "start":  
+	Implication: Clock "enter1":  <= Clock "start":  
+	SustainedImplication delayed and strong (off): Clock "in1":  <= Clock "allEvents": (22, now)  Clock "enter1":  Clock "leave1":  
+	SustainedImplication delayed and strong (off): Clock "in2": (Unit, now)  <= Clock "allEvents": (22, now)  Clock "enter2":  Clock "leave2": (Unit, now)  
+	SustainedImplication delayed and strong (on): Clock "in3":  <= Clock "allEvents": (22, now)  Clock "enter3": (Unit, now)  Clock "leave3":  
+	TimeDelayedImplication: 2, Clock "eventTimeout2to3": (Unit, now)  <= Clock "enter2":  Clock "allEvents": (22, now)  Clock "leave2": (Unit, now)  
+	Implication: Clock "allEvents": (22, now)  <= Clock "eventTimeout2to3": (Unit, now)  
+	WhenImplication: Clock "enter2":  <= Clock "in1":  Clock "eventA":  
+	WhenImplication: Clock "enter1":  <= Clock "in2": (Unit, now)  Clock "eventB": (23)  
+	WhenImplication: Clock "enter3": (Unit, now)  <= Clock "in2": (Unit, now)  Clock "eventTimeout2to3": (Unit, now)  
+	WhenImplication: Clock "enter1":  <= Clock "in3":  Clock "eventC": (25)  
+	WhenImplication: Clock "leave1":  <= Clock "enter2":  Clock "in1":  
+	WhenImplication: Clock "leave2": (Unit, now)  <= Clock "enter1":  Clock "in2": (Unit, now)  
+	WhenImplication: Clock "leave2": (Unit, now)  <= Clock "enter3": (Unit, now)  Clock "in2": (Unit, now)  
+	WhenImplication: Clock "leave3":  <= Clock "enter1":  Clock "in3":  
+	TagRelation from allEvents to eventA
+	TagRelation from allEvents to eventB
+	TagRelation from allEvents to eventC
+	TagRelation from allEvents to start
+	TagRelation from __allEvents_ruler__ to allEvents
+	Clock "eventB": (23) 
+	Clock "leave2": (Unit, now) 
+	Clock "enter2": 
+	Clock "enter3": (Unit, now) 
+	Clock "eventTimeout2to3": (Unit, now) 
+	Clock "eventC": (25) 
+	Clock "in3": 
+	Clock "leave3": 
+	Clock "start": 
+	Clock "enter1": 
+	Clock "leave1": 
+	Clock "in2": (Unit, now) 
+	Clock "in1": 
+	Clock "eventA": 
+	Clock "allEvents": (22, now) 
+
+##### Solve [7] #####
+15:50:39: (TESL solver/info) START
+	Implication: Clock "allEvents":  <= Clock "eventA":  
+	Implication: Clock "allEvents":  <= Clock "eventB": (23)  
+	Implication: Clock "allEvents":  <= Clock "eventC": (25)  
+	Implication: Clock "allEvents":  <= Clock "start":  
+	Implication: Clock "enter1":  <= Clock "start":  
+	SustainedImplication delayed and strong (off): Clock "in1":  <= Clock "allEvents":  Clock "enter1":  Clock "leave1":  
+	SustainedImplication delayed and strong (off): Clock "in2":  <= Clock "allEvents":  Clock "enter2":  Clock "leave2":  
+	SustainedImplication delayed and strong (on): Clock "in3":  <= Clock "allEvents":  Clock "enter3":  Clock "leave3":  
+	TimeDelayedImplication: 2, Clock "eventTimeout2to3":  <= Clock "enter2":  Clock "allEvents":  Clock "leave2":  
+	Implication: Clock "allEvents":  <= Clock "eventTimeout2to3":  
+	WhenImplication: Clock "enter2":  <= Clock "in1":  Clock "eventA":  
+	WhenImplication: Clock "enter1":  <= Clock "in2":  Clock "eventB": (23)  
+	WhenImplication: Clock "enter3":  <= Clock "in2":  Clock "eventTimeout2to3":  
+	WhenImplication: Clock "enter1":  <= Clock "in3":  Clock "eventC": (25)  
+	WhenImplication: Clock "leave1":  <= Clock "enter2":  Clock "in1":  
+	WhenImplication: Clock "leave2":  <= Clock "enter1":  Clock "in2":  
+	WhenImplication: Clock "leave2":  <= Clock "enter3":  Clock "in2":  
+	WhenImplication: Clock "leave3":  <= Clock "enter1":  Clock "in3":  
+	TagRelation from allEvents to eventA
+	TagRelation from allEvents to eventB
+	TagRelation from allEvents to eventC
+	TagRelation from allEvents to start
+	TagRelation from __allEvents_ruler__ to allEvents
+	Clock "eventB": (23) 
+	Clock "leave2": 
+	Clock "enter2": 
+	Clock "enter3": 
+	Clock "eventTimeout2to3": 
+	Clock "eventC": (25) 
+	Clock "in3": 
+	Clock "leave3": 
+	Clock "start": 
+	Clock "enter1": 
+	Clock "leave1": 
+	Clock "in2": 
+	Clock "in1": 
+	Clock "eventA": 
+	Clock "allEvents": 
+
+15:50:39: (TESL solver/info) Merging on Clock "eventB": {, now} (23)  tag = 23
+15:50:39: (TESL solver/info) Merging on Clock "eventC": {, now} (25)  tag = 23
+15:50:39: (TESL solver/info) *** Result
+	Implication: Clock "allEvents": (23, now)  <= Clock "eventA":  
+	Implication: Clock "allEvents": (23, now)  <= Clock "eventB": (23, now)  
+	Implication: Clock "allEvents": (23, now)  <= Clock "eventC": (25)  
+	Implication: Clock "allEvents": (23, now)  <= Clock "start":  
+	Implication: Clock "enter1":  <= Clock "start":  
+	SustainedImplication delayed and strong (off): Clock "in1":  <= Clock "allEvents": (23, now)  Clock "enter1":  Clock "leave1":  
+	SustainedImplication delayed and strong (off): Clock "in2":  <= Clock "allEvents": (23, now)  Clock "enter2":  Clock "leave2":  
+	SustainedImplication delayed and strong (on): Clock "in3": (Unit, now)  <= Clock "allEvents": (23, now)  Clock "enter3":  Clock "leave3":  
+	TimeDelayedImplication: 2, Clock "eventTimeout2to3":  <= Clock "enter2":  Clock "allEvents": (23, now)  Clock "leave2":  
+	Implication: Clock "allEvents": (23, now)  <= Clock "eventTimeout2to3":  
+	WhenImplication: Clock "enter2":  <= Clock "in1":  Clock "eventA":  
+	WhenImplication: Clock "enter1":  <= Clock "in2":  Clock "eventB": (23, now)  
+	WhenImplication: Clock "enter3":  <= Clock "in2":  Clock "eventTimeout2to3":  
+	WhenImplication: Clock "enter1":  <= Clock "in3": (Unit, now)  Clock "eventC": (25)  
+	WhenImplication: Clock "leave1":  <= Clock "enter2":  Clock "in1":  
+	WhenImplication: Clock "leave2":  <= Clock "enter1":  Clock "in2":  
+	WhenImplication: Clock "leave2":  <= Clock "enter3":  Clock "in2":  
+	WhenImplication: Clock "leave3":  <= Clock "enter1":  Clock "in3": (Unit, now)  
+	TagRelation from allEvents to eventA
+	TagRelation from allEvents to eventB
+	TagRelation from allEvents to eventC
+	TagRelation from allEvents to start
+	TagRelation from __allEvents_ruler__ to allEvents
+	Clock "eventB": (23, now) 
+	Clock "leave2": 
+	Clock "enter2": 
+	Clock "enter3": 
+	Clock "eventTimeout2to3": 
+	Clock "eventC": (25) 
+	Clock "in3": (Unit, now) 
+	Clock "leave3": 
+	Clock "start": 
+	Clock "enter1": 
+	Clock "leave1": 
+	Clock "in2": 
+	Clock "in1": 
+	Clock "eventA": 
+	Clock "allEvents": (23, now) 
+
+##### Solve [8] #####
+15:50:39: (TESL solver/info) START
+	Implication: Clock "allEvents":  <= Clock "eventA":  
+	Implication: Clock "allEvents":  <= Clock "eventB":  
+	Implication: Clock "allEvents":  <= Clock "eventC": (25)  
+	Implication: Clock "allEvents":  <= Clock "start":  
+	Implication: Clock "enter1":  <= Clock "start":  
+	SustainedImplication delayed and strong (off): Clock "in1":  <= Clock "allEvents":  Clock "enter1":  Clock "leave1":  
+	SustainedImplication delayed and strong (off): Clock "in2":  <= Clock "allEvents":  Clock "enter2":  Clock "leave2":  
+	SustainedImplication delayed and strong (on): Clock "in3":  <= Clock "allEvents":  Clock "enter3":  Clock "leave3":  
+	TimeDelayedImplication: 2, Clock "eventTimeout2to3":  <= Clock "enter2":  Clock "allEvents":  Clock "leave2":  
+	Implication: Clock "allEvents":  <= Clock "eventTimeout2to3":  
+	WhenImplication: Clock "enter2":  <= Clock "in1":  Clock "eventA":  
+	WhenImplication: Clock "enter1":  <= Clock "in2":  Clock "eventB":  
+	WhenImplication: Clock "enter3":  <= Clock "in2":  Clock "eventTimeout2to3":  
+	WhenImplication: Clock "enter1":  <= Clock "in3":  Clock "eventC": (25)  
+	WhenImplication: Clock "leave1":  <= Clock "enter2":  Clock "in1":  
+	WhenImplication: Clock "leave2":  <= Clock "enter1":  Clock "in2":  
+	WhenImplication: Clock "leave2":  <= Clock "enter3":  Clock "in2":  
+	WhenImplication: Clock "leave3":  <= Clock "enter1":  Clock "in3":  
+	TagRelation from allEvents to eventA
+	TagRelation from allEvents to eventB
+	TagRelation from allEvents to eventC
+	TagRelation from allEvents to start
+	TagRelation from __allEvents_ruler__ to allEvents
+	Clock "eventB": 
+	Clock "leave2": 
+	Clock "enter2": 
+	Clock "enter3": 
+	Clock "eventTimeout2to3": 
+	Clock "eventC": (25) 
+	Clock "in3": 
+	Clock "leave3": 
+	Clock "start": 
+	Clock "enter1": 
+	Clock "leave1": 
+	Clock "in2": 
+	Clock "in1": 
+	Clock "eventA": 
+	Clock "allEvents": 
+
+15:50:39: (TESL solver/info) Merging on Clock "eventC": {, now} (25)  tag = 25
+15:50:39: (TESL solver/info) *** Result
+	Implication: Clock "allEvents": (25, now)  <= Clock "eventA":  
+	Implication: Clock "allEvents": (25, now)  <= Clock "eventB":  
+	Implication: Clock "allEvents": (25, now)  <= Clock "eventC": (25, now)  
+	Implication: Clock "allEvents": (25, now)  <= Clock "start":  
+	Implication: Clock "enter1": (Unit, now)  <= Clock "start":  
+	SustainedImplication delayed and strong (on): Clock "in1":  <= Clock "allEvents": (25, now)  Clock "enter1": (Unit, now)  Clock "leave1":  
+	SustainedImplication delayed and strong (off): Clock "in2":  <= Clock "allEvents": (25, now)  Clock "enter2":  Clock "leave2":  
+	SustainedImplication delayed and strong (off): Clock "in3": (Unit, now)  <= Clock "allEvents": (25, now)  Clock "enter3":  Clock "leave3": (Unit, now)  
+	TimeDelayedImplication: 2, Clock "eventTimeout2to3":  <= Clock "enter2":  Clock "allEvents": (25, now)  Clock "leave2":  
+	Implication: Clock "allEvents": (25, now)  <= Clock "eventTimeout2to3":  
+	WhenImplication: Clock "enter2":  <= Clock "in1":  Clock "eventA":  
+	WhenImplication: Clock "enter1": (Unit, now)  <= Clock "in2":  Clock "eventB":  
+	WhenImplication: Clock "enter3":  <= Clock "in2":  Clock "eventTimeout2to3":  
+	WhenImplication: Clock "enter1": (Unit, now)  <= Clock "in3": (Unit, now)  Clock "eventC": (25, now)  
+	WhenImplication: Clock "leave1":  <= Clock "enter2":  Clock "in1":  
+	WhenImplication: Clock "leave2":  <= Clock "enter1": (Unit, now)  Clock "in2":  
+	WhenImplication: Clock "leave2":  <= Clock "enter3":  Clock "in2":  
+	WhenImplication: Clock "leave3": (Unit, now)  <= Clock "enter1": (Unit, now)  Clock "in3": (Unit, now)  
+	TagRelation from allEvents to eventA
+	TagRelation from allEvents to eventB
+	TagRelation from allEvents to eventC
+	TagRelation from allEvents to start
+	TagRelation from __allEvents_ruler__ to allEvents
+	Clock "eventB": 
+	Clock "leave2": 
+	Clock "enter2": 
+	Clock "enter3": 
+	Clock "eventTimeout2to3": 
+	Clock "eventC": (25, now) 
+	Clock "in3": (Unit, now) 
+	Clock "leave3": (Unit, now) 
+	Clock "start": 
+	Clock "enter1": (Unit, now) 
+	Clock "leave1": 
+	Clock "in2": 
+	Clock "in1": 
+	Clock "eventA": 
+	Clock "allEvents": (25, now) 
+
+### End of simulation ###

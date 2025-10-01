@@ -1,0 +1,1285 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xtext:Grammar xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:xtext="http://www.eclipse.org/2008/Xtext" name="fr.supelec.tesl.lang.TESL" definesHiddenTokens="true" hiddenTokens="//@rules.62 //@rules.59 //@rules.60">
+  <metamodelDeclarations xsi:type="xtext:GeneratedMetamodel" name="tesl">
+    <ePackage href="http://www.supelec.fr/tesl/lang/TESL#/"/>
+  </metamodelDeclarations>
+  <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="ecore">
+    <ePackage href="http://www.eclipse.org/emf/2002/Ecore#/"/>
+  </metamodelDeclarations>
+  <rules xsi:type="xtext:ParserRule" name="Specification">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Specification"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives" cardinality="*">
+      <elements xsi:type="xtext:Assignment" feature="decl" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.1"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="rel" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.7"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="let" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.16"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="pragmas" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.41"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Clock">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Clock"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="nongreedy" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="nongreedy"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="type" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.5"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="name" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="qual" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.2"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="ClockQualifier">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//ClockQualifier"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.3"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.4"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="PeriodicQualifier">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//PeriodicQualifier"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="periodic"/>
+      <elements xsi:type="xtext:Assignment" feature="period" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.25"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Keyword" value="offset"/>
+        <elements xsi:type="xtext:Assignment" feature="offset" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.25"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SporadicQualifier">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//SporadicQualifier"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Action">
+        <type metamodel="//@metamodelDeclarations.0">
+          <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//SporadicQualifier"/>
+        </type>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="sporadic"/>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Assignment" feature="instants" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.17"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="*">
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="instants" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.25"/>
+          </elements>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:EnumRule" name="Type">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EEnum" href="http://www.supelec.fr/tesl/lang/TESL#//Type"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:EnumLiteralDeclaration">
+        <enumLiteral href="http://www.supelec.fr/tesl/lang/TESL#//Type/TUNIT"/>
+        <literal value="U-clock"/>
+      </elements>
+      <elements xsi:type="xtext:EnumLiteralDeclaration">
+        <enumLiteral href="http://www.supelec.fr/tesl/lang/TESL#//Type/TUNIT"/>
+        <literal value="unit-clock"/>
+      </elements>
+      <elements xsi:type="xtext:EnumLiteralDeclaration">
+        <enumLiteral href="http://www.supelec.fr/tesl/lang/TESL#//Type/TINT"/>
+        <literal value="Z-clock"/>
+      </elements>
+      <elements xsi:type="xtext:EnumLiteralDeclaration">
+        <enumLiteral href="http://www.supelec.fr/tesl/lang/TESL#//Type/TINT"/>
+        <literal value="int-clock"/>
+      </elements>
+      <elements xsi:type="xtext:EnumLiteralDeclaration">
+        <enumLiteral href="http://www.supelec.fr/tesl/lang/TESL#//Type/TDEC"/>
+        <literal value="D-clock"/>
+      </elements>
+      <elements xsi:type="xtext:EnumLiteralDeclaration">
+        <enumLiteral href="http://www.supelec.fr/tesl/lang/TESL#//Type/TDEC"/>
+        <literal value="decimal-clock"/>
+      </elements>
+      <elements xsi:type="xtext:EnumLiteralDeclaration">
+        <enumLiteral href="http://www.supelec.fr/tesl/lang/TESL#//Type/TRAT"/>
+        <literal value="Q-clock"/>
+      </elements>
+      <elements xsi:type="xtext:EnumLiteralDeclaration">
+        <enumLiteral href="http://www.supelec.fr/tesl/lang/TESL#//Type/TRAT"/>
+        <literal value="rational-clock"/>
+      </elements>
+      <elements xsi:type="xtext:EnumLiteralDeclaration">
+        <enumLiteral href="http://www.supelec.fr/tesl/lang/TESL#//Type/TFLOAT"/>
+        <literal value="F-clock"/>
+      </elements>
+      <elements xsi:type="xtext:EnumLiteralDeclaration">
+        <enumLiteral href="http://www.supelec.fr/tesl/lang/TESL#//Type/TFLOAT"/>
+        <literal value="float-clock"/>
+      </elements>
+      <elements xsi:type="xtext:EnumLiteralDeclaration">
+        <enumLiteral href="http://www.supelec.fr/tesl/lang/TESL#//Type/TFLOAT"/>
+        <literal value="double-clock"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:EnumRule" name="ValueType">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EEnum" href="http://www.supelec.fr/tesl/lang/TESL#//ValueType"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:EnumLiteralDeclaration">
+        <enumLiteral href="http://www.supelec.fr/tesl/lang/TESL#//ValueType/TINT"/>
+        <literal value="int"/>
+      </elements>
+      <elements xsi:type="xtext:EnumLiteralDeclaration">
+        <enumLiteral href="http://www.supelec.fr/tesl/lang/TESL#//ValueType/TDEC"/>
+        <literal value="decimal"/>
+      </elements>
+      <elements xsi:type="xtext:EnumLiteralDeclaration">
+        <enumLiteral href="http://www.supelec.fr/tesl/lang/TESL#//ValueType/TRAT"/>
+        <literal value="rational"/>
+      </elements>
+      <elements xsi:type="xtext:EnumLiteralDeclaration">
+        <enumLiteral href="http://www.supelec.fr/tesl/lang/TESL#//ValueType/TFLOAT"/>
+        <literal value="double"/>
+      </elements>
+      <elements xsi:type="xtext:EnumLiteralDeclaration">
+        <enumLiteral href="http://www.supelec.fr/tesl/lang/TESL#//ValueType/TFLOAT"/>
+        <literal value="float"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Relation">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Relation"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.8"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.37"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.9"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="ImplicationRelation">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//ImplicationRelation"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="source" operator="=">
+        <terminal xsi:type="xtext:CrossReference">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Clock"/>
+          </type>
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+        </terminal>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="qual" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.10"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="implies"/>
+      <elements xsi:type="xtext:Assignment" feature="target" operator="=">
+        <terminal xsi:type="xtext:CrossReference">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Clock"/>
+          </type>
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+        </terminal>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="AwaitImplication">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//AwaitImplication"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="await"/>
+      <elements xsi:type="xtext:Assignment" cardinality="+" feature="masters" operator="+=">
+        <terminal xsi:type="xtext:CrossReference">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Clock"/>
+          </type>
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+        </terminal>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Keyword" value="with"/>
+        <elements xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:Assignment" feature="weak" operator="?=">
+            <terminal xsi:type="xtext:Keyword" value="weak"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="strong" operator="?=">
+            <terminal xsi:type="xtext:Keyword" value="strong"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="reset"/>
+        <elements xsi:type="xtext:Keyword" value="on"/>
+        <elements xsi:type="xtext:Assignment" feature="reset" operator="=">
+          <terminal xsi:type="xtext:CrossReference">
+            <type metamodel="//@metamodelDeclarations.0">
+              <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Clock"/>
+            </type>
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+          </terminal>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="implies"/>
+      <elements xsi:type="xtext:Assignment" feature="target" operator="=">
+        <terminal xsi:type="xtext:CrossReference">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Clock"/>
+          </type>
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+        </terminal>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="ImplicationQualifier">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//ImplicationQualifier"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.11"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.12"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.13"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.14"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.15"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.34"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.35"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="FilteredQualifier">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//FilteredQualifier"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="filtered"/>
+      <elements xsi:type="xtext:Keyword" value="by"/>
+      <elements xsi:type="xtext:Assignment" feature="pattern" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.36"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="EveryQualifier">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//EveryQualifier"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="every"/>
+      <elements xsi:type="xtext:Assignment" feature="period" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.25"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Assignment" feature="off" operator="?=">
+          <terminal xsi:type="xtext:Keyword" value="starting"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="at"/>
+        <elements xsi:type="xtext:Assignment" feature="offset" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.25"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="DelayedQualifier">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//DelayedQualifier"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="immediately" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="immediately"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="delayed"/>
+      <elements xsi:type="xtext:Keyword" value="by"/>
+      <elements xsi:type="xtext:Assignment" feature="count" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.25"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Assignment" feature="reset" operator="?=">
+          <terminal xsi:type="xtext:Keyword" value="with"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="reset"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="on"/>
+      <elements xsi:type="xtext:Assignment" feature="clock" operator="=">
+        <terminal xsi:type="xtext:CrossReference">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Clock"/>
+          </type>
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+        </terminal>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SustainedQualifier">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//SustainedQualifier"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="sustained"/>
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="immediately" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="immediately"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="from"/>
+      <elements xsi:type="xtext:Assignment" feature="startClock" operator="=">
+        <terminal xsi:type="xtext:CrossReference">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Clock"/>
+          </type>
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+        </terminal>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="to"/>
+      <elements xsi:type="xtext:Assignment" feature="endClock" operator="=">
+        <terminal xsi:type="xtext:CrossReference">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Clock"/>
+          </type>
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+        </terminal>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="weakly" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="weakly"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="TimeDelayedQualifier">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//TimeDelayedQualifier"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="time"/>
+      <elements xsi:type="xtext:Keyword" value="delayed"/>
+      <elements xsi:type="xtext:Keyword" value="by"/>
+      <elements xsi:type="xtext:Assignment" feature="delay" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.25"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="on"/>
+      <elements xsi:type="xtext:Assignment" feature="clock" operator="=">
+        <terminal xsi:type="xtext:CrossReference">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Clock"/>
+          </type>
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+        </terminal>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Assignment" feature="reset" operator="?=">
+          <terminal xsi:type="xtext:Keyword" value="with"/>
+        </elements>
+        <elements xsi:type="xtext:UnorderedGroup">
+          <elements xsi:type="xtext:Assignment" cardinality="?" feature="immReset" operator="?=">
+            <terminal xsi:type="xtext:Keyword" value="immediate"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" cardinality="?" feature="strongReset" operator="?=">
+            <terminal xsi:type="xtext:Keyword" value="strong"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="reset"/>
+        <elements xsi:type="xtext:Keyword" value="on"/>
+        <elements xsi:type="xtext:Assignment" feature="resetClock" operator="=">
+          <terminal xsi:type="xtext:CrossReference">
+            <type metamodel="//@metamodelDeclarations.0">
+              <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Clock"/>
+            </type>
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+          </terminal>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Let">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Let"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="let"/>
+      <elements xsi:type="xtext:Assignment" feature="type" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.6"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="name" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="="/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.25"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Value">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Value"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.18"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.19"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.20"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.21"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.22"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="IntegerValue">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//IntegerValue"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="sign" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.23"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.54"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="DecimalValue">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//DecimalValue"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="sign" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.23"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.56"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="FloatValue">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//FloatValue"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="sign" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.23"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.55"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="RationalValue">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//RationalValue"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="sign" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.23"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.57"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="LetValue">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//LetValue"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="$"/>
+      <elements xsi:type="xtext:Assignment" feature="ref" operator="=">
+        <terminal xsi:type="xtext:CrossReference">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Let"/>
+          </type>
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+        </terminal>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:EnumRule" name="OpTerm">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EEnum" href="http://www.supelec.fr/tesl/lang/TESL#//Op"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:EnumLiteralDeclaration">
+        <enumLiteral href="http://www.supelec.fr/tesl/lang/TESL#//Op/PLUS"/>
+        <literal value="+"/>
+      </elements>
+      <elements xsi:type="xtext:EnumLiteralDeclaration">
+        <enumLiteral href="http://www.supelec.fr/tesl/lang/TESL#//Op/MINUS"/>
+        <literal value="-"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:EnumRule" name="OpFact">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EEnum" href="http://www.supelec.fr/tesl/lang/TESL#//Op"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:EnumLiteralDeclaration">
+        <enumLiteral href="http://www.supelec.fr/tesl/lang/TESL#//Op/TIMES"/>
+        <literal value="*"/>
+      </elements>
+      <elements xsi:type="xtext:EnumLiteralDeclaration">
+        <enumLiteral href="http://www.supelec.fr/tesl/lang/TESL#//Op/DIV"/>
+        <literal value="/"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Expression">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Expression"/>
+    </type>
+    <alternatives xsi:type="xtext:RuleCall" rule="//@rules.26"/>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Term">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Expression"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.27"/>
+      <elements xsi:type="xtext:Group" cardinality="*">
+        <elements xsi:type="xtext:Action" feature="left" operator="=">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//BinOp"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="op" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.23"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="right" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.27"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Factor">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Expression"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.28"/>
+      <elements xsi:type="xtext:Group" cardinality="*">
+        <elements xsi:type="xtext:Action" feature="left" operator="=">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//BinOp"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="op" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.24"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="right" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.28"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="BasicExpr">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Expression"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.17"/>
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="("/>
+        <elements xsi:type="xtext:RuleCall" rule="//@rules.25"/>
+        <elements xsi:type="xtext:Keyword" value=")"/>
+      </elements>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.29"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Cast">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Cast"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.30"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.32"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.31"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.33"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="IntCast">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//IntCast"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="[int "/>
+      <elements xsi:type="xtext:Assignment" feature="expr" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.25"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="]"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="FloatCast">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//FloatCast"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Keyword" value="[float "/>
+        <elements xsi:type="xtext:Keyword" value="[double"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="expr" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.25"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="]"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="DecimalCast">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//DecimalCast"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="[decimal"/>
+      <elements xsi:type="xtext:Assignment" feature="expr" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.25"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="]"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="RationalCast">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//RationalCast"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="[rational "/>
+      <elements xsi:type="xtext:Assignment" feature="expr" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.25"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="]"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="WhenQualifier">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//WhenQualifier"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="when"/>
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="not" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="not"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="clock" operator="=">
+        <terminal xsi:type="xtext:CrossReference">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Clock"/>
+          </type>
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+        </terminal>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="NextQualifier">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//NextQualifier"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="strict" operator="?=">
+        <terminal xsi:type="xtext:Keyword" value="strictly"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="next"/>
+      <elements xsi:type="xtext:Keyword" value="to"/>
+      <elements xsi:type="xtext:Assignment" feature="clock" operator="=">
+        <terminal xsi:type="xtext:CrossReference">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Clock"/>
+          </type>
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+        </terminal>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Pattern">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Pattern"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="skip" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.25"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=","/>
+      <elements xsi:type="xtext:Assignment" feature="keep" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.25"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Assignment" feature="rep" operator="?=">
+          <terminal xsi:type="xtext:Keyword" value="("/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="repskip" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.25"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=","/>
+        <elements xsi:type="xtext:Assignment" feature="repkeep" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.25"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=")"/>
+        <elements xsi:type="xtext:Keyword" value="*"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="TagRelation">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//TagRelation"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="tag"/>
+      <elements xsi:type="xtext:Keyword" value="relation"/>
+      <elements xsi:type="xtext:Assignment" feature="expr" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.38"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="TagExpr">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//TagExpr"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.39"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.40"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SameTagsExpr">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//SameTagsExpr"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Action">
+        <type metamodel="//@metamodelDeclarations.0">
+          <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//SameTagsExpr"/>
+        </type>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="clockY" operator="=">
+        <terminal xsi:type="xtext:CrossReference">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Clock"/>
+          </type>
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+        </terminal>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="eq" operator="=">
+        <terminal xsi:type="xtext:Keyword" value="="/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="clockX" operator="=">
+        <terminal xsi:type="xtext:CrossReference">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Clock"/>
+          </type>
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+        </terminal>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="AffineTagsExpr">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//AffineTagsExpr"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Action">
+        <type metamodel="//@metamodelDeclarations.0">
+          <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//AffineTagsExpr"/>
+        </type>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="clockY" operator="=">
+        <terminal xsi:type="xtext:CrossReference">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Clock"/>
+          </type>
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+        </terminal>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="eq" operator="=">
+        <terminal xsi:type="xtext:Keyword" value="="/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="valueA" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.25"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="*"/>
+      <elements xsi:type="xtext:Assignment" feature="clockX" operator="=">
+        <terminal xsi:type="xtext:CrossReference">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Clock"/>
+          </type>
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+        </terminal>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="+"/>
+      <elements xsi:type="xtext:Assignment" feature="valueB" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.25"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Pragma">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Pragma"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.42"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.43"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.44"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.45"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.46"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.48"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.49"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="StopPragma">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//StopPragma"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="@stop"/>
+      <elements xsi:type="xtext:Keyword" value="when"/>
+      <elements xsi:type="xtext:Assignment" feature="clock" operator="=">
+        <terminal xsi:type="xtext:CrossReference">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Clock"/>
+          </type>
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+        </terminal>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="TagrefPragma">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//TagrefPragma"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="@tagref"/>
+      <elements xsi:type="xtext:Assignment" feature="clock" operator="=">
+        <terminal xsi:type="xtext:CrossReference">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Clock"/>
+          </type>
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+        </terminal>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="TracePragma">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//TracePragma"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="@trace"/>
+      <elements xsi:type="xtext:Assignment" feature="kinds" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="*">
+        <elements xsi:type="xtext:Keyword" value=","/>
+        <elements xsi:type="xtext:Assignment" feature="kinds" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="MaxstepPragma">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//MaxstepPragma"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="@maxstep"/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.25"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="OutputPragma">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//OutputPragma"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Action">
+        <type metamodel="//@metamodelDeclarations.0">
+          <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//OutputPragma"/>
+        </type>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="@output"/>
+      <elements xsi:type="xtext:Assignment" feature="type" operator="=">
+        <terminal xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:Keyword" value="vcd"/>
+          <elements xsi:type="xtext:Keyword" value="tikz"/>
+          <elements xsi:type="xtext:Keyword" value="svg"/>
+        </terminal>
+      </elements>
+      <elements xsi:type="xtext:UnorderedGroup">
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Assignment" feature="selection" operator="?=">
+            <terminal xsi:type="xtext:Keyword" value="select"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="selectedClocks" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.47"/>
+          </elements>
+          <elements xsi:type="xtext:Group" cardinality="*">
+            <elements xsi:type="xtext:Keyword" value=","/>
+            <elements xsi:type="xtext:Assignment" feature="selectedClocks" operator="+=">
+              <terminal xsi:type="xtext:RuleCall" rule="//@rules.47"/>
+            </elements>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Assignment" feature="window" operator="?=">
+            <terminal xsi:type="xtext:Keyword" value="from"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="from" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.25"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="to"/>
+          <elements xsi:type="xtext:Assignment" feature="to" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.25"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="label"/>
+          <elements xsi:type="xtext:Keyword" value="if"/>
+          <elements xsi:type="xtext:Assignment" feature="labelif" operator="+=">
+            <terminal xsi:type="xtext:CrossReference">
+              <type metamodel="//@metamodelDeclarations.0">
+                <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Clock"/>
+              </type>
+              <terminal xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+            </terminal>
+          </elements>
+          <elements xsi:type="xtext:Group" cardinality="*">
+            <elements xsi:type="xtext:Keyword" value=","/>
+            <elements xsi:type="xtext:Assignment" feature="labelif" operator="+=">
+              <terminal xsi:type="xtext:CrossReference">
+                <type metamodel="//@metamodelDeclarations.0">
+                  <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Clock"/>
+                </type>
+                <terminal xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+              </terminal>
+            </elements>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Assignment" feature="xscaled" operator="?=">
+            <terminal xsi:type="xtext:Keyword" value="xscale"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="xscale" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.25"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="border"/>
+          <elements xsi:type="xtext:Keyword" value="="/>
+          <elements xsi:type="xtext:Assignment" feature="border" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.61"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="css"/>
+          <elements xsi:type="xtext:Keyword" value="="/>
+          <elements xsi:type="xtext:Assignment" feature="css" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.61"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Assignment" cardinality="?" feature="nodefcss" operator="?=">
+          <terminal xsi:type="xtext:Keyword" value="no-default-css"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="javascript"/>
+          <elements xsi:type="xtext:Keyword" value="="/>
+          <elements xsi:type="xtext:Assignment" feature="jvs" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.61"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Assignment" feature="standalone" operator="?=">
+            <terminal xsi:type="xtext:Keyword" value="standalone"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" cardinality="?" feature="overwrite" operator="?=">
+            <terminal xsi:type="xtext:Keyword" value="overwrite"/>
+          </elements>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="ClockItem">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//ClockItem"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="clock" operator="=">
+        <terminal xsi:type="xtext:CrossReference">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//Clock"/>
+          </type>
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+        </terminal>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Keyword" value="->"/>
+        <elements xsi:type="xtext:Assignment" feature="newName" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="DoubleCalcPragma">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//DoubleCalcPragma"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="@doublecalc"/>
+      <elements xsi:type="xtext:Keyword" value="digits"/>
+      <elements xsi:type="xtext:Keyword" value="="/>
+      <elements xsi:type="xtext:Assignment" feature="num_digits" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.54"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Assignment" feature="round" operator="?=">
+          <terminal xsi:type="xtext:Keyword" value="("/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="rounding_mode" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.50"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=")"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="DumpResultPragma">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//DumpResultPragma"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Action">
+        <type metamodel="//@metamodelDeclarations.0">
+          <classifier xsi:type="ecore:EClass" href="http://www.supelec.fr/tesl/lang/TESL#//DumpResultPragma"/>
+        </type>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="@dumpres"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:EnumRule" name="ROUNDING_MODE">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EEnum" href="http://www.supelec.fr/tesl/lang/TESL#//ROUNDING_MODE"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:EnumLiteralDeclaration">
+        <enumLiteral href="http://www.supelec.fr/tesl/lang/TESL#//ROUNDING_MODE/ROUND_UP"/>
+        <literal value="round_up"/>
+      </elements>
+      <elements xsi:type="xtext:EnumLiteralDeclaration">
+        <enumLiteral href="http://www.supelec.fr/tesl/lang/TESL#//ROUNDING_MODE/ROUND_DOWN"/>
+        <literal value="round_down"/>
+      </elements>
+      <elements xsi:type="xtext:EnumLiteralDeclaration">
+        <enumLiteral href="http://www.supelec.fr/tesl/lang/TESL#//ROUNDING_MODE/ROUND_CEILING"/>
+        <literal value="round_ceil"/>
+      </elements>
+      <elements xsi:type="xtext:EnumLiteralDeclaration">
+        <enumLiteral href="http://www.supelec.fr/tesl/lang/TESL#//ROUNDING_MODE/ROUND_FLOOR"/>
+        <literal value="round_floor"/>
+      </elements>
+      <elements xsi:type="xtext:EnumLiteralDeclaration">
+        <enumLiteral href="http://www.supelec.fr/tesl/lang/TESL#//ROUNDING_MODE/ROUND_HALF_UP"/>
+        <literal value="round_half_up"/>
+      </elements>
+      <elements xsi:type="xtext:EnumLiteralDeclaration">
+        <enumLiteral href="http://www.supelec.fr/tesl/lang/TESL#//ROUNDING_MODE/ROUND_HALF_DOWN"/>
+        <literal value="round_half_down"/>
+      </elements>
+      <elements xsi:type="xtext:EnumLiteralDeclaration">
+        <enumLiteral href="http://www.supelec.fr/tesl/lang/TESL#//ROUNDING_MODE/ROUND_HALF_EVEN"/>
+        <literal value="round_half_even"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="DIGIT" fragment="true">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:CharacterRange">
+      <left value="0"/>
+      <right value="9"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="SIGN" fragment="true">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Keyword" value="+"/>
+      <elements xsi:type="xtext:Keyword" value="-"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="EXPONENT" fragment="true">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Keyword" value="e"/>
+        <elements xsi:type="xtext:Keyword" value="E"/>
+      </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="?" rule="//@rules.52"/>
+      <elements xsi:type="xtext:RuleCall" cardinality="+" rule="//@rules.51"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="BIG_INT">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBigInteger"/>
+    </type>
+    <alternatives xsi:type="xtext:RuleCall" cardinality="+" rule="//@rules.51"/>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="FLOAT">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:RuleCall" cardinality="+" rule="//@rules.51"/>
+          <elements xsi:type="xtext:Keyword" value="."/>
+          <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.51"/>
+          <elements xsi:type="xtext:RuleCall" cardinality="?" rule="//@rules.53"/>
+        </elements>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Keyword" value="."/>
+          <elements xsi:type="xtext:RuleCall" cardinality="+" rule="//@rules.51"/>
+          <elements xsi:type="xtext:RuleCall" cardinality="?" rule="//@rules.53"/>
+        </elements>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:RuleCall" cardinality="+" rule="//@rules.51"/>
+          <elements xsi:type="xtext:RuleCall" rule="//@rules.53"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="F"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="BIG_DECIMAL">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:RuleCall" cardinality="+" rule="//@rules.51"/>
+        <elements xsi:type="xtext:Keyword" value="."/>
+        <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.51"/>
+        <elements xsi:type="xtext:RuleCall" cardinality="?" rule="//@rules.53"/>
+      </elements>
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="."/>
+        <elements xsi:type="xtext:RuleCall" cardinality="+" rule="//@rules.51"/>
+        <elements xsi:type="xtext:RuleCall" cardinality="?" rule="//@rules.53"/>
+      </elements>
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:RuleCall" cardinality="+" rule="//@rules.51"/>
+        <elements xsi:type="xtext:RuleCall" rule="//@rules.53"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="RATIONAL">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="&lt;"/>
+      <elements xsi:type="xtext:RuleCall" cardinality="+" rule="//@rules.51"/>
+      <elements xsi:type="xtext:Keyword" value="/"/>
+      <elements xsi:type="xtext:RuleCall" cardinality="+" rule="//@rules.51"/>
+      <elements xsi:type="xtext:Keyword" value=">"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="ID">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" cardinality="?" value="^"/>
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:CharacterRange">
+          <left value="a"/>
+          <right value="z"/>
+        </elements>
+        <elements xsi:type="xtext:CharacterRange">
+          <left value="A"/>
+          <right value="Z"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="_"/>
+      </elements>
+      <elements xsi:type="xtext:Alternatives" cardinality="*">
+        <elements xsi:type="xtext:CharacterRange">
+          <left value="a"/>
+          <right value="z"/>
+        </elements>
+        <elements xsi:type="xtext:CharacterRange">
+          <left value="A"/>
+          <right value="Z"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="_"/>
+        <elements xsi:type="xtext:CharacterRange">
+          <left value="0"/>
+          <right value="9"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="ML_COMMENT">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="/*"/>
+      <elements xsi:type="xtext:UntilToken">
+        <terminal xsi:type="xtext:Keyword" value="*/"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="SL_COMMENT">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="//"/>
+      <elements xsi:type="xtext:NegatedToken" cardinality="*">
+        <terminal xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+          <elements xsi:type="xtext:Keyword" value="&#xD;"/>
+        </terminal>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Keyword" cardinality="?" value="&#xD;"/>
+        <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="STRING">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="&quot;"/>
+      <elements xsi:type="xtext:UntilToken">
+        <terminal xsi:type="xtext:Keyword" value="&quot;"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="WS">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives" cardinality="+">
+      <elements xsi:type="xtext:Keyword" value=" "/>
+      <elements xsi:type="xtext:Keyword" value="&#x9;"/>
+      <elements xsi:type="xtext:Keyword" value="&#xD;"/>
+      <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="ANY_OTHER">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Wildcard"/>
+  </rules>
+</xtext:Grammar>

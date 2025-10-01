@@ -1,0 +1,307 @@
+## File: /Users/boulange/Documents/Recherche/ModHelX_Gemoc/TESL_Tests/lightswitch_rat.tesl
+## TESL version: 1.0.11
+## TESL lang version: 1.1.8
+##-----------------------------------------
+Stop clock: null
+Tagref clock: Clock "ms": 
+Max. steps: 1000
+##### Solve [1] #####
+14:26:46: (TESL solver/info) START
+	Implication: Clock "switch_on":  <= Clock "button": (500)  
+	TimeDelayedImplication: 1, Clock "switch_off":  <= Clock "switch_on":  Clock "min":  
+	TimeDelayedImplication: 1, Clock "light_on":  <= Clock "switch_on":  Clock "s":  
+	TimeDelayedImplication: 50, Clock "light_off":  <= Clock "switch_off":  Clock "ms":  
+	TagRelation from s to ms x1000+0
+	TagRelation from min to s x60+0
+	TagRelation from ms to button
+	TagRelation from __min_ruler__ to min
+	TagRelation from __s_ruler__ to s
+	TagRelation from __ms_ruler__ to ms
+	Clock "light_on": 
+	Clock "switch_on": 
+	Clock "button": (500) 
+	Clock "light_off": 
+	Clock "ms": 
+	Clock "min": 
+	Clock "s": 
+	Clock "switch_off": 
+
+14:26:46: (TESL solver/tags) 500 - 0 = 500
+14:26:46: (TESL solver/tags) 500 / 1000 = 0.5
+14:26:46: (TESL solver/tags) 0.5 - 0 = 0.5
+14:26:46: (TESL solver/tags) 0.5 / 60 = 1/120
+14:26:46: (TESL solver/info) Merging on Clock "button": {, now} (500)  tag = 500
+14:26:46: (TESL solver/tags) 500 - 0 = 500
+14:26:46: (TESL solver/tags) 500 / 1000 = 0.5
+14:26:46: (TESL solver/tags) 0.5 - 0 = 0.5
+14:26:46: (TESL solver/tags) 0.5 / 60 = 1/120
+14:26:46: (TESL solver/tags) 500 - 0 = 500
+14:26:46: (TESL solver/tags) 500 / 1000 = 0.5
+14:26:46: (TESL solver/tags) 0.5 - 0 = 0.5
+14:26:46: (TESL solver/tags) 0.5 / 60 = 1/120
+14:26:46: (TESL solver/tags) 1/120 + 1 = 121/120
+14:26:46: (TESL solver/tags) 0.5 + 1 = 1.5
+14:26:46: (TESL solver/tags) 500 - 0 = 500
+14:26:46: (TESL solver/tags) 500 / 1000 = 0.5
+14:26:46: (TESL solver/tags) 0.5 - 0 = 0.5
+14:26:46: (TESL solver/tags) 0.5 / 60 = 1/120
+14:26:46: (TESL solver/tags) 500 - 0 = 500
+14:26:46: (TESL solver/tags) 500 / 1000 = 0.5
+14:26:46: (TESL solver/tags) 0.5 - 0 = 0.5
+14:26:46: (TESL solver/tags) 0.5 / 60 = 1/120
+14:26:46: (TESL solver/tags) 500 - 0 = 500
+14:26:46: (TESL solver/tags) 500 / 1000 = 0.5
+14:26:46: (TESL solver/tags) 0.5 - 0 = 0.5
+14:26:46: (TESL solver/tags) 0.5 / 60 = 1/120
+14:26:46: (TESL solver/tags) 500 - 0 = 500
+14:26:46: (TESL solver/tags) 500 / 1000 = 0.5
+14:26:46: (TESL solver/tags) 0.5 - 0 = 0.5
+14:26:46: (TESL solver/tags) 0.5 / 60 = 1/120
+14:26:46: (TESL solver/info) *** Result
+	Implication: Clock "switch_on": (Unit, now)  <= Clock "button": (500, now)  
+	TimeDelayedImplication: 1, Clock "switch_off":  <= Clock "switch_on": (Unit, now)  Clock "min":  
+	TimeDelayedImplication: 1, Clock "light_on":  <= Clock "switch_on": (Unit, now)  Clock "s":  
+	TimeDelayedImplication: 50, Clock "light_off":  <= Clock "switch_off":  Clock "ms":  
+	TagRelation from s to ms x1000+0
+	TagRelation from min to s x60+0
+	TagRelation from ms to button
+	TagRelation from __min_ruler__ to min
+	TagRelation from __s_ruler__ to s
+	TagRelation from __ms_ruler__ to ms
+	Clock "light_on": 
+	Clock "switch_on": (Unit, now) 
+	Clock "button": (500, now) 
+	Clock "light_off": 
+	Clock "ms": 
+	Clock "min": 
+	Clock "s": 
+	Clock "switch_off": 
+
+##### Solve [2] #####
+14:26:46: (TESL solver/info) START
+	Implication: Clock "switch_on":  <= Clock "button":  
+	TimeDelayedImplication: 1, Clock "switch_off":  <= Clock "switch_on":  Clock "min":  
+	TimeDelayedImplication: 1, Clock "light_on":  <= Clock "switch_on":  Clock "s":  
+	TimeDelayedImplication: 50, Clock "light_off":  <= Clock "switch_off":  Clock "ms":  
+	TagRelation from s to ms x1000+0
+	TagRelation from min to s x60+0
+	TagRelation from ms to button
+	TagRelation from __min_ruler__ to min
+	TagRelation from __s_ruler__ to s
+	TagRelation from __ms_ruler__ to ms
+	Clock "light_on": 
+	Clock "switch_on": 
+	Clock "button": 
+	Clock "light_off": 
+	Clock "ms": 
+	Clock "min": 
+	Clock "s": 
+	Clock "switch_off": 
+
+14:26:46: (TESL solver/tags) 121/120 * 60 = 60.05
+14:26:46: (TESL solver/tags) 60.05 + 0 = 60.05
+14:26:46: (TESL solver/tags) 60.05 * 1000 = 60500
+14:26:46: (TESL solver/tags) 60500 + 0 = 60500
+14:26:46: (TESL solver/tags) 1.5 * 1000 = 1500
+14:26:46: (TESL solver/tags) 1500 + 0 = 1500
+14:26:46: (TESL solver/tags) 1.5 - 0 = 1.5
+14:26:46: (TESL solver/tags) 1.5 / 60 = 0.025
+14:26:46: (TESL solver/info) Merging on Clock "__s_ruler__": {, now} (1.5)  tag = 1.5
+14:26:46: (TESL solver/info) Merging on Clock "__min_ruler__": {, now} (121/120)  tag = 0.025
+14:26:46: (TESL solver/tags) 1.5 * 1000 = 1500
+14:26:46: (TESL solver/tags) 1500 + 0 = 1500
+14:26:46: (TESL solver/tags) 1.5 - 0 = 1.5
+14:26:46: (TESL solver/tags) 1.5 / 60 = 0.025
+14:26:46: (TESL solver/tags) 1.5 * 1000 = 1500
+14:26:46: (TESL solver/tags) 1500 + 0 = 1500
+14:26:46: (TESL solver/tags) 1.5 - 0 = 1.5
+14:26:46: (TESL solver/tags) 1.5 / 60 = 0.025
+14:26:46: (TESL solver/tags) 1.5 * 1000 = 1500
+14:26:46: (TESL solver/tags) 1500 + 0 = 1500
+14:26:46: (TESL solver/tags) 1.5 - 0 = 1.5
+14:26:46: (TESL solver/tags) 1.5 / 60 = 0.025
+14:26:46: (TESL solver/tags) 1.5 * 1000 = 1500
+14:26:46: (TESL solver/tags) 1500 + 0 = 1500
+14:26:46: (TESL solver/tags) 1.5 - 0 = 1.5
+14:26:46: (TESL solver/tags) 1.5 / 60 = 0.025
+14:26:46: (TESL solver/tags) 1.5 * 1000 = 1500
+14:26:46: (TESL solver/tags) 1500 + 0 = 1500
+14:26:46: (TESL solver/tags) 1.5 - 0 = 1.5
+14:26:46: (TESL solver/tags) 1.5 / 60 = 0.025
+14:26:46: (TESL solver/tags) 1.5 * 1000 = 1500
+14:26:46: (TESL solver/tags) 1500 + 0 = 1500
+14:26:46: (TESL solver/tags) 1.5 - 0 = 1.5
+14:26:46: (TESL solver/tags) 1.5 / 60 = 0.025
+14:26:46: (TESL solver/info) *** Result
+	Implication: Clock "switch_on":  <= Clock "button":  
+	TimeDelayedImplication: 1, Clock "switch_off":  <= Clock "switch_on":  Clock "min":  
+	TimeDelayedImplication: 1, Clock "light_on": (Unit, now)  <= Clock "switch_on":  Clock "s":  
+	TimeDelayedImplication: 50, Clock "light_off":  <= Clock "switch_off":  Clock "ms":  
+	TagRelation from s to ms x1000+0
+	TagRelation from min to s x60+0
+	TagRelation from ms to button
+	TagRelation from __min_ruler__ to min
+	TagRelation from __s_ruler__ to s
+	TagRelation from __ms_ruler__ to ms
+	Clock "light_on": (Unit, now) 
+	Clock "switch_on": 
+	Clock "button": 
+	Clock "light_off": 
+	Clock "ms": 
+	Clock "min": 
+	Clock "s": 
+	Clock "switch_off": 
+
+##### Solve [3] #####
+14:26:46: (TESL solver/info) START
+	Implication: Clock "switch_on":  <= Clock "button":  
+	TimeDelayedImplication: 1, Clock "switch_off":  <= Clock "switch_on":  Clock "min":  
+	TimeDelayedImplication: 1, Clock "light_on":  <= Clock "switch_on":  Clock "s":  
+	TimeDelayedImplication: 50, Clock "light_off":  <= Clock "switch_off":  Clock "ms":  
+	TagRelation from s to ms x1000+0
+	TagRelation from min to s x60+0
+	TagRelation from ms to button
+	TagRelation from __min_ruler__ to min
+	TagRelation from __s_ruler__ to s
+	TagRelation from __ms_ruler__ to ms
+	Clock "light_on": 
+	Clock "switch_on": 
+	Clock "button": 
+	Clock "light_off": 
+	Clock "ms": 
+	Clock "min": 
+	Clock "s": 
+	Clock "switch_off": 
+
+14:26:46: (TESL solver/tags) 121/120 * 60 = 60.05
+14:26:46: (TESL solver/tags) 60.05 + 0 = 60.05
+14:26:46: (TESL solver/tags) 60.05 * 1000 = 60500
+14:26:46: (TESL solver/tags) 60500 + 0 = 60500
+14:26:46: (TESL solver/info) Merging on Clock "__min_ruler__": {, now} (121/120)  tag = 121/120
+14:26:46: (TESL solver/tags) 121/120 * 60 = 60.05
+14:26:46: (TESL solver/tags) 60.05 + 0 = 60.05
+14:26:46: (TESL solver/tags) 60.05 * 1000 = 60500
+14:26:46: (TESL solver/tags) 60500 + 0 = 60500
+14:26:46: (TESL solver/tags) 121/120 * 60 = 60.05
+14:26:46: (TESL solver/tags) 60.05 + 0 = 60.05
+14:26:46: (TESL solver/tags) 60.05 * 1000 = 60500
+14:26:46: (TESL solver/tags) 60500 + 0 = 60500
+14:26:46: (TESL solver/tags) 60500 + 50 = 60550
+14:26:46: (TESL solver/tags) 121/120 * 60 = 60.05
+14:26:46: (TESL solver/tags) 60.05 + 0 = 60.05
+14:26:46: (TESL solver/tags) 60.05 * 1000 = 60500
+14:26:46: (TESL solver/tags) 60500 + 0 = 60500
+14:26:46: (TESL solver/tags) 121/120 * 60 = 60.05
+14:26:46: (TESL solver/tags) 60.05 + 0 = 60.05
+14:26:46: (TESL solver/tags) 60.05 * 1000 = 60500
+14:26:46: (TESL solver/tags) 60500 + 0 = 60500
+14:26:46: (TESL solver/tags) 121/120 * 60 = 60.05
+14:26:46: (TESL solver/tags) 60.05 + 0 = 60.05
+14:26:46: (TESL solver/tags) 60.05 * 1000 = 60500
+14:26:46: (TESL solver/tags) 60500 + 0 = 60500
+14:26:46: (TESL solver/tags) 121/120 * 60 = 60.05
+14:26:46: (TESL solver/tags) 60.05 + 0 = 60.05
+14:26:46: (TESL solver/tags) 60.05 * 1000 = 60500
+14:26:46: (TESL solver/tags) 60500 + 0 = 60500
+14:26:46: (TESL solver/info) *** Result
+	Implication: Clock "switch_on":  <= Clock "button":  
+	TimeDelayedImplication: 1, Clock "switch_off": (Unit, now)  <= Clock "switch_on":  Clock "min":  
+	TimeDelayedImplication: 1, Clock "light_on":  <= Clock "switch_on":  Clock "s":  
+	TimeDelayedImplication: 50, Clock "light_off":  <= Clock "switch_off": (Unit, now)  Clock "ms":  
+	TagRelation from s to ms x1000+0
+	TagRelation from min to s x60+0
+	TagRelation from ms to button
+	TagRelation from __min_ruler__ to min
+	TagRelation from __s_ruler__ to s
+	TagRelation from __ms_ruler__ to ms
+	Clock "light_on": 
+	Clock "switch_on": 
+	Clock "button": 
+	Clock "light_off": 
+	Clock "ms": 
+	Clock "min": 
+	Clock "s": 
+	Clock "switch_off": (Unit, now) 
+
+##### Solve [4] #####
+14:26:46: (TESL solver/info) START
+	Implication: Clock "switch_on":  <= Clock "button":  
+	TimeDelayedImplication: 1, Clock "switch_off":  <= Clock "switch_on":  Clock "min":  
+	TimeDelayedImplication: 1, Clock "light_on":  <= Clock "switch_on":  Clock "s":  
+	TimeDelayedImplication: 50, Clock "light_off":  <= Clock "switch_off":  Clock "ms":  
+	TagRelation from s to ms x1000+0
+	TagRelation from min to s x60+0
+	TagRelation from ms to button
+	TagRelation from __min_ruler__ to min
+	TagRelation from __s_ruler__ to s
+	TagRelation from __ms_ruler__ to ms
+	Clock "light_on": 
+	Clock "switch_on": 
+	Clock "button": 
+	Clock "light_off": 
+	Clock "ms": 
+	Clock "min": 
+	Clock "s": 
+	Clock "switch_off": 
+
+14:26:46: (TESL solver/tags) 60550 - 0 = 60550
+14:26:46: (TESL solver/tags) 60550 / 1000 = 60.55
+14:26:46: (TESL solver/tags) 60.55 - 0 = 60.55
+14:26:46: (TESL solver/tags) 60.55 / 60 = 1211/1200
+14:26:46: (TESL solver/info) Merging on Clock "__ms_ruler__": {, now} (60550)  tag = 60550
+14:26:46: (TESL solver/tags) 60550 - 0 = 60550
+14:26:46: (TESL solver/tags) 60550 / 1000 = 60.55
+14:26:46: (TESL solver/tags) 60.55 - 0 = 60.55
+14:26:46: (TESL solver/tags) 60.55 / 60 = 1211/1200
+14:26:46: (TESL solver/tags) 60550 - 0 = 60550
+14:26:46: (TESL solver/tags) 60550 / 1000 = 60.55
+14:26:46: (TESL solver/tags) 60.55 - 0 = 60.55
+14:26:46: (TESL solver/tags) 60.55 / 60 = 1211/1200
+14:26:46: (TESL solver/tags) 60550 - 0 = 60550
+14:26:46: (TESL solver/tags) 60550 / 1000 = 60.55
+14:26:46: (TESL solver/tags) 60.55 - 0 = 60.55
+14:26:46: (TESL solver/tags) 60.55 / 60 = 1211/1200
+14:26:46: (TESL solver/tags) 60550 - 0 = 60550
+14:26:46: (TESL solver/tags) 60550 / 1000 = 60.55
+14:26:46: (TESL solver/tags) 60.55 - 0 = 60.55
+14:26:46: (TESL solver/tags) 60.55 / 60 = 1211/1200
+14:26:46: (TESL solver/tags) 60550 - 0 = 60550
+14:26:46: (TESL solver/tags) 60550 / 1000 = 60.55
+14:26:46: (TESL solver/tags) 60.55 - 0 = 60.55
+14:26:46: (TESL solver/tags) 60.55 / 60 = 1211/1200
+14:26:46: (TESL solver/tags) 60550 - 0 = 60550
+14:26:46: (TESL solver/tags) 60550 / 1000 = 60.55
+14:26:46: (TESL solver/tags) 60.55 - 0 = 60.55
+14:26:46: (TESL solver/tags) 60.55 / 60 = 1211/1200
+14:26:46: (TESL solver/info) *** Result
+	Implication: Clock "switch_on":  <= Clock "button":  
+	TimeDelayedImplication: 1, Clock "switch_off":  <= Clock "switch_on":  Clock "min":  
+	TimeDelayedImplication: 1, Clock "light_on":  <= Clock "switch_on":  Clock "s":  
+	TimeDelayedImplication: 50, Clock "light_off": (Unit, now)  <= Clock "switch_off":  Clock "ms":  
+	TagRelation from s to ms x1000+0
+	TagRelation from min to s x60+0
+	TagRelation from ms to button
+	TagRelation from __min_ruler__ to min
+	TagRelation from __s_ruler__ to s
+	TagRelation from __ms_ruler__ to ms
+	Clock "light_on": 
+	Clock "switch_on": 
+	Clock "button": 
+	Clock "light_off": (Unit, now) 
+	Clock "ms": 
+	Clock "min": 
+	Clock "s": 
+	Clock "switch_off": 
+
+### End of simulation ###
+## Simulation result:
+# Tag = 500.0
+  button
+  switch_on
+# Tag = 1500.0
+  light_on
+# Tag = 60500.0
+  switch_off
+# Tag = 60550.0
+  light_off
+## End

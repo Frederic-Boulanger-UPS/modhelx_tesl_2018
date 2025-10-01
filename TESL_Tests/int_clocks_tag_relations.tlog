@@ -1,0 +1,170 @@
+## File: /Users/boulange/Documents/Recherche/ModHelX_Gemoc/TESL_Tests/int_clocks_tag_relations.tesl
+## TESL version: 1.0.11
+## TESL lang version: 1.1.8
+##-----------------------------------------
+Stop clock: null
+Tagref clock: Clock "B": 
+Max. steps: 10
+##### Solve [1] #####
+14:24:55: (TESL solver/info) START
+	TimeDelayedImplication: 4, Clock "A": (2)  <= Clock "A": (2)  Clock "A": (2)  
+	Implication: Clock "B":  <= Clock "A": (2)  
+	TagRelation from A to B x9+-6
+	Clock "A": (2) 
+	Clock "B": 
+
+14:24:55: (TESL solver/info) Merging on Clock "A": {, now} (2)  tag = 2
+14:24:55: (TESL solver/info) *** Result
+	TimeDelayedImplication: 4, Clock "A": (2, now) (6)  <= Clock "A": (2, now) (6)  Clock "A": (2, now) (6)  
+	Implication: Clock "B": (12, now)  <= Clock "A": (2, now) (6)  
+	TagRelation from A to B x9+-6
+	Clock "A": (2, now) (6) 
+	Clock "B": (12, now) 
+
+##### Solve [2] #####
+14:24:55: (TESL solver/info) START
+	TimeDelayedImplication: 4, Clock "A": (6)  <= Clock "A": (6)  Clock "A": (6)  
+	Implication: Clock "B":  <= Clock "A": (6)  
+	TagRelation from A to B x9+-6
+	Clock "A": (6) 
+	Clock "B": 
+
+14:24:55: (TESL solver/info) Merging on Clock "A": {, now} (6)  tag = 6
+14:24:55: (TESL solver/info) *** Result
+	TimeDelayedImplication: 4, Clock "A": (6, now) (10)  <= Clock "A": (6, now) (10)  Clock "A": (6, now) (10)  
+	Implication: Clock "B": (48, now)  <= Clock "A": (6, now) (10)  
+	TagRelation from A to B x9+-6
+	Clock "A": (6, now) (10) 
+	Clock "B": (48, now) 
+
+##### Solve [3] #####
+14:24:55: (TESL solver/info) START
+	TimeDelayedImplication: 4, Clock "A": (10)  <= Clock "A": (10)  Clock "A": (10)  
+	Implication: Clock "B":  <= Clock "A": (10)  
+	TagRelation from A to B x9+-6
+	Clock "A": (10) 
+	Clock "B": 
+
+14:24:55: (TESL solver/info) Merging on Clock "A": {, now} (10)  tag = 10
+14:24:55: (TESL solver/info) *** Result
+	TimeDelayedImplication: 4, Clock "A": (10, now) (14)  <= Clock "A": (10, now) (14)  Clock "A": (10, now) (14)  
+	Implication: Clock "B": (84, now)  <= Clock "A": (10, now) (14)  
+	TagRelation from A to B x9+-6
+	Clock "A": (10, now) (14) 
+	Clock "B": (84, now) 
+
+##### Solve [4] #####
+14:24:55: (TESL solver/info) START
+	TimeDelayedImplication: 4, Clock "A": (14)  <= Clock "A": (14)  Clock "A": (14)  
+	Implication: Clock "B":  <= Clock "A": (14)  
+	TagRelation from A to B x9+-6
+	Clock "A": (14) 
+	Clock "B": 
+
+14:24:55: (TESL solver/info) Merging on Clock "A": {, now} (14)  tag = 14
+14:24:55: (TESL solver/info) *** Result
+	TimeDelayedImplication: 4, Clock "A": (14, now) (18)  <= Clock "A": (14, now) (18)  Clock "A": (14, now) (18)  
+	Implication: Clock "B": (120, now)  <= Clock "A": (14, now) (18)  
+	TagRelation from A to B x9+-6
+	Clock "A": (14, now) (18) 
+	Clock "B": (120, now) 
+
+##### Solve [5] #####
+14:24:55: (TESL solver/info) START
+	TimeDelayedImplication: 4, Clock "A": (18)  <= Clock "A": (18)  Clock "A": (18)  
+	Implication: Clock "B":  <= Clock "A": (18)  
+	TagRelation from A to B x9+-6
+	Clock "A": (18) 
+	Clock "B": 
+
+14:24:55: (TESL solver/info) Merging on Clock "A": {, now} (18)  tag = 18
+14:24:55: (TESL solver/info) *** Result
+	TimeDelayedImplication: 4, Clock "A": (18, now) (22)  <= Clock "A": (18, now) (22)  Clock "A": (18, now) (22)  
+	Implication: Clock "B": (156, now)  <= Clock "A": (18, now) (22)  
+	TagRelation from A to B x9+-6
+	Clock "A": (18, now) (22) 
+	Clock "B": (156, now) 
+
+##### Solve [6] #####
+14:24:55: (TESL solver/info) START
+	TimeDelayedImplication: 4, Clock "A": (22)  <= Clock "A": (22)  Clock "A": (22)  
+	Implication: Clock "B":  <= Clock "A": (22)  
+	TagRelation from A to B x9+-6
+	Clock "A": (22) 
+	Clock "B": 
+
+14:24:55: (TESL solver/info) Merging on Clock "A": {, now} (22)  tag = 22
+14:24:55: (TESL solver/info) *** Result
+	TimeDelayedImplication: 4, Clock "A": (22, now) (26)  <= Clock "A": (22, now) (26)  Clock "A": (22, now) (26)  
+	Implication: Clock "B": (192, now)  <= Clock "A": (22, now) (26)  
+	TagRelation from A to B x9+-6
+	Clock "A": (22, now) (26) 
+	Clock "B": (192, now) 
+
+##### Solve [7] #####
+14:24:55: (TESL solver/info) START
+	TimeDelayedImplication: 4, Clock "A": (26)  <= Clock "A": (26)  Clock "A": (26)  
+	Implication: Clock "B":  <= Clock "A": (26)  
+	TagRelation from A to B x9+-6
+	Clock "A": (26) 
+	Clock "B": 
+
+14:24:55: (TESL solver/info) Merging on Clock "A": {, now} (26)  tag = 26
+14:24:55: (TESL solver/info) *** Result
+	TimeDelayedImplication: 4, Clock "A": (26, now) (30)  <= Clock "A": (26, now) (30)  Clock "A": (26, now) (30)  
+	Implication: Clock "B": (228, now)  <= Clock "A": (26, now) (30)  
+	TagRelation from A to B x9+-6
+	Clock "A": (26, now) (30) 
+	Clock "B": (228, now) 
+
+##### Solve [8] #####
+14:24:55: (TESL solver/info) START
+	TimeDelayedImplication: 4, Clock "A": (30)  <= Clock "A": (30)  Clock "A": (30)  
+	Implication: Clock "B":  <= Clock "A": (30)  
+	TagRelation from A to B x9+-6
+	Clock "A": (30) 
+	Clock "B": 
+
+14:24:55: (TESL solver/info) Merging on Clock "A": {, now} (30)  tag = 30
+14:24:55: (TESL solver/info) *** Result
+	TimeDelayedImplication: 4, Clock "A": (30, now) (34)  <= Clock "A": (30, now) (34)  Clock "A": (30, now) (34)  
+	Implication: Clock "B": (264, now)  <= Clock "A": (30, now) (34)  
+	TagRelation from A to B x9+-6
+	Clock "A": (30, now) (34) 
+	Clock "B": (264, now) 
+
+##### Solve [9] #####
+14:24:55: (TESL solver/info) START
+	TimeDelayedImplication: 4, Clock "A": (34)  <= Clock "A": (34)  Clock "A": (34)  
+	Implication: Clock "B":  <= Clock "A": (34)  
+	TagRelation from A to B x9+-6
+	Clock "A": (34) 
+	Clock "B": 
+
+14:24:55: (TESL solver/info) Merging on Clock "A": {, now} (34)  tag = 34
+14:24:55: (TESL solver/info) *** Result
+	TimeDelayedImplication: 4, Clock "A": (34, now) (38)  <= Clock "A": (34, now) (38)  Clock "A": (34, now) (38)  
+	Implication: Clock "B": (300, now)  <= Clock "A": (34, now) (38)  
+	TagRelation from A to B x9+-6
+	Clock "A": (34, now) (38) 
+	Clock "B": (300, now) 
+
+##### Solve [10] #####
+14:24:55: (TESL solver/info) START
+	TimeDelayedImplication: 4, Clock "A": (38)  <= Clock "A": (38)  Clock "A": (38)  
+	Implication: Clock "B":  <= Clock "A": (38)  
+	TagRelation from A to B x9+-6
+	Clock "A": (38) 
+	Clock "B": 
+
+14:24:55: (TESL solver/info) Merging on Clock "A": {, now} (38)  tag = 38
+14:24:55: (TESL solver/info) *** Result
+	TimeDelayedImplication: 4, Clock "A": (38, now) (42)  <= Clock "A": (38, now) (42)  Clock "A": (38, now) (42)  
+	Implication: Clock "B": (336, now)  <= Clock "A": (38, now) (42)  
+	TagRelation from A to B x9+-6
+	Clock "A": (38, now) (42) 
+	Clock "B": (336, now) 
+
+
+Stopping simulation at step 10 as requested.
+### End of simulation ###

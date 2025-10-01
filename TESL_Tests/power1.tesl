@@ -1,0 +1,7 @@
+int-clock a periodic 1 offset 0
+int-clock b periodic 1 offset 0
+tag relation b = a^2
+
+@maxstep 17
+@output svg standalone
+

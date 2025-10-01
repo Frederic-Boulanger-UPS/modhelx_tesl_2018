@@ -1,0 +1,299 @@
+// grammar fr.supelec.tesl.lang.TESL with org.eclipse.xtext.common.Terminals
+grammar fr.supelec.tesl.lang.TESL hidden(WS, ML_COMMENT, SL_COMMENT)
+
+generate tesl "http://www.supelec.fr/tesl/lang/TESL"
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+Specification:
+	(decl+=Clock |
+	rel+=Relation |
+	let+=Let |
+	pragmas+=Pragma)*
+;
+
+Clock:
+	(nongreedy?="nongreedy")? type=Type name=ID (qual=ClockQualifier)?
+;
+
+ClockQualifier:
+	PeriodicQualifier | SporadicQualifier
+;
+
+PeriodicQualifier:
+	"periodic" period=Expression ("offset" offset=Expression)?
+;
+
+SporadicQualifier:
+	{SporadicQualifier} "sporadic" (instants+=Value ("," instants+=Expression)*)?
+;
+
+enum Type:
+	TUNIT = "U-clock" | TUNIT = "unit-clock"
+	| TINT = "Z-clock" | TINT = "int-clock"
+	| TDEC = "D-clock" | TDEC = "decimal-clock"
+	| TRAT = "Q-clock" | TRAT = "rational-clock"
+	| TFLOAT = "F-clock" | TFLOAT = "float-clock" | TFLOAT = "double-clock"
+;
+
+enum ValueType:
+	 TINT = "int"
+	 | TDEC = "decimal"
+	 | TRAT = "rational"
+     | TFLOAT = "double" | TFLOAT = "float"
+;
+
+Relation:
+	ImplicationRelation | TagRelation | AwaitImplication
+;
+
+ImplicationRelation:
+	source=[Clock | ID] (qual=ImplicationQualifier)? "implies" target=[Clock | ID]
+;
+
+AwaitImplication:
+    "await" (masters+=[Clock | ID])+ ("with" (weak?="weak" | strong?="strong") "reset" "on" reset=[Clock | ID])? "implies" target=[Clock | ID]
+;
+
+ImplicationQualifier:
+	FilteredQualifier | EveryQualifier | DelayedQualifier | SustainedQualifier | TimeDelayedQualifier | WhenQualifier | NextQualifier
+;
+
+FilteredQualifier:
+	"filtered" "by" pattern=Pattern
+;
+
+EveryQualifier:
+	"every" period=Expression (off?="starting" "at" offset=Expression)?
+;
+
+DelayedQualifier:
+	(immediately?="immediately")? "delayed" "by" count=Expression (reset?="with" "reset")? "on" clock=[Clock | ID]
+;
+
+SustainedQualifier:
+	"sustained" (immediately?="immediately")?
+	"from" startClock=[Clock | ID] "to" endClock=[Clock | ID]
+	(weakly?="weakly")?
+;
+
+TimeDelayedQualifier:
+	"time" "delayed" "by" delay=Expression "on" clock=[Clock | ID]
+	(reset?="with" ((immReset?="immediate")? & (strongReset?="strong")?) "reset" "on" resetClock=[Clock | ID])?
+	//timeExpr=Expr
+;
+
+Let:
+	"let" type=ValueType name=ID "=" value=Expression
+;
+
+Value:
+	IntegerValue | DecimalValue | FloatValue | RationalValue | LetValue
+;
+
+IntegerValue:
+	(sign=OpTerm)? value=BIG_INT
+;
+
+DecimalValue:
+    (sign=OpTerm)? value=BIG_DECIMAL
+;
+
+FloatValue:
+	(sign=OpTerm)? value=FLOAT
+;
+
+RationalValue:
+    (sign=OpTerm)? value=RATIONAL
+;
+
+LetValue:
+	"$" ref=[Let | ID]
+;
+
+enum OpTerm returns Op:
+	PLUS="+" | MINUS="-"
+;
+
+enum OpFact returns Op:
+	TIMES="*" | DIV="/"
+;
+
+Expression:
+	Term
+;
+
+Term returns Expression:
+	Factor ({BinOp.left=current} op=OpTerm right=Factor)*
+;
+
+Factor returns Expression:
+	BasicExpr ({BinOp.left=current} op=OpFact right=BasicExpr)*
+;
+
+BasicExpr returns Expression:
+	Value | ('(' Expression ')') | Cast
+;
+
+Cast:
+	IntCast | DecimalCast | FloatCast | RationalCast
+;
+
+IntCast:
+	"[int" expr=Expression "]"
+;
+
+FloatCast:
+    ("[float" | "[double") expr=Expression "]"
+;
+
+DecimalCast:
+    "[decimal" expr=Expression "]"
+;
+
+RationalCast:
+    "[rational" expr=Expression "]"
+;
+
+WhenQualifier:
+	"when" (not?="not")? clock=[Clock | ID]
+;
+
+NextQualifier:
+	(strict?="strictly")? "next" "to" clock=[Clock | ID]
+;
+
+Pattern:
+	skip=Expression "," keep=Expression (rep?="(" repskip=Expression "," repkeep=Expression ")" "*")?
+;
+
+TagRelation:
+	"tag" "relation" expr=TagExpr
+;
+
+TagExpr:
+	SameTagsExpr | AffineTagsExpr
+;
+
+SameTagsExpr:
+	{SameTagsExpr} clockY=[Clock | ID] eq="=" clockX=[Clock | ID]
+;
+
+AffineTagsExpr:
+	{AffineTagsExpr} clockY=[Clock | ID] eq="=" valueA=Expression "*" clockX=[Clock | ID] "+" valueB=Expression
+;
+
+/*
+TagEq:
+	clock=[Clock | ID] "=" expr=Expr
+;
+
+/*
+BinOp1:
+	'*' | '/'
+;
+
+BinOp2:
+	'+' | '-'
+;
+
+
+Expr:
+	Term ({BinOperation.left=current} operator=BinOp2 right=Term)*
+;
+
+Term returns Expr:
+	Factor ({BinOperation.left=current} operator=BinOp1 right=Factor)*
+;
+
+Factor returns Expr:
+	{ClockRef} clock=[Clock | ID] |
+	{Litteral} value=Value |
+	( '(' Expr ')' )
+;
+*/
+
+Pragma:
+	(StopPragma | TagrefPragma | TracePragma | MaxstepPragma
+   | OutputPragma | DoubleCalcPragma | DumpResultPragma
+	)
+;
+
+StopPragma:
+	"@stop" "when" clock=[Clock | ID]
+//	("before" beforeClock=[Clock | ID])?
+;
+
+TagrefPragma:
+	"@tagref" clock=[Clock | ID]
+;
+
+TracePragma:
+	"@trace" kinds+=ID ("," kinds+=ID)*
+;
+
+MaxstepPragma:
+	"@maxstep" value=Expression
+;
+
+OutputPragma:
+	{OutputPragma} "@output" type=("vcd" | "tikz" | "svg")
+	((selection?="select" selectedClocks+=ClockItem ("," selectedClocks+=ClockItem)*)?
+     & (window?="from" from=Expression "to" to=Expression)?
+	 & ("label" "if" labelif+=[Clock | ID] ("," labelif+=[Clock | ID])* )?
+	 & (xscaled?="xscale" xscale=Expression)?
+     & ("border" "=" border=STRING)?
+     & ("css" "=" css=STRING)?
+     & (nodefcss?="no-default-css")?
+     & ("javascript" "=" jvs=STRING)?
+	 & (standalone?="standalone" (overwrite?="overwrite")?)?)
+;
+
+// supports clock renaming (for long clock names)
+ClockItem:
+	clock=[Clock | ID]
+	("->" newName = ID)?
+;
+
+DoubleCalcPragma:
+    "@doublecalc" "digits" "=" num_digits=BIG_INT (round?="(" rounding_mode=ROUNDING_MODE ")")?
+;
+
+DumpResultPragma:
+    {DumpResultPragma} "@dumpres"
+;
+
+enum ROUNDING_MODE:
+    ROUND_UP = "round_up"
+    | ROUND_DOWN = "round_down"
+    | ROUND_CEILING = "round_ceil"
+    | ROUND_FLOOR = "round_floor"
+    | ROUND_HALF_UP = "round_half_up"
+    | ROUND_HALF_DOWN = "round_half_down"
+    | ROUND_HALF_EVEN = "round_half_even"
+;
+// Terminals
+terminal fragment DIGIT: ('0'..'9');
+terminal fragment SIGN: ('+'|'-');
+terminal fragment EXPONENT: ('e'|'E')SIGN?DIGIT+;
+terminal BIG_INT returns ecore::EBigInteger: DIGIT+;
+terminal FLOAT returns ecore::EDouble:
+    (DIGIT+ '.' DIGIT* (EXPONENT)? |  // digits before decimal point
+    '.' DIGIT+ (EXPONENT)? |         // no digits before decimal point
+    DIGIT+ EXPONENT)'F'                  // no decimal point, but exponent
+;
+terminal BIG_DECIMAL returns ecore::EBigDecimal:
+    DIGIT+ '.' DIGIT* (EXPONENT)? |  // digits before decimal point
+    '.' DIGIT+ (EXPONENT)? |         // no digits before decimal point
+    DIGIT+ EXPONENT                  // no decimal point, but exponent
+;
+terminal RATIONAL returns ecore::EJavaObject:
+    '<' DIGIT+ '/' DIGIT+ '>'
+;
+terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+terminal ML_COMMENT	: '/*' -> '*/';
+terminal SL_COMMENT 	: '//' !('\n'|'\r')* ('\r'? '\n')?;
+terminal STRING     : '"' -> '"';
+terminal WS			: (' '|'\t'|'\r'|'\n')+;
+//terminal WORD       : ('a'..'z'|'A'..'Z'|'_'|'\\'|'0'..'9')+;
+terminal ANY_OTHER: .;

@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Export-Package: fr.supelec.tesl.lang.ui.contentassist,fr.supelec.tesl.
+ lang.ui.contentassist.antlr; uses:="org.eclipse.xtext,  org.eclipse.x
+ text.ui.editor.contentassist.antlr.internal,  org.eclipse.xtext.ui.co
+ detemplates.ui.partialEditing,  fr.supelec.tesl.lang.services,  org.e
+ clipse.xtext.ui.editor.contentassist.antlr,  fr.supelec.tesl.lang.ui.
+ contentassist.antlr.internal",fr.supelec.tesl.lang.ui.internal;uses:=
+ "org.eclipse.ui.plugin,org.osgi.framework,com.google.inject",fr.supel
+ ec.tesl.lang.ui.quickfix;uses:="org.eclipse.xtext.ui.editor.quickfix"
+Require-Bundle: fr.supelec.tesl.lang;bundle-version="1.1.6";visibility
+ :=reexport,org.eclipse.xtext.ui,org.eclipse.ui.editors;bundle-version
+ ="3.5.0",org.eclipse.ui.ide;bundle-version="3.5.0",org.eclipse.xtext.
+ ui.shared,org.eclipse.ui,org.eclipse.xtext.builder,org.antlr.runtime,
+ org.eclipse.xtext.common.types.ui,org.eclipse.xtext.ui.codetemplates.
+ ui,org.eclipse.compare,fr.supelec.tesl.core;bundle-version="1.0.10";v
+ isibility:=reexport,org.eclipse.ui.console
+Bundle-Vendor: Supélec
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 1.1.7.201407171718
+Bundle-Name: fr.supelec.tesl.lang.ui
+Bundle-Activator: fr.supelec.tesl.lang.ui.internal.TESLActivator
+Bundle-ManifestVersion: 2
+Import-Package: org.apache.log4j,org.eclipse.xtext.xbase.lib
+Bundle-SymbolicName: fr.supelec.tesl.lang.ui; singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+

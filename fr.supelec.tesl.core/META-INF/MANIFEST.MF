@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Automatic-Module-Name: fr.supelec.tesl.core
+Bundle-Name: TESL Core
+Bundle-SymbolicName: fr.supelec.tesl.core
+Bundle-Version: 1.1.0.qualifier
+Bundle-Activator: fr.supelec.tesl.core.Activator
+Bundle-Vendor: CentraleSupélec/LRI
+Require-Bundle: org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-ActivationPolicy: lazy
+Export-Package: fr.supelec.tesl.core;uses:="fr.supelec.tesl.logging",
+ fr.supelec.tesl.logging

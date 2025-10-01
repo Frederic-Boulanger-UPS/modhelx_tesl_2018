@@ -1,0 +1,9 @@
+int-clock master1 sporadic 1, 4, 7
+int-clock master2 sporadic   2, 5
+unit-clock slave
+ 
+master1 implies slave
+master2 implies slave
+ 
+@tagref master1
+@output svg xscale 50 standalone overwrite

@@ -1,0 +1,97 @@
+int-clock allEvents
+
+/**** States ****/
+// State S
+unit-clock in_S
+unit-clock enter_S
+unit-clock leave_S
+allEvents sustained from enter_S to leave_S implies in_S
+
+// State U
+unit-clock in_U
+unit-clock enter_U
+unit-clock leave_U
+allEvents sustained from enter_U to leave_U implies in_U
+
+// State M
+unit-clock in_M
+unit-clock enter_M
+unit-clock leave_M
+allEvents sustained from enter_M to leave_M implies in_M
+
+// State A
+unit-clock in_A
+unit-clock enter_A
+unit-clock leave_A
+allEvents sustained from enter_A to leave_A implies in_A
+
+/**** Transitions ****/
+// Transition: S -> U when UUp produces MUp
+in_S when event_UUp implies enter_U
+in_S when event_UUp implies leave_S
+in_S when event_UUp implies action_MUp
+
+// Transition: U -> M when 20 produces None
+in_U when event_Timeout_U_to_M implies enter_M
+in_U when event_Timeout_U_to_M implies leave_U
+
+// Transition: U -> A when UNeutral produces None
+in_U when event_UNeutral implies enter_A
+in_U when event_UNeutral implies leave_U
+
+// Transition: M -> S when UNeutral produces MStop
+in_M when event_UNeutral implies enter_S
+in_M when event_UNeutral implies leave_M
+in_M when event_UNeutral implies action_MStop
+
+// Transition: M -> S when EndStop produces MStop
+in_M when event_EndStop implies enter_S
+in_M when event_EndStop implies leave_M
+in_M when event_EndStop implies action_MStop
+
+// Transition: A -> S when UUp produces MStop
+in_A when event_UUp implies enter_S
+in_A when event_UUp implies leave_A
+in_A when event_UUp implies action_MStop
+
+// Transition: A -> S when EndStop produces MStop
+in_A when event_EndStop implies enter_S
+in_A when event_EndStop implies leave_A
+in_A when event_EndStop implies action_MStop
+
+/**** Actions ****/
+// Output action: MStop
+unit-clock action_MStop
+
+// Output action: MUp
+unit-clock action_MUp
+
+/**** Events and scenario ****/
+// Input event: EndStop
+int-clock event_EndStop sporadic 30
+tag relation event_EndStop = allEvents
+event_EndStop implies allEvents
+
+// Input event: UUp
+int-clock event_UUp sporadic 5, 40
+tag relation event_UUp = allEvents
+event_UUp implies allEvents
+
+// Input event: UNeutral
+int-clock event_UNeutral sporadic 10, 70
+tag relation event_UNeutral = allEvents
+event_UNeutral implies allEvents
+
+// Event: delay 20 after entering U
+unit-clock event_Timeout_U_to_M
+enter_U time delayed by 20 on allEvents implies event_Timeout_U_to_M
+event_Timeout_U_to_M implies allEvents
+
+// Initial state
+int-clock start sporadic 0
+tag relation start = allEvents
+start implies allEvents
+start implies enter_S
+@tagref allEvents
+
+@output svg standalone

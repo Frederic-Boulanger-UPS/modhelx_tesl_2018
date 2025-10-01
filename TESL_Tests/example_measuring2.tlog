@@ -1,0 +1,16 @@
+## File: /Users/boulange/Documents/Recherche/ModHelX_Gemoc/TESL_Tests/example_measuring2.tesl
+## TESL version: 1.0.11
+## TESL lang version: 1.1.8
+##-----------------------------------------
+Stop clock: null
+Tagref clock: Clock "measuring": (1) 
+Max. steps: 6
+##### Solve [1] #####
+##### Solve [2] #####
+##### Solve [3] #####
+##### Solve [4] #####
+##### Solve [5] #####
+##### Solve [6] #####
+
+Stopping simulation at step 6 as requested.
+### End of simulation ###

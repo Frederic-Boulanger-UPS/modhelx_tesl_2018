@@ -1,0 +1,18 @@
+## File: /Users/boulange/Documents/Recherche/ModHelX_Gemoc/TESL_Tests/engine.tesl
+## TESL version: 1.0.11
+## TESL lang version: 1.1.8
+##-----------------------------------------
+Stop clock: null
+Tagref clock: Clock "camshaft": 
+Max. steps: 8
+##### Solve [1] #####
+##### Solve [2] #####
+##### Solve [3] #####
+##### Solve [4] #####
+##### Solve [5] #####
+##### Solve [6] #####
+##### Solve [7] #####
+##### Solve [8] #####
+
+Stopping simulation at step 8 as requested.
+### End of simulation ###

@@ -1,0 +1,6 @@
+Une fois l'update site mis en place, lancer le build depuis :
+  https://ci.inria.fr/gemoc/job/org.gemoc.targetplatform.redirects/
+pour s'assurer de bien prendre en compte les nouveau numéro de version 
+puis le build :
+https://ci.inria.fr/gemoc/job/org.gemoc.gemoc_studio.root/
+pour avoir un nouveau studio avec tes ajouts

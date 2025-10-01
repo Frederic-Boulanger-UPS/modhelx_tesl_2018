@@ -1,0 +1,9 @@
+int-clock master periodic 2
+int-clock sampling periodic 3 offset 2
+tag relation sampling = master
+unit-clock slave
+master when sampling implies slave
+@tagref master
+@maxstep 20
+@output svg xscale 20 standalone
+@trace info

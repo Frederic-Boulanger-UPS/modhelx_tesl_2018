@@ -1,0 +1,83 @@
+/*
+ * This file is part of TESL.
+ *
+ * TESL is free software: you can redistribute it and/or modify
+ * it under the terms of the Eclipse Public License 1.0
+ *
+ * TESL is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * Eclipse Public License for more details.
+ *
+ * You should have received a copy of the Eclipse Public License
+ * along with TESL. If not, see <http://opensource.org/licenses/EPL-1.0>.
+ * 
+ * Copyright Supélec, Department of Computer Science, 2013
+ * http://wwwdi.supelec.fr/software
+ * 
+ */
+
+package fr.supelec.tesl.core;
+
+public class Tag<T extends Comparable<? super T>> implements Comparable<Tag<T>> {
+    private T value_;
+
+    public Tag(T value) {
+        this.value_ = value;
+    }
+
+    public Tag<T> copy() {
+        return new Tag<T>(this.value_);
+    }
+
+    @Override
+    public int compareTo(Tag<T> tag) {
+        return this.value_.compareTo(tag.value_);
+    }
+
+    /* (non-Javadoc)
+     * @see java.lang.Object#hashCode()
+     */
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((this.value_ == null) ? 0 : this.value_.hashCode());
+        return result;
+    }
+
+    /* (non-Javadoc)
+     * @see java.lang.Object#equals(java.lang.Object)
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (!(obj instanceof Tag)) {
+            return false;
+        }
+        Tag<?> other = (Tag<?>) obj;
+        if ((this.value_ == null) && (other.value_ != null)) {
+            return false;
+        }
+
+        return this.value_.equals(other.value_);
+    }
+
+    public int compareTo(T tag) {
+        return this.value_.compareTo(tag);
+    }
+
+    public T getValue() {
+        return this.value_;
+    }
+
+    @Override
+    public String toString() {
+        return this.value_.toString();
+    }
+}

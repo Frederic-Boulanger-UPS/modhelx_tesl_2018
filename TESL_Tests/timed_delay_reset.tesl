@@ -1,0 +1,18 @@
+D-clock measuring
+D-clock master sporadic 0, 2, 4
+tag relation master = measuring
+D-clock doreset sporadic 2, 5
+tag relation doreset = measuring
+U-clock slave
+master time delayed by 1 on measuring implies slave
+U-clock slave_reset
+master time delayed by 1 on measuring with reset on doreset implies slave_reset
+U-clock slave_imm
+master time delayed by 1 on measuring with immediate reset on doreset implies slave_imm
+U-clock slave_strong
+master time delayed by 1 on measuring with strong reset on doreset implies slave_strong
+U-clock slave_immstrong
+master time delayed by 1 on measuring with immediate strong reset on doreset implies slave_immstrong
+
+@tagref measuring
+@output svg standalone

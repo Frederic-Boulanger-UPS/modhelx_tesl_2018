@@ -1,0 +1,26 @@
+// Computing leap years with periodic clocks and tag relations
+let int leap_period = 4
+let int not_leap_period = 25 * $leap_period
+let int but_leap_period = 4 * $not_leap_period
+
+int-clock year periodic 1
+
+int-clock period_leap periodic $leap_period
+tag relation period_leap = year
+
+int-clock period_not_leap periodic $not_leap_period
+tag relation period_not_leap = year
+
+int-clock but_leap periodic $but_leap_period
+tag relation but_leap = year
+
+unit-clock leap
+// A year is leap if it is divisible by 4 but not by 100
+period_leap sustained immediately from period_leap to period_not_leap weakly implies leap
+// However, a year divisible by 400 is leap
+but_leap implies leap
+
+@tagref year
+@output svg xscale 30 standalone
+@maxstep 2200
+//@trace info

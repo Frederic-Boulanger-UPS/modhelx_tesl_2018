@@ -1,0 +1,13 @@
+int-clock master1 sporadic 1, 2, 4, 7
+int-clock master2 sporadic   2, 5
+tag relation master2 = 2 * master1 + 0
+
+unit-clock slave
+ 
+master1 implies slave
+master2 implies slave
+ 
+@tagref master1
+@dumpres
+@output svg xscale 30 standalone overwrite
+//@trace info, fine

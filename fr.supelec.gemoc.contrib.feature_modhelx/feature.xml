@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="fr.supelec.gemoc.contrib.feature_modhelx"
+      label="The ModHel&apos;X heterogeneous simulation engine as a contribution from Supélec to Gemoc"
+      version="1.1.0.qualifier"
+      provider-name="Supélec">
+
+   <description url="http://wwwdi.supelec.fr/software/ModHelX/">
+      The ModHel&apos;X heterogeneous simulation engine
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      Copyright Supélec 2014
+   </copyright>
+
+   <license url="http://www.eclipse.org/org/documents/epl-v10.php">
+      Eclipse Public License - v 1.0
+THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE PUBLIC LICENSE (&quot;AGREEMENT&quot;).
+ANY USE, REPRODUCTION OR DISTRIBUTION OF THE PROGRAM CONSTITUTES RECIPIENT’S ACCEPTANCE OF THIS AGREEMENT.
+   </license>
+
+   <url>
+      <discovery label="ModHel&apos;X web site at Supélec" url="http://wwwdi.supelec.fr/software/ModHelX/"/>
+   </url>
+
+   <requires>
+      <import feature="fr.supelec.gemoc.contrib.feature_tesl" version="1.0.0.qualifier"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="fr.supelec.tesl.core" version="1.0.10" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="fr.supelec.modhelx.core"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.qualifier"/>
+
+</feature>

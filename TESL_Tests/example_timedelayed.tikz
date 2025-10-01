@@ -1,0 +1,70 @@
+\pgfkeysifdefined{/tikz/tesl clock name/.@cmd}{}{%
+  \tikzstyle{tesl clock name}=[node font=\sffamily, above left, inner ysep=0pt]
+}
+\pgfkeysifdefined{/tikz/tesl time line/.@cmd}{}{%
+  \tikzstyle{tesl time line}=[->,shorten >=1pt,auto,semithick]
+}
+\pgfkeysifdefined{/tikz/tesl tick helper/.@cmd}{}{%
+  \tikzstyle{tesl tick helper}=[loosely dotted]
+}
+\pgfkeysifdefined{/tikz/tesl clock tick mark/.@cmd}{}{%
+  \tikzstyle{tesl clock tick mark}=[thick]
+}
+\pgfkeysifdefined{/tikz/tesl tick mark/.@cmd}{}{%
+  \tikzstyle{tesl tick mark}=[]
+}
+\pgfkeysifdefined{/tikz/tesl tick label/.@cmd}{}{%
+  \tikzstyle{tesl tick label}=[below, node font={\sffamily\scriptsize}]
+}
+\pgfkeysifdefined{/tikz/tesl clock line/.@cmd}{}{%
+  \tikzstyle{tesl clock line}=[]
+}
+\expandafter\ifx\csname teslclocktickheight\endcsname\relax
+  \def\teslclocktickheight{0.6}%
+\fi
+\expandafter\ifx\csname tesltimetickheight\endcsname\relax
+  \def\tesltimetickheight{0.2}%
+\fi
+\expandafter\ifx\csname teslxoffsetfromtimeorigin\endcsname\relax
+  \def\teslxoffsetfromtimeorigin{-1}%
+\fi
+\expandafter\ifx\csname teslextraclocklength\endcsname\relax
+  \def\teslextraclocklength{1}%
+\fi
+\expandafter\ifx\csname teslextratimelinelength\endcsname\relax
+  \def\teslextratimelinelength{0.3}%
+\fi
+\expandafter\ifx\csname teslpicid\endcsname\relax
+  \def\teslpicid{}%
+\fi
+
+\path (6, -0) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_0) ;
+\path (6, -0) ++(4.5, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_0_end) ;
+\draw[tesl clock line] (\teslpicid c_0) node[tesl clock name] {m} -- (\teslpicid c_0_end) ;
+\path (6, -1) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_1) ;
+\path (6, -1) ++(4.5, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_1_end) ;
+\draw[tesl clock line] (\teslpicid c_1) node[tesl clock name] {a} -- (\teslpicid c_1_end) ;
+\path (6, -2) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid c_2) ;
+\path (6, -2) ++(4.5, 0) ++(\teslextraclocklength, 0) coordinate (\teslpicid c_2_end) ;
+\draw[tesl clock line] (\teslpicid c_2) node[tesl clock name] {b} -- (\teslpicid c_2_end) ;
+\path (6, -3) ++(\teslxoffsetfromtimeorigin, 0) coordinate (\teslpicid timeline) ;
+\path (6, -3) ++(4.5, 0) ++(\teslextraclocklength, 0) ++(\teslextratimelinelength, 0) coordinate (\teslpicid timeline_end) ;
+\draw[tesl time line] (\teslpicid timeline) -- (\teslpicid timeline_end) ;
+\draw[tesl tick helper] (6, 0) -- +(0, -3) ;
+\draw[tesl tick helper] (6.75, 0) -- +(0, -3) ;
+\draw[tesl tick mark] (6.75, -3) -- +(0, \tesltimetickheight) ;
+\node[tesl tick label] (\teslpicid d_4_5) at (6.75, -3) {4.5} ;
+\draw[tesl clock tick mark] (6.75, -2) -- +(0, \teslclocktickheight) ; % b_1
+\draw[tesl tick helper] (7.5, 0) -- +(0, -3) ;
+\draw[tesl tick mark] (7.5, -3) -- +(0, \tesltimetickheight) ;
+\node[tesl tick label] (\teslpicid d_5) at (7.5, -3) {5} ;
+\draw[tesl clock tick mark] (7.5, -1) -- +(0, \teslclocktickheight) ; % a_2
+\draw[tesl tick helper] (9, 0) -- +(0, -3) ;
+\draw[tesl tick helper] (9.75, 0) -- +(0, -3) ;
+\draw[tesl tick mark] (9.75, -3) -- +(0, \tesltimetickheight) ;
+\node[tesl tick label] (\teslpicid d_6_5) at (9.75, -3) {6.5} ;
+\draw[tesl clock tick mark] (9.75, -2) -- +(0, \teslclocktickheight) ; % b_4
+\draw[tesl tick helper] (10.5, 0) -- +(0, -3) ;
+\draw[tesl tick mark] (10.5, -3) -- +(0, \tesltimetickheight) ;
+\node[tesl tick label] (\teslpicid d_7) at (10.5, -3) {7} ;
+\draw[tesl clock tick mark] (10.5, -1) -- +(0, \teslclocktickheight) ; % a_5

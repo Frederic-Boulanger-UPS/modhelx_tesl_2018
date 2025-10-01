@@ -1,0 +1,26 @@
+rational-clock CPU1_time  // time scale on CPU 1
+rational-clock compute_A sporadic 1 // start computing A at 1
+tag relation compute_A = CPU1_time
+unit-clock A_available
+compute_A time delayed by 0.5 on CPU1_time implies A_available
+
+rational-clock CPU2_time  // time scale on CPU 2
+rational-clock compute_B sporadic 2 // start computing B at 2
+tag relation compute_B = CPU2_time
+unit-clock B_available
+compute_B time delayed by 1.5 on CPU2_time implies B_available
+
+// start computing A+B when both A and B are available
+unit-clock compute_A_plus_B
+await A_available B_available implies compute_A_plus_B
+//A_available sustained immediately from B_available
+//                                  to compute_A_plus_B implies compute_A_plus_B
+//B_available sustained immediately from A_available
+//                                  to compute_A_plus_B implies compute_A_plus_B
+
+unit-clock A_plus_B_available
+compute_A_plus_B time delayed by 1 on CPU1_time implies A_plus_B_available
+
+@tagref CPU1_time // display events according to the time of CPU 1
+@output vcd
+@output svg standalone

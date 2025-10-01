@@ -1,0 +1,430 @@
+## File: /Users/boulange/Documents/Recherche/ModHelX_Gemoc/TESL_Tests/implieswhen.tesl
+## TESL version: 1.0.11
+## TESL lang version: 1.1.8
+##-----------------------------------------
+Stop clock: null
+Tagref clock: Clock "master": (0) 
+Max. steps: 20
+##### Solve [1] #####
+14:24:35: (TESL solver/info) START
+	TimeDelayedImplication: 2, Clock "master": (0)  <= Clock "master": (0)  Clock "master": (0)  
+	TimeDelayedImplication: 3, Clock "sampling": (2)  <= Clock "sampling": (2)  Clock "sampling": (2)  
+	WhenImplication: Clock "slave":  <= Clock "master": (0)  Clock "sampling": (2)  
+	TagRelation from master to sampling
+	Clock "sampling": (2) 
+	Clock "slave": 
+	Clock "master": (0) 
+
+14:24:35: (TESL solver/info) Merging on Clock "sampling": {, now} (2)  tag = 0
+14:24:35: (TESL solver/info) Merging on Clock "master": {, now} (0)  tag = 0
+14:24:35: (TESL solver/info) *** Result
+	TimeDelayedImplication: 2, Clock "master": (0, now) (2)  <= Clock "master": (0, now) (2)  Clock "master": (0, now) (2)  
+	TimeDelayedImplication: 3, Clock "sampling": (2)  <= Clock "sampling": (2)  Clock "sampling": (2)  
+	WhenImplication: Clock "slave":  <= Clock "master": (0, now) (2)  Clock "sampling": (2)  
+	TagRelation from master to sampling
+	Clock "sampling": (2) 
+	Clock "slave": 
+	Clock "master": (0, now) (2) 
+
+##### Solve [2] #####
+14:24:35: (TESL solver/info) START
+	TimeDelayedImplication: 2, Clock "master": (2)  <= Clock "master": (2)  Clock "master": (2)  
+	TimeDelayedImplication: 3, Clock "sampling": (2)  <= Clock "sampling": (2)  Clock "sampling": (2)  
+	WhenImplication: Clock "slave":  <= Clock "master": (2)  Clock "sampling": (2)  
+	TagRelation from master to sampling
+	Clock "sampling": (2) 
+	Clock "slave": 
+	Clock "master": (2) 
+
+14:24:35: (TESL solver/info) Merging on Clock "sampling": {, now} (2)  tag = 2
+14:24:35: (TESL solver/info) Merging on Clock "master": {, now} (2)  tag = 2
+14:24:35: (TESL solver/info) *** Result
+	TimeDelayedImplication: 2, Clock "master": (2, now) (4)  <= Clock "master": (2, now) (4)  Clock "master": (2, now) (4)  
+	TimeDelayedImplication: 3, Clock "sampling": (2, now) (5)  <= Clock "sampling": (2, now) (5)  Clock "sampling": (2, now) (5)  
+	WhenImplication: Clock "slave": (Unit, now)  <= Clock "master": (2, now) (4)  Clock "sampling": (2, now) (5)  
+	TagRelation from master to sampling
+	Clock "sampling": (2, now) (5) 
+	Clock "slave": (Unit, now) 
+	Clock "master": (2, now) (4) 
+
+##### Solve [3] #####
+14:24:35: (TESL solver/info) START
+	TimeDelayedImplication: 2, Clock "master": (4)  <= Clock "master": (4)  Clock "master": (4)  
+	TimeDelayedImplication: 3, Clock "sampling": (5)  <= Clock "sampling": (5)  Clock "sampling": (5)  
+	WhenImplication: Clock "slave":  <= Clock "master": (4)  Clock "sampling": (5)  
+	TagRelation from master to sampling
+	Clock "sampling": (5) 
+	Clock "slave": 
+	Clock "master": (4) 
+
+14:24:35: (TESL solver/info) Merging on Clock "sampling": {, now} (5)  tag = 4
+14:24:35: (TESL solver/info) Merging on Clock "master": {, now} (4)  tag = 4
+14:24:35: (TESL solver/info) *** Result
+	TimeDelayedImplication: 2, Clock "master": (4, now) (6)  <= Clock "master": (4, now) (6)  Clock "master": (4, now) (6)  
+	TimeDelayedImplication: 3, Clock "sampling": (5)  <= Clock "sampling": (5)  Clock "sampling": (5)  
+	WhenImplication: Clock "slave":  <= Clock "master": (4, now) (6)  Clock "sampling": (5)  
+	TagRelation from master to sampling
+	Clock "sampling": (5) 
+	Clock "slave": 
+	Clock "master": (4, now) (6) 
+
+##### Solve [4] #####
+14:24:35: (TESL solver/info) START
+	TimeDelayedImplication: 2, Clock "master": (6)  <= Clock "master": (6)  Clock "master": (6)  
+	TimeDelayedImplication: 3, Clock "sampling": (5)  <= Clock "sampling": (5)  Clock "sampling": (5)  
+	WhenImplication: Clock "slave":  <= Clock "master": (6)  Clock "sampling": (5)  
+	TagRelation from master to sampling
+	Clock "sampling": (5) 
+	Clock "slave": 
+	Clock "master": (6) 
+
+14:24:35: (TESL solver/info) Merging on Clock "sampling": {, now} (5)  tag = 5
+14:24:35: (TESL solver/info) Merging on Clock "master": {, now} (6)  tag = 5
+14:24:35: (TESL solver/info) *** Result
+	TimeDelayedImplication: 2, Clock "master": (6)  <= Clock "master": (6)  Clock "master": (6)  
+	TimeDelayedImplication: 3, Clock "sampling": (5, now) (8)  <= Clock "sampling": (5, now) (8)  Clock "sampling": (5, now) (8)  
+	WhenImplication: Clock "slave":  <= Clock "master": (6)  Clock "sampling": (5, now) (8)  
+	TagRelation from master to sampling
+	Clock "sampling": (5, now) (8) 
+	Clock "slave": 
+	Clock "master": (6) 
+
+##### Solve [5] #####
+14:24:35: (TESL solver/info) START
+	TimeDelayedImplication: 2, Clock "master": (6)  <= Clock "master": (6)  Clock "master": (6)  
+	TimeDelayedImplication: 3, Clock "sampling": (8)  <= Clock "sampling": (8)  Clock "sampling": (8)  
+	WhenImplication: Clock "slave":  <= Clock "master": (6)  Clock "sampling": (8)  
+	TagRelation from master to sampling
+	Clock "sampling": (8) 
+	Clock "slave": 
+	Clock "master": (6) 
+
+14:24:35: (TESL solver/info) Merging on Clock "sampling": {, now} (8)  tag = 6
+14:24:35: (TESL solver/info) Merging on Clock "master": {, now} (6)  tag = 6
+14:24:35: (TESL solver/info) *** Result
+	TimeDelayedImplication: 2, Clock "master": (6, now) (8)  <= Clock "master": (6, now) (8)  Clock "master": (6, now) (8)  
+	TimeDelayedImplication: 3, Clock "sampling": (8)  <= Clock "sampling": (8)  Clock "sampling": (8)  
+	WhenImplication: Clock "slave":  <= Clock "master": (6, now) (8)  Clock "sampling": (8)  
+	TagRelation from master to sampling
+	Clock "sampling": (8) 
+	Clock "slave": 
+	Clock "master": (6, now) (8) 
+
+##### Solve [6] #####
+14:24:35: (TESL solver/info) START
+	TimeDelayedImplication: 2, Clock "master": (8)  <= Clock "master": (8)  Clock "master": (8)  
+	TimeDelayedImplication: 3, Clock "sampling": (8)  <= Clock "sampling": (8)  Clock "sampling": (8)  
+	WhenImplication: Clock "slave":  <= Clock "master": (8)  Clock "sampling": (8)  
+	TagRelation from master to sampling
+	Clock "sampling": (8) 
+	Clock "slave": 
+	Clock "master": (8) 
+
+14:24:35: (TESL solver/info) Merging on Clock "sampling": {, now} (8)  tag = 8
+14:24:35: (TESL solver/info) Merging on Clock "master": {, now} (8)  tag = 8
+14:24:35: (TESL solver/info) *** Result
+	TimeDelayedImplication: 2, Clock "master": (8, now) (10)  <= Clock "master": (8, now) (10)  Clock "master": (8, now) (10)  
+	TimeDelayedImplication: 3, Clock "sampling": (8, now) (11)  <= Clock "sampling": (8, now) (11)  Clock "sampling": (8, now) (11)  
+	WhenImplication: Clock "slave": (Unit, now)  <= Clock "master": (8, now) (10)  Clock "sampling": (8, now) (11)  
+	TagRelation from master to sampling
+	Clock "sampling": (8, now) (11) 
+	Clock "slave": (Unit, now) 
+	Clock "master": (8, now) (10) 
+
+##### Solve [7] #####
+14:24:35: (TESL solver/info) START
+	TimeDelayedImplication: 2, Clock "master": (10)  <= Clock "master": (10)  Clock "master": (10)  
+	TimeDelayedImplication: 3, Clock "sampling": (11)  <= Clock "sampling": (11)  Clock "sampling": (11)  
+	WhenImplication: Clock "slave":  <= Clock "master": (10)  Clock "sampling": (11)  
+	TagRelation from master to sampling
+	Clock "sampling": (11) 
+	Clock "slave": 
+	Clock "master": (10) 
+
+14:24:35: (TESL solver/info) Merging on Clock "sampling": {, now} (11)  tag = 10
+14:24:35: (TESL solver/info) Merging on Clock "master": {, now} (10)  tag = 10
+14:24:35: (TESL solver/info) *** Result
+	TimeDelayedImplication: 2, Clock "master": (10, now) (12)  <= Clock "master": (10, now) (12)  Clock "master": (10, now) (12)  
+	TimeDelayedImplication: 3, Clock "sampling": (11)  <= Clock "sampling": (11)  Clock "sampling": (11)  
+	WhenImplication: Clock "slave":  <= Clock "master": (10, now) (12)  Clock "sampling": (11)  
+	TagRelation from master to sampling
+	Clock "sampling": (11) 
+	Clock "slave": 
+	Clock "master": (10, now) (12) 
+
+##### Solve [8] #####
+14:24:35: (TESL solver/info) START
+	TimeDelayedImplication: 2, Clock "master": (12)  <= Clock "master": (12)  Clock "master": (12)  
+	TimeDelayedImplication: 3, Clock "sampling": (11)  <= Clock "sampling": (11)  Clock "sampling": (11)  
+	WhenImplication: Clock "slave":  <= Clock "master": (12)  Clock "sampling": (11)  
+	TagRelation from master to sampling
+	Clock "sampling": (11) 
+	Clock "slave": 
+	Clock "master": (12) 
+
+14:24:35: (TESL solver/info) Merging on Clock "sampling": {, now} (11)  tag = 11
+14:24:35: (TESL solver/info) Merging on Clock "master": {, now} (12)  tag = 11
+14:24:35: (TESL solver/info) *** Result
+	TimeDelayedImplication: 2, Clock "master": (12)  <= Clock "master": (12)  Clock "master": (12)  
+	TimeDelayedImplication: 3, Clock "sampling": (11, now) (14)  <= Clock "sampling": (11, now) (14)  Clock "sampling": (11, now) (14)  
+	WhenImplication: Clock "slave":  <= Clock "master": (12)  Clock "sampling": (11, now) (14)  
+	TagRelation from master to sampling
+	Clock "sampling": (11, now) (14) 
+	Clock "slave": 
+	Clock "master": (12) 
+
+##### Solve [9] #####
+14:24:35: (TESL solver/info) START
+	TimeDelayedImplication: 2, Clock "master": (12)  <= Clock "master": (12)  Clock "master": (12)  
+	TimeDelayedImplication: 3, Clock "sampling": (14)  <= Clock "sampling": (14)  Clock "sampling": (14)  
+	WhenImplication: Clock "slave":  <= Clock "master": (12)  Clock "sampling": (14)  
+	TagRelation from master to sampling
+	Clock "sampling": (14) 
+	Clock "slave": 
+	Clock "master": (12) 
+
+14:24:35: (TESL solver/info) Merging on Clock "sampling": {, now} (14)  tag = 12
+14:24:35: (TESL solver/info) Merging on Clock "master": {, now} (12)  tag = 12
+14:24:35: (TESL solver/info) *** Result
+	TimeDelayedImplication: 2, Clock "master": (12, now) (14)  <= Clock "master": (12, now) (14)  Clock "master": (12, now) (14)  
+	TimeDelayedImplication: 3, Clock "sampling": (14)  <= Clock "sampling": (14)  Clock "sampling": (14)  
+	WhenImplication: Clock "slave":  <= Clock "master": (12, now) (14)  Clock "sampling": (14)  
+	TagRelation from master to sampling
+	Clock "sampling": (14) 
+	Clock "slave": 
+	Clock "master": (12, now) (14) 
+
+##### Solve [10] #####
+14:24:35: (TESL solver/info) START
+	TimeDelayedImplication: 2, Clock "master": (14)  <= Clock "master": (14)  Clock "master": (14)  
+	TimeDelayedImplication: 3, Clock "sampling": (14)  <= Clock "sampling": (14)  Clock "sampling": (14)  
+	WhenImplication: Clock "slave":  <= Clock "master": (14)  Clock "sampling": (14)  
+	TagRelation from master to sampling
+	Clock "sampling": (14) 
+	Clock "slave": 
+	Clock "master": (14) 
+
+14:24:35: (TESL solver/info) Merging on Clock "sampling": {, now} (14)  tag = 14
+14:24:35: (TESL solver/info) Merging on Clock "master": {, now} (14)  tag = 14
+14:24:35: (TESL solver/info) *** Result
+	TimeDelayedImplication: 2, Clock "master": (14, now) (16)  <= Clock "master": (14, now) (16)  Clock "master": (14, now) (16)  
+	TimeDelayedImplication: 3, Clock "sampling": (14, now) (17)  <= Clock "sampling": (14, now) (17)  Clock "sampling": (14, now) (17)  
+	WhenImplication: Clock "slave": (Unit, now)  <= Clock "master": (14, now) (16)  Clock "sampling": (14, now) (17)  
+	TagRelation from master to sampling
+	Clock "sampling": (14, now) (17) 
+	Clock "slave": (Unit, now) 
+	Clock "master": (14, now) (16) 
+
+##### Solve [11] #####
+14:24:35: (TESL solver/info) START
+	TimeDelayedImplication: 2, Clock "master": (16)  <= Clock "master": (16)  Clock "master": (16)  
+	TimeDelayedImplication: 3, Clock "sampling": (17)  <= Clock "sampling": (17)  Clock "sampling": (17)  
+	WhenImplication: Clock "slave":  <= Clock "master": (16)  Clock "sampling": (17)  
+	TagRelation from master to sampling
+	Clock "sampling": (17) 
+	Clock "slave": 
+	Clock "master": (16) 
+
+14:24:35: (TESL solver/info) Merging on Clock "sampling": {, now} (17)  tag = 16
+14:24:35: (TESL solver/info) Merging on Clock "master": {, now} (16)  tag = 16
+14:24:35: (TESL solver/info) *** Result
+	TimeDelayedImplication: 2, Clock "master": (16, now) (18)  <= Clock "master": (16, now) (18)  Clock "master": (16, now) (18)  
+	TimeDelayedImplication: 3, Clock "sampling": (17)  <= Clock "sampling": (17)  Clock "sampling": (17)  
+	WhenImplication: Clock "slave":  <= Clock "master": (16, now) (18)  Clock "sampling": (17)  
+	TagRelation from master to sampling
+	Clock "sampling": (17) 
+	Clock "slave": 
+	Clock "master": (16, now) (18) 
+
+##### Solve [12] #####
+14:24:35: (TESL solver/info) START
+	TimeDelayedImplication: 2, Clock "master": (18)  <= Clock "master": (18)  Clock "master": (18)  
+	TimeDelayedImplication: 3, Clock "sampling": (17)  <= Clock "sampling": (17)  Clock "sampling": (17)  
+	WhenImplication: Clock "slave":  <= Clock "master": (18)  Clock "sampling": (17)  
+	TagRelation from master to sampling
+	Clock "sampling": (17) 
+	Clock "slave": 
+	Clock "master": (18) 
+
+14:24:35: (TESL solver/info) Merging on Clock "sampling": {, now} (17)  tag = 17
+14:24:35: (TESL solver/info) Merging on Clock "master": {, now} (18)  tag = 17
+14:24:35: (TESL solver/info) *** Result
+	TimeDelayedImplication: 2, Clock "master": (18)  <= Clock "master": (18)  Clock "master": (18)  
+	TimeDelayedImplication: 3, Clock "sampling": (17, now) (20)  <= Clock "sampling": (17, now) (20)  Clock "sampling": (17, now) (20)  
+	WhenImplication: Clock "slave":  <= Clock "master": (18)  Clock "sampling": (17, now) (20)  
+	TagRelation from master to sampling
+	Clock "sampling": (17, now) (20) 
+	Clock "slave": 
+	Clock "master": (18) 
+
+##### Solve [13] #####
+14:24:35: (TESL solver/info) START
+	TimeDelayedImplication: 2, Clock "master": (18)  <= Clock "master": (18)  Clock "master": (18)  
+	TimeDelayedImplication: 3, Clock "sampling": (20)  <= Clock "sampling": (20)  Clock "sampling": (20)  
+	WhenImplication: Clock "slave":  <= Clock "master": (18)  Clock "sampling": (20)  
+	TagRelation from master to sampling
+	Clock "sampling": (20) 
+	Clock "slave": 
+	Clock "master": (18) 
+
+14:24:35: (TESL solver/info) Merging on Clock "sampling": {, now} (20)  tag = 18
+14:24:35: (TESL solver/info) Merging on Clock "master": {, now} (18)  tag = 18
+14:24:35: (TESL solver/info) *** Result
+	TimeDelayedImplication: 2, Clock "master": (18, now) (20)  <= Clock "master": (18, now) (20)  Clock "master": (18, now) (20)  
+	TimeDelayedImplication: 3, Clock "sampling": (20)  <= Clock "sampling": (20)  Clock "sampling": (20)  
+	WhenImplication: Clock "slave":  <= Clock "master": (18, now) (20)  Clock "sampling": (20)  
+	TagRelation from master to sampling
+	Clock "sampling": (20) 
+	Clock "slave": 
+	Clock "master": (18, now) (20) 
+
+##### Solve [14] #####
+14:24:35: (TESL solver/info) START
+	TimeDelayedImplication: 2, Clock "master": (20)  <= Clock "master": (20)  Clock "master": (20)  
+	TimeDelayedImplication: 3, Clock "sampling": (20)  <= Clock "sampling": (20)  Clock "sampling": (20)  
+	WhenImplication: Clock "slave":  <= Clock "master": (20)  Clock "sampling": (20)  
+	TagRelation from master to sampling
+	Clock "sampling": (20) 
+	Clock "slave": 
+	Clock "master": (20) 
+
+14:24:35: (TESL solver/info) Merging on Clock "sampling": {, now} (20)  tag = 20
+14:24:35: (TESL solver/info) Merging on Clock "master": {, now} (20)  tag = 20
+14:24:35: (TESL solver/info) *** Result
+	TimeDelayedImplication: 2, Clock "master": (20, now) (22)  <= Clock "master": (20, now) (22)  Clock "master": (20, now) (22)  
+	TimeDelayedImplication: 3, Clock "sampling": (20, now) (23)  <= Clock "sampling": (20, now) (23)  Clock "sampling": (20, now) (23)  
+	WhenImplication: Clock "slave": (Unit, now)  <= Clock "master": (20, now) (22)  Clock "sampling": (20, now) (23)  
+	TagRelation from master to sampling
+	Clock "sampling": (20, now) (23) 
+	Clock "slave": (Unit, now) 
+	Clock "master": (20, now) (22) 
+
+##### Solve [15] #####
+14:24:35: (TESL solver/info) START
+	TimeDelayedImplication: 2, Clock "master": (22)  <= Clock "master": (22)  Clock "master": (22)  
+	TimeDelayedImplication: 3, Clock "sampling": (23)  <= Clock "sampling": (23)  Clock "sampling": (23)  
+	WhenImplication: Clock "slave":  <= Clock "master": (22)  Clock "sampling": (23)  
+	TagRelation from master to sampling
+	Clock "sampling": (23) 
+	Clock "slave": 
+	Clock "master": (22) 
+
+14:24:35: (TESL solver/info) Merging on Clock "sampling": {, now} (23)  tag = 22
+14:24:35: (TESL solver/info) Merging on Clock "master": {, now} (22)  tag = 22
+14:24:35: (TESL solver/info) *** Result
+	TimeDelayedImplication: 2, Clock "master": (22, now) (24)  <= Clock "master": (22, now) (24)  Clock "master": (22, now) (24)  
+	TimeDelayedImplication: 3, Clock "sampling": (23)  <= Clock "sampling": (23)  Clock "sampling": (23)  
+	WhenImplication: Clock "slave":  <= Clock "master": (22, now) (24)  Clock "sampling": (23)  
+	TagRelation from master to sampling
+	Clock "sampling": (23) 
+	Clock "slave": 
+	Clock "master": (22, now) (24) 
+
+##### Solve [16] #####
+14:24:35: (TESL solver/info) START
+	TimeDelayedImplication: 2, Clock "master": (24)  <= Clock "master": (24)  Clock "master": (24)  
+	TimeDelayedImplication: 3, Clock "sampling": (23)  <= Clock "sampling": (23)  Clock "sampling": (23)  
+	WhenImplication: Clock "slave":  <= Clock "master": (24)  Clock "sampling": (23)  
+	TagRelation from master to sampling
+	Clock "sampling": (23) 
+	Clock "slave": 
+	Clock "master": (24) 
+
+14:24:35: (TESL solver/info) Merging on Clock "sampling": {, now} (23)  tag = 23
+14:24:35: (TESL solver/info) Merging on Clock "master": {, now} (24)  tag = 23
+14:24:35: (TESL solver/info) *** Result
+	TimeDelayedImplication: 2, Clock "master": (24)  <= Clock "master": (24)  Clock "master": (24)  
+	TimeDelayedImplication: 3, Clock "sampling": (23, now) (26)  <= Clock "sampling": (23, now) (26)  Clock "sampling": (23, now) (26)  
+	WhenImplication: Clock "slave":  <= Clock "master": (24)  Clock "sampling": (23, now) (26)  
+	TagRelation from master to sampling
+	Clock "sampling": (23, now) (26) 
+	Clock "slave": 
+	Clock "master": (24) 
+
+##### Solve [17] #####
+14:24:35: (TESL solver/info) START
+	TimeDelayedImplication: 2, Clock "master": (24)  <= Clock "master": (24)  Clock "master": (24)  
+	TimeDelayedImplication: 3, Clock "sampling": (26)  <= Clock "sampling": (26)  Clock "sampling": (26)  
+	WhenImplication: Clock "slave":  <= Clock "master": (24)  Clock "sampling": (26)  
+	TagRelation from master to sampling
+	Clock "sampling": (26) 
+	Clock "slave": 
+	Clock "master": (24) 
+
+14:24:35: (TESL solver/info) Merging on Clock "sampling": {, now} (26)  tag = 24
+14:24:35: (TESL solver/info) Merging on Clock "master": {, now} (24)  tag = 24
+14:24:35: (TESL solver/info) *** Result
+	TimeDelayedImplication: 2, Clock "master": (24, now) (26)  <= Clock "master": (24, now) (26)  Clock "master": (24, now) (26)  
+	TimeDelayedImplication: 3, Clock "sampling": (26)  <= Clock "sampling": (26)  Clock "sampling": (26)  
+	WhenImplication: Clock "slave":  <= Clock "master": (24, now) (26)  Clock "sampling": (26)  
+	TagRelation from master to sampling
+	Clock "sampling": (26) 
+	Clock "slave": 
+	Clock "master": (24, now) (26) 
+
+##### Solve [18] #####
+14:24:35: (TESL solver/info) START
+	TimeDelayedImplication: 2, Clock "master": (26)  <= Clock "master": (26)  Clock "master": (26)  
+	TimeDelayedImplication: 3, Clock "sampling": (26)  <= Clock "sampling": (26)  Clock "sampling": (26)  
+	WhenImplication: Clock "slave":  <= Clock "master": (26)  Clock "sampling": (26)  
+	TagRelation from master to sampling
+	Clock "sampling": (26) 
+	Clock "slave": 
+	Clock "master": (26) 
+
+14:24:35: (TESL solver/info) Merging on Clock "sampling": {, now} (26)  tag = 26
+14:24:35: (TESL solver/info) Merging on Clock "master": {, now} (26)  tag = 26
+14:24:35: (TESL solver/info) *** Result
+	TimeDelayedImplication: 2, Clock "master": (26, now) (28)  <= Clock "master": (26, now) (28)  Clock "master": (26, now) (28)  
+	TimeDelayedImplication: 3, Clock "sampling": (26, now) (29)  <= Clock "sampling": (26, now) (29)  Clock "sampling": (26, now) (29)  
+	WhenImplication: Clock "slave": (Unit, now)  <= Clock "master": (26, now) (28)  Clock "sampling": (26, now) (29)  
+	TagRelation from master to sampling
+	Clock "sampling": (26, now) (29) 
+	Clock "slave": (Unit, now) 
+	Clock "master": (26, now) (28) 
+
+##### Solve [19] #####
+14:24:35: (TESL solver/info) START
+	TimeDelayedImplication: 2, Clock "master": (28)  <= Clock "master": (28)  Clock "master": (28)  
+	TimeDelayedImplication: 3, Clock "sampling": (29)  <= Clock "sampling": (29)  Clock "sampling": (29)  
+	WhenImplication: Clock "slave":  <= Clock "master": (28)  Clock "sampling": (29)  
+	TagRelation from master to sampling
+	Clock "sampling": (29) 
+	Clock "slave": 
+	Clock "master": (28) 
+
+14:24:35: (TESL solver/info) Merging on Clock "sampling": {, now} (29)  tag = 28
+14:24:35: (TESL solver/info) Merging on Clock "master": {, now} (28)  tag = 28
+14:24:35: (TESL solver/info) *** Result
+	TimeDelayedImplication: 2, Clock "master": (28, now) (30)  <= Clock "master": (28, now) (30)  Clock "master": (28, now) (30)  
+	TimeDelayedImplication: 3, Clock "sampling": (29)  <= Clock "sampling": (29)  Clock "sampling": (29)  
+	WhenImplication: Clock "slave":  <= Clock "master": (28, now) (30)  Clock "sampling": (29)  
+	TagRelation from master to sampling
+	Clock "sampling": (29) 
+	Clock "slave": 
+	Clock "master": (28, now) (30) 
+
+##### Solve [20] #####
+14:24:35: (TESL solver/info) START
+	TimeDelayedImplication: 2, Clock "master": (30)  <= Clock "master": (30)  Clock "master": (30)  
+	TimeDelayedImplication: 3, Clock "sampling": (29)  <= Clock "sampling": (29)  Clock "sampling": (29)  
+	WhenImplication: Clock "slave":  <= Clock "master": (30)  Clock "sampling": (29)  
+	TagRelation from master to sampling
+	Clock "sampling": (29) 
+	Clock "slave": 
+	Clock "master": (30) 
+
+14:24:35: (TESL solver/info) Merging on Clock "sampling": {, now} (29)  tag = 29
+14:24:35: (TESL solver/info) Merging on Clock "master": {, now} (30)  tag = 29
+14:24:35: (TESL solver/info) *** Result
+	TimeDelayedImplication: 2, Clock "master": (30)  <= Clock "master": (30)  Clock "master": (30)  
+	TimeDelayedImplication: 3, Clock "sampling": (29, now) (32)  <= Clock "sampling": (29, now) (32)  Clock "sampling": (29, now) (32)  
+	WhenImplication: Clock "slave":  <= Clock "master": (30)  Clock "sampling": (29, now) (32)  
+	TagRelation from master to sampling
+	Clock "sampling": (29, now) (32) 
+	Clock "slave": 
+	Clock "master": (30) 
+
+
+Stopping simulation at step 20 as requested.
+### End of simulation ###
